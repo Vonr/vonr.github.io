@@ -43,13 +43,6 @@
     <div class="mb-12">
         <Markdown markdown={post} />
     </div>
-{:else}
-    <div class="centered-content">
-        <h1>404 Not Found</h1>
-        Article does not exist.
-        <br />
-        <a href="/blog">Go back to the index.</a>
-    </div>
 {/if}
 
 {#if $mobile}
