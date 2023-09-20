@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.centered-content {
+    max-width: calc(min(760px, 90%));
+    margin: 0 auto;
+}
+
+a:hover:not(.noblue) {
+    --tw-text-opacity: 1;
+    color: rgb(105 122 221 / var(--tw-text-opacity));
+}
+
+a:not(.no-underline) {
+    text-decoration: underline;
+}
+
+a:not(.notransition):not(.noblue) {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding-bottom: 0.4rem;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding-bottom: 0.35rem;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
