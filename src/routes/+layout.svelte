@@ -124,10 +124,6 @@
         </ul>
     </nav>
 
-    <div class="mt-16 text-lg">
-        <slot class="bg-white dark:bg-black" />
-    </div>
-
     <div class="fixed bottom-0 right-0 p-8">
         <a href="https://ko-fi.com/qther" target="_blank">
             <img
@@ -136,6 +132,10 @@
                 class="h-16 w-16"
             />
         </a>
+    </div>
+
+    <div class="mt-16 text-lg">
+        <slot class="bg-white dark:bg-black" />
     </div>
 {/if}
 

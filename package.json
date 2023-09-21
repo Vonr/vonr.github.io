@@ -6,6 +6,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.20.4",
+    "@types/dom-view-transitions": "^1.0.1",
     "autoprefixer": "^10.4.15",
     "fractils": "^3.1.2",
     "postcss": "^8.4.29",
