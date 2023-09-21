@@ -1,8 +1,7 @@
-import { redirect } from "@sveltejs/kit";
 import type { EntryGenerator, PageLoad } from "./$types";
 
 export const entries: EntryGenerator = async () => {
-    let index = await import('../../../../static/article-index?raw');
+    let index = await import('$lib/article-index?raw');
     return index.default
         .split("\n")
         .map((entry) => entry.split("|||"))
@@ -10,14 +9,10 @@ export const entries: EntryGenerator = async () => {
         .map(([id, _name, _date]) => ({ article: id }))
 };
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageLoad = async ({ params }) => {
     const id = params.article;
-    const post = await fetch(`/articles/${id}.html`);
+    const post = await import(`../../../lib/articles/${id}.html?raw`);
 
-    if (!post.ok) {
-        throw redirect(307, '/blog')
-    }
-
-    return { post: post.text() }
+    return { post: post.default }
 
 }

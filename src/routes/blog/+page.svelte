@@ -1,9 +1,8 @@
 <script lang="ts">
     let index: Promise<string[][]> | null;
 
-    index = fetch("/article-index")
-        .then((res) => res.text())
-        .then((text) =>
+    index = import("$lib/article-index?raw")
+        .then(({default: text}) =>
             text
                 .split("\n")
                 .map((entry) => entry.split("|||"))

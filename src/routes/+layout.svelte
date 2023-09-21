@@ -7,7 +7,7 @@
     import { theme } from "$lib/stores";
     import { onMount } from "svelte";
     import { Fractils, mobile } from "fractils";
-import { onNavigate } from '$app/navigation';
+    import { onNavigate } from "$app/navigation";
 
     let mounted = false;
 
@@ -42,16 +42,16 @@ import { onNavigate } from '$app/navigation';
         mounted = true;
     });
 
-onNavigate((navigation) => {
-	if (!document.startViewTransition) return;
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return;
 
-	return new Promise((resolve) => {
-		document.startViewTransition(async () => {
-			resolve();
-			await navigation.complete;
-		});
-	});
-});
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve();
+                await navigation.complete;
+            });
+        });
+    });
 </script>
 
 <Fractils />
@@ -63,7 +63,7 @@ onNavigate((navigation) => {
             <li>
                 <ul>
                     <li>
-                        <a href="/" class="text-lg no-underline">
+                        <a href="/" class="text-lg no-underline" title="Home">
                             <Fa icon={faHome} class="inline" />
                             {#if !$mobile}
                                 Home
@@ -72,13 +72,21 @@ onNavigate((navigation) => {
                     </li>
 
                     <li>
-                        <a href="/portfolio" class="text-lg no-underline">
+                        <a
+                            href="/portfolio"
+                            class="text-lg no-underline"
+                            title="Portfolio"
+                        >
                             Portfolio
                         </a>
                     </li>
 
                     <li>
-                        <a href="/blog" class="text-lg no-underline">Blog</a>
+                        <a
+                            href="/blog"
+                            class="text-lg no-underline"
+                            title="Blog">Blog</a
+                        >
                     </li>
                 </ul>
             </li>
@@ -91,6 +99,7 @@ onNavigate((navigation) => {
                             href="https://github.com/Vonr"
                             target="_blank"
                             class="noblue notransition"
+                            title="GitHub"
                         >
                             <Fa icon={faGithub} size="2x" class="py-1 w-6" />
                         </a>
@@ -178,6 +187,7 @@ onNavigate((navigation) => {
         width: 100%;
         flex-flow: row nowrap;
         justify-content: space-between;
+        text-align: center;
     }
 
     nav > ul > li > ul > li {
