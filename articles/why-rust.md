@@ -37,7 +37,7 @@ fn print(s: String) {
 [Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=4cd8bcc42a9e27c8a287a0295b68a362)
 
 Of course, this by itself is inconvenient.  
-<!-- That's why Rust makes heavy use of borrows - creating references to values. -->
+That's why Rust makes heavy use of borrows - creating references to values.
 
 References are split into two distinct types: shared and immutable, and exclusive and mutable.
 

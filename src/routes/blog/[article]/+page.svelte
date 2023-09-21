@@ -1,31 +1,32 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import Markdown from "$lib/components/Markdown.svelte";
+    import "./markdown.css";
     import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-    import { onMount } from "svelte";
     import Fa from "svelte-fa";
     import { mobile } from "fractils";
+    import { theme } from "$lib/stores";
+    import type { PageData } from "./$types";
 
-    let post: string | null = null;
-    let id: string | null = null;
+    let style: string;
+    export let data: PageData;
+    let post = data.post;
 
-    let mounted = false;
-
-    onMount(async () => {
-        id = $page.params.article;
-        post = await fetch(`/articles/${id}.md`).then((res) =>
-            res.ok ? res.text() : Promise.resolve(null)
-        );
-        mounted = true;
+    theme.subscribe(async (theme) => {
+        if (theme === "light") {
+            style = (
+                await import("$lib/styles/hljs-gruvbox-light-medium.css?inline")
+            ).default;
+        } else {
+            style = (
+                await import("$lib/styles/hljs-gruvbox-dark-medium.css?inline")
+            ).default;
+        }
     });
 </script>
 
 <svelte:head>
-    {#if mounted && post !== null}
-        <title>
-            {post.substring(0, post.indexOf("\n")).replace(/^#+ /, "")}
-        </title>
-    {/if}
+    <title>
+        {post.substring(0, post.indexOf("\n")).replace(/<[^>]*>?/gm, "")}
+    </title>
 </svelte:head>
 
 <div
@@ -39,11 +40,10 @@
     </a>
 </div>
 
-{#if mounted && post !== null}
-    <div class="mb-12">
-        <Markdown markdown={post} />
-    </div>
-{/if}
+{@html `<style>${style}</style>`}
+<div class="centered-content">
+    {@html post}
+</div>
 
 {#if $mobile}
     <style>

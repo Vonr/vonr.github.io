@@ -5,9 +5,9 @@ import { child_process } from 'vite-plugin-child-process'
 export default defineConfig({
     plugins: [
         child_process({
-            name: "Generate Index",
-            command: ["./genindex.sh"],
-            watch: ["./static/articles", "./genindex.sh"]
+            name: "Compile Articles",
+            command: ["./compile_articles.sh"],
+            watch: ["./articles", "./mdc", './compile_articles.sh']
         }),
         sveltekit(),
     ],

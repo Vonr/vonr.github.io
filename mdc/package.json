@@ -1,0 +1,16 @@
+{
+  "name": "mdc",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/markdown-it": "^13.0.1",
+    "highlight.js": "^11.8.0",
+    "markdown-it": "^13.0.1"
+  }
+}
