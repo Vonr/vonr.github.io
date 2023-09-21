@@ -10,6 +10,9 @@
     overflow-x: auto;
     justify-self: center;
     border-radius: 0.5rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
 }
 
 .codeblock > code {
