@@ -1,4 +1,4 @@
-<h1>Why Rust?</h1>
+const s=`<h1>Why Rust?</h1>
 <h2>Sep 20 2023</h2>
 <p>I have used a variety of languages since I first started my foray into programming.</p>
 <p>I started with Javascript, learnt Java, hopped to Kotlin, pivoted to Go, and touched on a bunch of other languages along the way.</p>
@@ -17,7 +17,7 @@ This means that you can no longer access it, even after the function is over.</p
 
     <span class="hljs-title function_ invoke__">print</span>(s);
 
-    <span class="hljs-comment">// This would be an error, as s has moved into `print`</span>
+    <span class="hljs-comment">// This would be an error, as s has moved into \`print\`</span>
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
 }
 
@@ -35,15 +35,15 @@ or a single mutable reference.</p>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = <span class="hljs-type">String</span>::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);
 
-    <span class="hljs-comment">// We give `print` a reference to `s` instead of `s` itself</span>
+    <span class="hljs-comment">// We give \`print\` a reference to \`s\` instead of \`s\` itself</span>
     <span class="hljs-title function_ invoke__">print</span>(&amp;s);
 
-    <span class="hljs-comment">// `s` has not been moved out of this function,</span>
+    <span class="hljs-comment">// \`s\` has not been moved out of this function,</span>
     <span class="hljs-comment">// and is thus still valid.</span>
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
 }
 
-<span class="hljs-comment">// `print` now takes in reference to a String.</span>
+<span class="hljs-comment">// \`print\` now takes in reference to a String.</span>
 <span class="hljs-comment">//</span>
 <span class="hljs-comment">// P.S. the type should really be &amp;str since</span>
 <span class="hljs-comment">// we are only interested in the data of</span>
@@ -192,7 +192,7 @@ such as <code>filter</code>, <code>map</code>, <code>skip</code>, and <code>take
 <p>Rust's <code>Iterator</code> is &quot;lazy&quot;, meaning that operations on them only run when needed.
 This avoids allocating a container for each operation, which would be necessary in a strict API.</p>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
-    <span class="hljs-comment">// This is a bad use of `map`, `inspect` is more suitable here.</span>
+    <span class="hljs-comment">// This is a bad use of \`map\`, \`inspect\` is more suitable here.</span>
     <span class="hljs-keyword">for</span> <span class="hljs-variable">_</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>) {
         <span class="hljs-comment">// Draining the iterator, as it would</span>
         <span class="hljs-comment">// otherwise be lazy and do nothing.</span>
@@ -209,7 +209,7 @@ This avoids allocating a container for each operation, which would be necessary 
 <p>The <code>Iterator</code> we produced is equivalent to the following imperative code.</p>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">count</span> = <span class="hljs-number">0</span>;
 <span class="hljs-keyword">for</span> <span class="hljs-variable">n</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>) {
-    <span class="hljs-comment">// Shadowing the binding of `n` to the result of the map.</span>
+    <span class="hljs-comment">// Shadowing the binding of \`n\` to the result of the map.</span>
     <span class="hljs-keyword">let</span> <span class="hljs-variable">n</span> = <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>);
 
     count += <span class="hljs-number">1</span>;
@@ -250,3 +250,4 @@ harness it's powers when it fits the project. I personally make a lot of
 command-line utilities, which I believe Rust to be an excellent choice for.</p>
 <p>If you are interested in learning Rust, I strongly recommend reading the <a href="https://doc.rust-lang.org/book" target="_blank">Book</a>
 or doing <a href="https://github.com/rust-lang/rustlings" target="_blank">Rustlings exercises</a>.</p>
+`;export{s as default};
