@@ -109,7 +109,7 @@ for (const article of unreplacedArticles) {
 
 const indexContent = indices
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
-    .map((article) => `${article.id} ||| ${article.name} ||| ${article.date}`)
+    .map((article) => `${article.id}|||${article.name}|||${article.date}`)
     .join("\n");
 
 if (!fs.existsSync(index) || fs.readFileSync(index).toString('utf8') != indexContent) {
