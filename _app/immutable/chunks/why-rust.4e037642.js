@@ -1,5 +1,5 @@
 const s=`<h1>Why Rust?</h1>
-<h2>Sep 20 2023</h2>
+<h1>Sep 20 2023</h1>
 <p>I have used a variety of languages since I first started my foray into programming.</p>
 <p>I started with Javascript, learnt Java, hopped to Kotlin, pivoted to Go, and touched on a bunch of other languages along the way.</p>
 <p>Despite all my time with these other languages, I find myself routinely reaching for Rust
@@ -7,7 +7,7 @@ for whatever I am working on.</p>
 <p>Rust was a language that I had a lot of trouble picking up.<br>
 I attempted learning it 8 times before it finally clicked.<br>
 What made it so different, and why do I enjoy it?</p>
-<h2>The Borrow Checker</h2>
+<h2 id="the-borrow-checker" tabindex="-1"><a class="header-anchor" href="#the-borrow-checker" aria-hidden="true" target="_self">#</a> The Borrow Checker</h2>
 <p>Rust has a system that it calls the borrow checker.<br>
 This program is at the core of Rust, upholding its borrowing rules.</p>
 <p>In Rust, when something is passed by value to another function, it is moved out of its original function.
@@ -65,7 +65,7 @@ In fact, it is such a simple function you could write it yourself - no compiler 
 <p><a href="https://doc.rust-lang.org/std/mem/fn.drop.html" target="_blank">Docs</a></p>
 <p>If you wish to learn more about what the borrow checker does, I recommend reading<br>
 <a href="https://blog.logrocket.com/introducing-the-rust-borrow-checker/" target="_blank">this article</a>.</p>
-<h2>Enums (Sum Types)</h2>
+<h2 id="enums-sum-types" tabindex="-1"><a class="header-anchor" href="#enums-sum-types" aria-hidden="true" target="_self">#</a> Enums (Sum Types)</h2>
 <p>The borrow checker is really neat, but one of the biggest reasons I love Rust is how
 expressive the language is, in many ways thanks to its powerful enums.</p>
 <p>If you're familiar with algebraic type systems, Rust's enums are sum types,
@@ -97,7 +97,7 @@ If you don't, you will simply get a compile error.</p>
 <p>This makes working with optional values more concise and convenient.</p>
 <p>Rust also has a <code>Result</code> type which is very similar to <code>Option</code>, replacing exceptions instead of <code>null</code>.
 You can read more about it <a href="https://doc.rust-lang.org/std/result/enum.Result.html" target="_blank">here</a>.</p>
-<h2>Traits (Typeclasses)</h2>
+<h2 id="traits-typeclasses" tabindex="-1"><a class="header-anchor" href="#traits-typeclasses" aria-hidden="true" target="_self">#</a> Traits (Typeclasses)</h2>
 <p>If you've had experience with the ML family of langauges or Haskell, you would be familiar with the concept of typeclasses.</p>
 <p>Rust was influenced by Haskell's typeclasses, resulting in traits.</p>
 <p>Traits allow us to compartmentalize behaviour into interface-like structures.</p>
@@ -182,7 +182,7 @@ As such, we put them on the heap using the <code>Box</code> smart pointer and st
 }
 </code></pre>
 <p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=05af188547fe84ba81c0aae62f8e2373" target="_blank">Playground</a></p>
-<h2>Iterators</h2>
+<h2 id="iterators" tabindex="-1"><a class="header-anchor" href="#iterators" aria-hidden="true" target="_self">#</a> Iterators</h2>
 <p>Iterators are by far my favourite feature of Rust, utilizing its powerful type system
 to create a concise and easy way of manipulating data.</p>
 <p>Most collection types in Rust either have an <code>iter</code> method or implement <code>IntoIterator</code>,
@@ -193,10 +193,7 @@ such as <code>filter</code>, <code>map</code>, <code>skip</code>, and <code>take
 This avoids allocating a container for each operation, which would be necessary in a strict API.</p>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
     <span class="hljs-comment">// This is a bad use of \`map\`, \`inspect\` is more suitable here.</span>
-    <span class="hljs-keyword">for</span> <span class="hljs-variable">_</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>) {
-        <span class="hljs-comment">// Draining the iterator, as it would</span>
-        <span class="hljs-comment">// otherwise be lazy and do nothing.</span>
-    }
+    (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>).<span class="hljs-title function_ invoke__">for_each</span>(drop);
     <span class="hljs-comment">// By the end of the loop,</span>
     <span class="hljs-comment">// we&#x27;d have printed</span>
     <span class="hljs-comment">// next 1</span>
@@ -204,7 +201,7 @@ This avoids allocating a container for each operation, which would be necessary 
     <span class="hljs-comment">// next 3</span>
 }
 </code></pre>
-<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=b9b5ff8b9c9b56e5bb6224efba7eae19" target="_blank">Playground</a></p>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=480f6d4ab0935f7cb3e254f0237f6cd9" target="_blank">Playground</a></p>
 <p>Notice how we only printed &quot;next&quot; three times, despite the <code>inspect</code> taking place before <code>take</code>.</p>
 <p>The <code>Iterator</code> we produced is equivalent to the following imperative code.</p>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">count</span> = <span class="hljs-number">0</span>;
@@ -236,7 +233,7 @@ not only unexpectedly printing all 10 numbers, but also allocating two new array
 </code></pre>
 <p>In my experience, I have never encountered a situation where I'd rather have a strict API here,
 and Rust's lack of container allocations makes it the better option for me.</p>
-<h1>Conclusion</h1>
+<h2 id="conclusion" tabindex="-1"><a class="header-anchor" href="#conclusion" aria-hidden="true" target="_self">#</a> Conclusion</h2>
 <p>I have only discussed a small portion of the reasons that I love using Rust, but the
 reasons I have discussed are the primary reasons why I continue to choose Rust for
 many of my projects.</p>
