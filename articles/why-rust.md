@@ -1,5 +1,5 @@
 # Why Rust?
-## Sep 20 2023
+# Sep 20 2023
 
 I have used a variety of languages since I first started my foray into programming.
 
@@ -256,10 +256,7 @@ This avoids allocating a container for each operation, which would be necessary 
 ```rs
 fn main() {
     // This is a bad use of `map`, `inspect` is more suitable here.
-    for _ in (1..=10).map(|n| println!("{n}")).take(3) {
-        // Draining the iterator, as it would
-        // otherwise be lazy and do nothing.
-    }
+    (1..=10).map(|n| println!("{n}")).take(3).for_each(drop);
     // By the end of the loop,
     // we'd have printed
     // next 1
@@ -267,7 +264,7 @@ fn main() {
     // next 3
 }
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=b9b5ff8b9c9b56e5bb6224efba7eae19)
+[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=480f6d4ab0935f7cb3e254f0237f6cd9)
 
 Notice how we only printed "next" three times, despite the `inspect` taking place before `take`.
 
@@ -308,7 +305,7 @@ for (n of taken) {
 In my experience, I have never encountered a situation where I'd rather have a strict API here,
 and Rust's lack of container allocations makes it the better option for me.
 
-# Conclusion
+## Conclusion
 
 I have only discussed a small portion of the reasons that I love using Rust, but the
 reasons I have discussed are the primary reasons why I continue to choose Rust for

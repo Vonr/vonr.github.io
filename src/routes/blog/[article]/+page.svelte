@@ -39,7 +39,8 @@
 </div>
 
 {@html `<style>${style}</style>`}
-<div class="centered-content">
+
+<div class="centered-content pb-8">
     {@html post}
 </div>
 

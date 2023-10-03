@@ -2,7 +2,12 @@ import fs from 'node:fs'
 import MarkdownIt from "markdown-it";
 import hljs from "highlight.js";
 import Rust from "highlight.js/lib/languages/rust";
-import { exit } from 'node:process';
+import MarkdownItAnchor from "markdown-it-anchor";
+import { exit } from "node:process";
+import { RenderRule } from "markdown-it/lib/renderer";
+import { slugifyWithCounter } from "@sindresorhus/slugify"
+
+const _slugify = slugifyWithCounter();
 
 if (process.argv.length < 5) {
     console.error("Arguments: <dir> <builddir> <index>");
@@ -19,6 +24,8 @@ const articles = fs.readdirSync(dir).filter((article) => article.endsWith(".md")
 let indices = [];
 
 hljs.registerLanguage("rust", Rust);
+
+const slugify = (s: string) => _slugify(s.replaceAll(/!@#\$%\^\*\(\)\[\]'"/g, ""))
 
 const md: MarkdownIt = MarkdownIt({
     highlight: (str, lang) => {
@@ -38,31 +45,35 @@ const md: MarkdownIt = MarkdownIt({
             str
         )}</code></pre>`;
     },
+}).use(MarkdownItAnchor, {
+    slugify: slugify,
+    level: 2,
+    permalink: MarkdownItAnchor.permalink.ariaHidden({
+        placement: 'before',
+        renderAttrs: (_slug, _state) => ({ 'target': '_self' }),
+    })
 });
 
-const linkRenderer =
-    md.renderer.rules.link_open ||
-    function(tokens, idx, options, _env, self) {
-        return self.renderToken(tokens, idx, options);
-    };
+const proxy: (_: RenderRule | undefined) => RenderRule =
+    (old) => old || ((tokens, idx, options, _env, self) => self.renderToken(tokens, idx, options));
 
+const link_open = proxy(md.renderer.rules.link_open)
 md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
     const token = tokens[idx];
     const aIndex = token.attrIndex("target");
 
     if (aIndex < 0) {
         token.attrPush(["target", "_blank"]);
-    } else {
-        token.attrs ??= [];
-        token.attrs[aIndex][1] = "_blank";
     }
 
-    return linkRenderer(tokens, idx, options, env, self);
+    return link_open(tokens, idx, options, env, self);
 };
 
 if (!fs.existsSync(builddir)) {
     fs.mkdirSync(builddir);
 }
+
+const unreplacedArticles = new Set(fs.readdirSync(builddir));
 
 for (const article of articles) {
     const id = article.replace(/\.md$/, "");
@@ -76,15 +87,34 @@ for (const article of articles) {
     const date = content.slice(firstLineEnd + 1, secondLineEnd).replace(/^#+ /, "");
 
     const rendered = md.render(content);
-    fs.writeFileSync(`${builddir}/${id}.html`, rendered)
+    const path = `${builddir}/${id}.html`;
+
+    if (!fs.existsSync(path) || fs.readFileSync(path).toString('utf8') != rendered) {
+        console.log(`Wrote rendered ${article} to ${builddir}/${id}.html`);
+        fs.writeFileSync(path, rendered)
+    } else {
+        console.log(`No changes to ${article}`);
+    }
+
+    unreplacedArticles.delete(`${id}.html`)
 
     indices.push({ id, name, date })
+}
+
+for (const article of unreplacedArticles) {
+    console.log(`${article} was not produced by us, removing.`)
+    fs.unlinkSync(`${builddir}/${article}`)
 }
 
 
 const indexContent = indices
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
-    .map((article) => `${article.id}|||${article.name}|||${article.date}`)
+    .map((article) => `${article.id} ||| ${article.name} ||| ${article.date}`)
     .join("\n");
 
-fs.writeFileSync(index, indexContent)
+if (!fs.existsSync(index) || fs.readFileSync(index).toString('utf8') != indexContent) {
+    fs.writeFileSync(index, indexContent);
+    console.log(`Wrote index to ${index}`);
+} else {
+    console.log("No changes to index");
+}
