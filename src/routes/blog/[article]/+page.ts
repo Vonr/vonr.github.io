@@ -1,8 +1,8 @@
 import type { EntryGenerator, PageLoad } from "./$types";
+import index from "$lib/article-index?raw";
 
 export const entries: EntryGenerator = async () => {
-    let index = await import('$lib/article-index?raw');
-    return index.default
+    return index
         .split("\n")
         .map((entry) => entry.split("|||"))
         .filter((entry) => entry.length === 3)

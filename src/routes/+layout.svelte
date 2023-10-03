@@ -1,5 +1,5 @@
-<script>
-    import "../app.css";
+<script lang="ts">
+    import "../app.postcss";
     import Fa from "svelte-fa";
     import { faSun, faMoon, faHome } from "@fortawesome/free-solid-svg-icons";
     import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -9,9 +9,11 @@
     import { Fractils, mobile } from "fractils";
     import { onNavigate } from "$app/navigation";
 
-    let mounted = false;
+    let themeToggle: HTMLButtonElement;
 
     onMount(() => {
+        themeToggle.disabled = false;
+
         if (
             localStorage.theme === "dark" ||
             (!("theme" in localStorage) &&
@@ -39,7 +41,6 @@
                 localStorage.theme = "dark";
             }
         });
-        mounted = true;
     });
 
     onNavigate((navigation) => {
@@ -56,88 +57,90 @@
 
 <Fractils />
 
-{#if mounted}
-    <nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0">
-        <ul>
-            <!-- left -->
-            <li>
-                <ul>
-                    <li>
-                        <a href="/" class="text-lg no-underline" title="Home">
-                            <Fa icon={faHome} class="inline" />
-                            {#if !$mobile}
-                                Home
-                            {/if}
-                        </a>
-                    </li>
+<nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0">
+    <ul>
+        <!-- left -->
+        <li>
+            <ul>
+                <li>
+                    <a href="/" class="text-lg no-underline" title="Home">
+                        <Fa icon={faHome} class="inline" />
+                        {#if !$mobile}
+                            Home
+                        {/if}
+                    </a>
+                </li>
 
-                    <li>
-                        <a
-                            href="/portfolio"
-                            class="text-lg no-underline"
-                            title="Portfolio"
-                        >
-                            Portfolio
-                        </a>
-                    </li>
+                <li>
+                    <a
+                        href="/portfolio"
+                        class="text-lg no-underline"
+                        title="Portfolio"
+                    >
+                        Portfolio
+                    </a>
+                </li>
 
-                    <li>
-                        <a
-                            href="/blog"
-                            class="text-lg no-underline"
-                            title="Blog">Blog</a
-                        >
-                    </li>
-                </ul>
-            </li>
+                <li>
+                    <a href="/blog" class="text-lg no-underline" title="Blog"
+                        >Blog</a
+                    >
+                </li>
+            </ul>
+        </li>
 
-            <!-- right -->
-            <li>
-                <ul>
-                    <li>
-                        <a
-                            href="https://github.com/Vonr"
-                            target="_blank"
-                            class="noblue notransition"
-                            title="GitHub"
-                        >
-                            <Fa icon={faGithub} size="2x" class="py-1 w-6" />
-                        </a>
-                    </li>
-                    <li>
-                        <button
-                            on:click={() => {
-                                theme.update((theme) =>
-                                    theme === "light" ? "dark" : "light"
-                                );
-                            }}
-                        >
-                            <Fa
-                                icon={$theme === "light" ? faSun : faMoon}
-                                size="2x"
-                                class="py-1 w-6"
-                            />
-                        </button>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+        <!-- right -->
+        <li>
+            <ul>
+                <li>
+                    <a
+                        href="https://github.com/Vonr"
+                        target="_blank"
+                        class="noblue notransition"
+                        title="GitHub"
+                    >
+                        <Fa icon={faGithub} size="2x" class="py-1 w-6" />
+                    </a>
+                </li>
+                <li>
+                    <button
+                        on:click={() => {
+                            theme.update((theme) =>
+                                theme === "light" ? "dark" : "light"
+                            );
+                        }}
+                        title={$theme === "light"
+                            ? "Switch to Dark Mode"
+                            : "Switch to Light Mode"}
+                        disabled={true}
+                        bind:this={themeToggle}
+                        class="disabled:opacity-50"
+                    >
+                        <Fa
+                            icon={$theme === "light" ? faSun : faMoon}
+                            size="2x"
+                            class="py-1 w-6"
+                        />
+                    </button>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
 
-    <div class="fixed bottom-0 right-0 p-8">
-        <a href="https://ko-fi.com/qther" target="_blank">
-            <img
-                src="/logos/kofi.png"
-                alt="Support me on Ko-fi"
-                class="h-16 w-16"
-            />
-        </a>
-    </div>
+<div class="fixed bottom-0 right-0 p-8">
+    <a href="https://ko-fi.com/qther" target="_blank">
+        <img
+            src="/logos/kofi.png"
+            alt="Support me on Ko-fi"
+            class="h-16 w-16"
+        />
+    </a>
+</div>
 
-    <div class="mt-16 text-lg">
-        <slot class="bg-white dark:bg-black" />
-    </div>
-{/if}
+<div class="mt-16 text-lg">
+    <slot class="bg-white dark:bg-black" />
+</div>
 
 {#if $mobile}
     <style>

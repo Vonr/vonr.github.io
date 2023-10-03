@@ -1,14 +1,12 @@
 <script lang="ts">
-    let index: Promise<string[][]> | null;
+    import indexFile from "$lib/article-index?raw";
+    let index: string[][];
 
-    index = import("$lib/article-index?raw")
-        .then(({default: text}) =>
-            text
-                .split("\n")
-                .map((entry) => entry.split("|||"))
-                .filter((entry) => entry.length === 3)
-                .sort((a, b) => Date.parse(b[2]) - Date.parse(a[2]))
-        );
+    index = indexFile
+        .split("\n")
+        .map((entry) => entry.split("|||"))
+        .filter((entry) => entry.length === 3)
+        .sort((a, b) => Date.parse(b[2]) - Date.parse(a[2]));
 </script>
 
 <svelte:head>
@@ -18,7 +16,6 @@
 <div class="centered-content">
     <h1>Blog Posts</h1>
     <ul class="text-lg">
-        {#await index then index}
             {#if index === null || index.length === 0}
                 No blog posts yet.
             {:else}
@@ -38,6 +35,5 @@
                     </li>
                 {/each}
             {/if}
-        {/await}
     </ul>
 </div>

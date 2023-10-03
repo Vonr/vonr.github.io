@@ -5,6 +5,8 @@
     import { mobile } from "fractils";
     import { theme } from "$lib/stores";
     import type { PageData } from "./$types";
+    import lightTheme from "$lib/styles/hljs-gruvbox-light-medium.css?inline";
+    import darkTheme from "$lib/styles/hljs-gruvbox-dark-medium.css?inline";
 
     let style: string;
     export let data: PageData;
@@ -12,13 +14,9 @@
 
     theme.subscribe(async (theme) => {
         if (theme === "light") {
-            style = (
-                await import("$lib/styles/hljs-gruvbox-light-medium.css?inline")
-            ).default;
+            style = lightTheme;
         } else {
-            style = (
-                await import("$lib/styles/hljs-gruvbox-dark-medium.css?inline")
-            ).default;
+            style = darkTheme;
         }
     });
 </script>
