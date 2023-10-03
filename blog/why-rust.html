@@ -10,28 +10,288 @@
     <meta content="Qther's Site" property="og:title" />
     <meta content="https://vonr.github.io/" property="og:url" />
     
-		<link href="../_app/immutable/assets/0.6f97fb41.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/0.fc28daaa.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/fa.95b16411.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/ThemeToggle.91c5c161.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/4.82b80c31.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.53766001.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.6c817c6f.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.c6290870.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.e4b0153f.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.14f11903.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.6c7a074d.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.ad90e8ae.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.a2d653e5.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.28076b49.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.768fd910.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.a4192956.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.c0515c57.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.c5ef1812.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/fa.4f02a059.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.e8eb39d2.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.9b80fb68.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/fa.20339734.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.ac23d56d.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.04ca9c1a.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.06333748.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/4.31422cef.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.51b89220.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.4e8edd29.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/article-index_raw.27fe09df.js"><title> Why Rust? </title><!-- HEAD_svelte-1awe3x3_START --><!-- HEAD_svelte-1awe3x3_END -->
 </head>
 
 <body data-sveltekit-preload-data="hover"
     class="transition-colors duration-500 bg-white dark:bg-black text-black dark:text-white">
-    <div style="display: contents">    <style data-svelte-h="svelte-1rtngcf">nav ul {
+    <div style="display: contents">   <nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0 svelte-b1bpo"><ul class="svelte-b1bpo"> <li class="svelte-b1bpo"><ul class="svelte-b1bpo"><li class="svelte-b1bpo"><a href="/" class="text-lg no-underline" title="Home"><svg class="svelte-fa inline svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 576 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(288 256)" transform-origin="144 0"><g transform="translate(0,0) scale(1,1)"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" fill="currentColor" transform="translate(-288 -256)"></path></g></g></svg> Home</a></li> <li class="svelte-b1bpo" data-svelte-h="svelte-13ep1wf"><a href="/portfolio" class="text-lg no-underline" title="Portfolio">Portfolio</a></li> <li class="svelte-b1bpo" data-svelte-h="svelte-12rj2bx"><a href="/blog" class="text-lg no-underline" title="Blog">Blog</a></li></ul></li>  <li class="svelte-b1bpo"><ul class="svelte-b1bpo"><li class="svelte-b1bpo"><a href="https://github.com/Vonr" target="_blank" class="noblue notransition" title="GitHub"><svg class="svelte-fa py-1 w-6 svelte-1cj2gr0" style="height:1em;font-size:2em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 496 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(248 256)" transform-origin="124 0"><g transform="translate(0,0) scale(1,1)"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="currentColor" transform="translate(-248 -256)"></path></g></g></svg></a></li> <li class="svelte-b1bpo"><button title="Switch to Dark Mode" disabled class="disabled:opacity-50"><svg class="svelte-fa py-1 w-6 svelte-1cj2gr0" style="height:1em;font-size:2em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></button></li></ul></li></ul></nav> <div class="fixed bottom-0 right-0 p-8" data-svelte-h="svelte-1rornph"><a href="https://ko-fi.com/qther" target="_blank"><img src="/logos/kofi.png" alt="Support me on Ko-fi" class="h-16 w-16"></a></div> <div class="mt-16 text-lg"> <div class="top-0 mt-16 fixed ml-8"><a href="/blog" class="no-underline"><svg class="svelte-fa inline mr-1 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0"><g transform="translate(0,0) scale(1,1)"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" fill="currentColor" transform="translate(-224 -256)"></path></g></g></svg><b data-svelte-h="svelte-1jwultk">Index</b></a></div> <!-- HTML_TAG_START --><style>/*!
+  Theme: Gruvbox light, medium
+  Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#504945;background:#fbf1c7}.hljs::-moz-selection,.hljs ::-moz-selection{background-color:#d5c4a1;color:#504945}.hljs::selection,.hljs ::selection{background-color:#d5c4a1;color:#504945}.hljs-comment{color:#bdae93}.hljs-tag{color:#665c54}.hljs-subst,.hljs-punctuation,.hljs-operator{color:#504945}.hljs-operator{opacity:.7}.hljs-bullet,.hljs-variable,.hljs-template-variable,.hljs-selector-tag,.hljs-name,.hljs-deletion{color:#9d0006}.hljs-symbol,.hljs-number,.hljs-link,.hljs-attr,.hljs-variable.constant_,.hljs-literal{color:#af3a03}.hljs-title,.hljs-class .hljs-title,.hljs-title.class_,#markdown>p>code{color:#b57614}.hljs-strong{font-weight:700;color:#b57614}.hljs-code,.hljs-addition,.hljs-title.class_.inherited__,.hljs-string{color:#79740e}.hljs-built_in,.hljs-doctag,.hljs-quote,.hljs-keyword.hljs-atrule,.hljs-regexp{color:#427b58}.hljs-function .hljs-title,.hljs-attribute,.ruby .hljs-property,.hljs-title.function_,.hljs-section{color:#076678}.hljs-type,.hljs-template-tag,.diff .hljs-meta,.hljs-keyword{color:#8f3f71}.hljs-emphasis{color:#8f3f71;font-style:italic}.hljs-meta,.hljs-meta .hljs-keyword,.hljs-meta .hljs-string{color:#d65d0e}.hljs-meta .hljs-keyword,.hljs-meta-keyword{font-weight:700}
+</style><!-- HTML_TAG_END --> <div class="centered-content"><!-- HTML_TAG_START --><h1>Why Rust?</h1>
+<h2>Sep 20 2023</h2>
+<p>I have used a variety of languages since I first started my foray into programming.</p>
+<p>I started with Javascript, learnt Java, hopped to Kotlin, pivoted to Go, and touched on a bunch of other languages along the way.</p>
+<p>Despite all my time with these other languages, I find myself routinely reaching for Rust
+for whatever I am working on.</p>
+<p>Rust was a language that I had a lot of trouble picking up.<br>
+I attempted learning it 8 times before it finally clicked.<br>
+What made it so different, and why do I enjoy it?</p>
+<h2>The Borrow Checker</h2>
+<p>Rust has a system that it calls the borrow checker.<br>
+This program is at the core of Rust, upholding its borrowing rules.</p>
+<p>In Rust, when something is passed by value to another function, it is moved out of its original function.
+This means that you can no longer access it, even after the function is over.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = <span class="hljs-type">String</span>::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);
+
+    <span class="hljs-title function_ invoke__">print</span>(s);
+
+    <span class="hljs-comment">// This would be an error, as s has moved into `print`</span>
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
+}
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">print</span>(s: <span class="hljs-type">String</span>) {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
+}
+</code></pre>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=4cd8bcc42a9e27c8a287a0295b68a362" target="_blank">Playground</a></p>
+<p>Of course, this by itself is inconvenient.<br>
+That's why Rust makes heavy use of borrows - creating references to values.</p>
+<p>References are split into two distinct types: shared and immutable, and exclusive and mutable.</p>
+<p>Mutable references can not coexist with any other reference, regardless of mutability.</p>
+<p>As such, you must pick between having as many immutable references to an object as needed,
+or a single mutable reference.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = <span class="hljs-type">String</span>::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);
+
+    <span class="hljs-comment">// We give `print` a reference to `s` instead of `s` itself</span>
+    <span class="hljs-title function_ invoke__">print</span>(&amp;s);
+
+    <span class="hljs-comment">// `s` has not been moved out of this function,</span>
+    <span class="hljs-comment">// and is thus still valid.</span>
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
+}
+
+<span class="hljs-comment">// `print` now takes in reference to a String.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// P.S. the type should really be &amp;str since</span>
+<span class="hljs-comment">// we are only interested in the data of</span>
+<span class="hljs-comment">// the string.</span>
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">print</span>(s: &amp;<span class="hljs-type">String</span>) {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
+}
+</code></pre>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=d1c040196f4c5a11c920ad0c9a2874a6" target="_blank">Playground</a></p>
+<p>This rule may seem quite arbitrary at first glance, but this simple rule prevents an entire class of bugs,
+such as use-after-free and double-free, which may be especially freeing for developers coming from a C or C++ background.</p>
+<p>The borrow checker also gives Rust the ability to know when a value can be freed
+statically at compile-time, making the use of a garbage collector unnecessary and
+allowing the programmer to not have to worry about memory leaks.</p>
+<p>That said, Rust also gives you the tools to free (or <code>drop</code>) a value manually as long as you have ownership of it.<br>
+In fact, it is such a simple function you could write it yourself - no compiler magic!</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">pub</span> <span class="hljs-keyword">fn</span> <span class="hljs-title function_">drop</span>&lt;T&gt;(_x: T) {}
+</code></pre>
+<p><a href="https://doc.rust-lang.org/std/mem/fn.drop.html" target="_blank">Docs</a></p>
+<p>If you wish to learn more about what the borrow checker does, I recommend reading<br>
+<a href="https://blog.logrocket.com/introducing-the-rust-borrow-checker/" target="_blank">this article</a>.</p>
+<h2>Enums (Sum Types)</h2>
+<p>The borrow checker is really neat, but one of the biggest reasons I love Rust is how
+expressive the language is, in many ways thanks to its powerful enums.</p>
+<p>If you're familiar with algebraic type systems, Rust's enums are sum types,
+and those of you who know what that implies would already be excited about it.</p>
+<p>Let's take a look at the <code>Option</code> type.
+This type exists in the <a href="https://doc.rust-lang.org/std/option/enum.Option.html" target="_blank">standard library</a>
+and is defined similarly to this.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">enum</span> <span class="hljs-title class_">Option</span>&lt;T&gt; {
+    <span class="hljs-title function_ invoke__">Some</span>(T),
+    <span class="hljs-literal">None</span>,
+}
+</code></pre>
+<p>It replaces the <code>null</code>s and <code>nil</code>s of other languages and is analogous to the <code>Maybe</code> type in Haskell.</p>
+<p>The most obvious advantage of using a sum type to represent &quot;nullable&quot; values is that they are typed, unlike <code>null</code>s in
+a few other languages such as Java, where you can pass a <code>null</code> for any argument.</p>
+<p>In Rust, you would have to explicitly write that what you are expecting is an <code>Option</code>.<br>
+If you don't, you will simply get a compile error.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">foo</span>(num: <span class="hljs-type">Option</span>&lt;<span class="hljs-type">i32</span>&gt;) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">Option</span>&lt;<span class="hljs-type">i32</span>&gt; {
+    num.<span class="hljs-title function_ invoke__">map</span>(|num| num * <span class="hljs-number">2</span>)
+}
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-built_in">assert_eq!</span>(<span class="hljs-title function_ invoke__">foo</span>(<span class="hljs-literal">None</span>), <span class="hljs-literal">None</span>);
+    <span class="hljs-built_in">assert_eq!</span>(<span class="hljs-title function_ invoke__">foo</span>(<span class="hljs-title function_ invoke__">Some</span>(<span class="hljs-number">2</span>)), <span class="hljs-title function_ invoke__">Some</span>(<span class="hljs-number">4</span>));
+}
+</code></pre>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=89255fd5cb5ab72b62c8ff772e599acc" target="_blank">Playground</a></p>
+<p>As shown in the above example, another advantage is that being a type, we can attach methods such as <code>map</code> onto it.</p>
+<p>This makes working with optional values more concise and convenient.</p>
+<p>Rust also has a <code>Result</code> type which is very similar to <code>Option</code>, replacing exceptions instead of <code>null</code>.
+You can read more about it <a href="https://doc.rust-lang.org/std/result/enum.Result.html" target="_blank">here</a>.</p>
+<h2>Traits (Typeclasses)</h2>
+<p>If you've had experience with the ML family of langauges or Haskell, you would be familiar with the concept of typeclasses.</p>
+<p>Rust was influenced by Haskell's typeclasses, resulting in traits.</p>
+<p>Traits allow us to compartmentalize behaviour into interface-like structures.</p>
+<p>We can implement any number of traits for an enum or struct.<br>
+We can also implement foreign traits for our own types, or our own traits for foreign types.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">trait</span> <span class="hljs-title class_">Legged</span> {
+    <span class="hljs-keyword">fn</span> <span class="hljs-title function_">legs</span>(&amp;<span class="hljs-keyword">self</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">u64</span>;
+}
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Table</span> {
+    legs: <span class="hljs-type">u64</span>,
+}
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Chair</span>;
+
+<span class="hljs-keyword">impl</span> <span class="hljs-title class_">Legged</span> <span class="hljs-keyword">for</span> <span class="hljs-title class_">Table</span> {
+    <span class="hljs-keyword">fn</span> <span class="hljs-title function_">legs</span>(&amp;<span class="hljs-keyword">self</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">u64</span> {
+        <span class="hljs-keyword">self</span>.legs
+    }
+}
+
+<span class="hljs-keyword">impl</span> <span class="hljs-title class_">Legged</span> <span class="hljs-keyword">for</span> <span class="hljs-title class_">Chair</span> {
+    <span class="hljs-keyword">fn</span> <span class="hljs-title function_">legs</span>(&amp;<span class="hljs-keyword">self</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">u64</span> {
+        <span class="hljs-number">4</span>
+    }
+}
+
+<span class="hljs-comment">// This function takes in any L such that L implements Legged.</span>
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">has_more_than_3_legs</span>&lt;L: Legged&gt;(legged: L) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">bool</span> {
+    legged.<span class="hljs-title function_ invoke__">legs</span>() &gt; <span class="hljs-number">3</span>
+}
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-built_in">assert!</span>(<span class="hljs-title function_ invoke__">has_more_than_3_legs</span>(Chair));
+    <span class="hljs-built_in">assert!</span>(!<span class="hljs-title function_ invoke__">has_more_than_3_legs</span>(Table { legs: <span class="hljs-number">3</span> }))
+}
+</code></pre>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=0c7470eeff0dd17b784d38d27eb75507" target="_blank">Playground</a></p>
+<p>In the above example, the function <code>has_more_than_3_legs</code> has a simple generic bound, but typeclasses let us express
+much more complex bounds.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">use</span> std::ops::Add;
+<span class="hljs-keyword">use</span> std::fmt::Display;
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">double_and_print</span>&lt;T: Add&lt;Output = T&gt; + Display + <span class="hljs-built_in">Clone</span>&gt;(val: T) {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, val.<span class="hljs-title function_ invoke__">clone</span>() + val)
+}
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-title function_ invoke__">double_and_print</span>(<span class="hljs-number">2</span>); <span class="hljs-comment">// prints &quot;4&quot;</span>
+}
+</code></pre>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=ccf2621556e0fe53957be7c9f89938db" target="_blank">Playground</a></p>
+<p>There are also alternative syntaxes to specify bounds.
+For longer bounds like that of <code>double_and_print</code>, we can use the <code>where</code> keyword to specify the bounds after the arguments.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">double_and_print</span>&lt;T&gt;(val: T)
+<span class="hljs-keyword">where</span>
+    T: Add&lt;Output = T&gt; + Display + <span class="hljs-built_in">Clone</span>
+{
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, val.<span class="hljs-title function_ invoke__">clone</span>() + val)
+}
+</code></pre>
+<p>For shorter bounds, we can use the <code>impl</code> keyword inside the arguments themselves, but this would prevent us from specifying
+the generic type(s) if type inference falls short.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">debug</span>(val: <span class="hljs-keyword">impl</span> <span class="hljs-title class_">Display</span>) {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{val}&quot;</span>)
+}
+</code></pre>
+<p>Rust has a lot of small conveniences like this, making it both flexible and pleasant to use.</p>
+<p>You can also use dynamic dispatch to make a &quot;trait object&quot; type.</p>
+<p>It should be noted that trait objects are unsized as different implementors of the trait may have different sizes.<br>
+As such, we put them on the heap using the <code>Box</code> smart pointer and store them in a heap-allocated <code>Vec</code>.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">use</span> std::fmt::<span class="hljs-built_in">Debug</span>;
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">vec</span>: <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">Box</span>&lt;<span class="hljs-keyword">dyn</span> <span class="hljs-built_in">Debug</span>&gt;&gt; = <span class="hljs-built_in">vec!</span>[
+        <span class="hljs-type">Box</span>::<span class="hljs-title function_ invoke__">new</span>(<span class="hljs-number">1</span>),
+        <span class="hljs-type">Box</span>::<span class="hljs-title function_ invoke__">new</span>(<span class="hljs-title function_ invoke__">Some</span>(<span class="hljs-number">3</span>)), 
+        <span class="hljs-type">Box</span>::<span class="hljs-title function_ invoke__">new</span>(<span class="hljs-string">&quot;test&quot;</span>)
+    ];
+    
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{vec:?}&quot;</span>)
+}
+</code></pre>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=05af188547fe84ba81c0aae62f8e2373" target="_blank">Playground</a></p>
+<h2>Iterators</h2>
+<p>Iterators are by far my favourite feature of Rust, utilizing its powerful type system
+to create a concise and easy way of manipulating data.</p>
+<p>Most collection types in Rust either have an <code>iter</code> method or implement <code>IntoIterator</code>,
+which craetes an <code>Iterator</code> over them.</p>
+<p>Once in an <code>Iterator</code>, you get access to a wide variety of helper methods to manipulate it
+such as <code>filter</code>, <code>map</code>, <code>skip</code>, and <code>take</code> among many more.</p>
+<p>Rust's <code>Iterator</code> is &quot;lazy&quot;, meaning that operations on them only run when needed.
+This avoids allocating a container for each operation, which would be necessary in a strict API.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-comment">// This is a bad use of `map`, `inspect` is more suitable here.</span>
+    <span class="hljs-keyword">for</span> <span class="hljs-variable">_</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>) {
+        <span class="hljs-comment">// Draining the iterator, as it would</span>
+        <span class="hljs-comment">// otherwise be lazy and do nothing.</span>
+    }
+    <span class="hljs-comment">// By the end of the loop,</span>
+    <span class="hljs-comment">// we&#x27;d have printed</span>
+    <span class="hljs-comment">// next 1</span>
+    <span class="hljs-comment">// next 2</span>
+    <span class="hljs-comment">// next 3</span>
+}
+</code></pre>
+<p><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021&amp;gist=b9b5ff8b9c9b56e5bb6224efba7eae19" target="_blank">Playground</a></p>
+<p>Notice how we only printed &quot;next&quot; three times, despite the <code>inspect</code> taking place before <code>take</code>.</p>
+<p>The <code>Iterator</code> we produced is equivalent to the following imperative code.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">count</span> = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> <span class="hljs-variable">n</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>) {
+    <span class="hljs-comment">// Shadowing the binding of `n` to the result of the map.</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">n</span> = <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>);
+
+    count += <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">if</span> count &gt;= <span class="hljs-number">3</span> {
+        <span class="hljs-keyword">break</span>
+    }
+
+    <span class="hljs-comment">// inner loop</span>
+}
+</code></pre>
+<p>While doing the same in Javascript would lead to the equivalent of the following instead,
+not only unexpectedly printing all 10 numbers, but also allocating two new arrays.</p>
+<pre class="hljs codeblock"><code><span class="hljs-keyword">let</span> mapped = [];
+
+<span class="hljs-keyword">for</span> (n <span class="hljs-keyword">of</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]) {
+    mapped.<span class="hljs-title function_">push</span>(<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(n));
+}
+
+<span class="hljs-keyword">let</span> taken = mapped.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>);
+
+<span class="hljs-keyword">for</span> (n <span class="hljs-keyword">of</span> taken) {
+    <span class="hljs-comment">// inner loop</span>
+}
+</code></pre>
+<p>In my experience, I have never encountered a situation where I'd rather have a strict API here,
+and Rust's lack of container allocations makes it the better option for me.</p>
+<h1>Conclusion</h1>
+<p>I have only discussed a small portion of the reasons that I love using Rust, but the
+reasons I have discussed are the primary reasons why I continue to choose Rust for
+many of my projects.</p>
+<p>With all that said, I believe it is worth nothing that Rust is neither a perfect langauge
+nor a language that should be used for everything.</p>
+<p>In fact, I considered writing this website in Rust for fun, but decided against it in the
+end as I would be losing out on the fantastic Javascript ecosystem which could help
+me push out this website faster.</p>
+<p>I believe that Rust deserves a spot on your toolbelt, so that you can easily
+harness it's powers when it fits the project. I personally make a lot of
+command-line utilities, which I believe Rust to be an excellent choice for.</p>
+<p>If you are interested in learning Rust, I strongly recommend reading the <a href="https://doc.rust-lang.org/book" target="_blank">Book</a>
+or doing <a href="https://github.com/rust-lang/rustlings" target="_blank">Rustlings exercises</a>.</p>
+<!-- HTML_TAG_END --></div> </div> <style data-svelte-h="svelte-1rtngcf">nav ul {
             margin-left: 2rem;
             margin-right: 2rem;
         }</style> <style data-svelte-h="svelte-lexy66">h1:not(.no-hl),
@@ -46,7 +306,7 @@
 			
 			<script>
 				{
-					__sveltekit_toy88g = {
+					__sveltekit_10x7b1b = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -56,8 +316,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.53766001.js"),
-						import("../_app/immutable/entry/app.14f11903.js")
+						import("../_app/immutable/entry/start.6c7a074d.js"),
+						import("../_app/immutable/entry/app.768fd910.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
