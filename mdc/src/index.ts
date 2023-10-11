@@ -30,7 +30,7 @@ const slugify = (s: string) => _slugify(s.replaceAll(/!@#\$%\^\*\(\)\[\]'"/g, ""
 
 const md: MarkdownIt = MarkdownIt({
     highlight: (str, _lang) => {
-        let [lang, ...mods] = _lang.split(',');
+        let [lang, ..._mods] = _lang.split(',');
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return `<pre class="hljs codeblock"><code>${hljs.highlight(str, {

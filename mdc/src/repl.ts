@@ -15,7 +15,7 @@ const choose = <T>(map: Record<string, T>, mods: string[]): T | undefined => {
 }
 
 const replMakers: Record<string, (lang: string, mods: string[], code: string) => string> = {
-    'Rust': (_lang, mods, code) => {
+    'rust': (_lang, mods, code) => {
         const channelMap = {
             'stable': 'stable',
             'beta': 'beta',
@@ -45,22 +45,26 @@ const replMakers: Record<string, (lang: string, mods: string[], code: string) =>
         return `https://play.rust-lang.org/?version=${channel}&mode=${mode}&edition=${edition}&code=${encodeURIComponent(code)}"`
     },
 
-    'JavaScript': (_lang, _mods, code) => {
+    'javascript': (_lang, _mods, code) => {
         return `https://www.typescriptlang.org/play?filetype=js&#src=${encodeURIComponent(code)}`;
     },
 
-    'TypeScript': (_lang, _mods, code) => {
+    'typescript': (_lang, _mods, code) => {
         return `https://www.typescriptlang.org/play?filetype=ts&#src=${encodeURIComponent(code)}`;
     },
 
-    'Haskell': (_lang, mods, code) => {
+    'haskell': (_lang, mods, code) => {
         if (mods.includes('nomain')) {
             code = `main :: IO ()
 main = ${code.replace(/\n$/, '').replaceAll(/\n/g, '\n  ')}`;
         }
 
         return `https://play.haskell.org/?code=${encodeURIComponent(code)}`;
-    }
+    },
+
+    'zig': (_lang, _mods, code) => {
+        return `https://codapi.org/zig/#${encodeURIComponent(code)}`
+    },
 };
 
 export const makeRepl = (lang: string, mods: string[], code: string) => {
@@ -68,6 +72,7 @@ export const makeRepl = (lang: string, mods: string[], code: string) => {
         return undefined;
     }
 
+    lang = lang.toLowerCase()
     let replMaker = replMakers[lang];
     if (replMaker) {
         return replMaker(lang, mods, code);
