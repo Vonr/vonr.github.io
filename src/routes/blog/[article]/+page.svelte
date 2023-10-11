@@ -48,6 +48,8 @@
     <style>
         .codeblock {
             max-height: 16rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
         }
     </style>
 {/if}
