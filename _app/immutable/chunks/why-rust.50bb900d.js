@@ -1,45 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Qther's Site</title>
-    <meta charset="utf-8" />
-    <link rel="icon" href="../favicon.png" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="darkreader-lock">
-    <meta content="Qther's Site" property="og:title" />
-    <meta content="https://vonr.github.io/" property="og:url" />
-    
-		<link href="../_app/immutable/assets/0.a1a3435a.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/fa.95b16411.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/ThemeToggle.91c5c161.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/4.1c41749c.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.406daa0c.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.ad90e8ae.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.1d007599.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.28076b49.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.6f153ea9.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.a4192956.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.e8eb39d2.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.4e33e0b8.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/fa.20339734.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.ac23d56d.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.04ca9c1a.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.51b89220.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/4.14ba97c1.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/article-index_raw.27fe09df.js"><title> Why Rust? </title><!-- HEAD_svelte-1awe3x3_START --><!-- HEAD_svelte-1awe3x3_END -->
-</head>
-
-<body data-sveltekit-preload-data="hover"
-    class="transition-colors duration-500 bg-white dark:bg-black text-black dark:text-white">
-    <div style="display: contents">   <nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0 z-50 svelte-b1bpo"><ul class="svelte-b1bpo"> <li class="svelte-b1bpo"><ul class="svelte-b1bpo"><li class="svelte-b1bpo"><a href="/" class="text-lg no-underline" title="Home"><svg class="svelte-fa inline svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 576 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(288 256)" transform-origin="144 0"><g transform="translate(0,0) scale(1,1)"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" fill="currentColor" transform="translate(-288 -256)"></path></g></g></svg> Home</a></li> <li class="svelte-b1bpo" data-svelte-h="svelte-13ep1wf"><a href="/portfolio" class="text-lg no-underline" title="Portfolio">Portfolio</a></li> <li class="svelte-b1bpo" data-svelte-h="svelte-12rj2bx"><a href="/blog" class="text-lg no-underline" title="Blog">Blog</a></li></ul></li>  <li class="svelte-b1bpo"><ul class="svelte-b1bpo"><li class="svelte-b1bpo"><a href="https://github.com/Vonr" target="_blank" class="noblue notransition" title="GitHub"><svg class="svelte-fa py-1 w-6 svelte-1cj2gr0" style="height:1em;font-size:2em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 496 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(248 256)" transform-origin="124 0"><g transform="translate(0,0) scale(1,1)"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="currentColor" transform="translate(-248 -256)"></path></g></g></svg></a></li> <li class="svelte-b1bpo"><button title="Switch to Dark Mode" disabled class="disabled:opacity-50"><svg class="svelte-fa py-1 w-6 svelte-1cj2gr0" style="height:1em;font-size:2em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0"><g transform="translate(0,0) scale(1,1)"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" fill="currentColor" transform="translate(-256 -256)"></path></g></g></svg></button></li></ul></li></ul></nav> <div class="fixed bottom-0 right-0 p-8" data-svelte-h="svelte-1rornph"><a href="https://ko-fi.com/qther" target="_blank"><img src="/logos/kofi.png" alt="Support me on Ko-fi" class="h-16 w-16"></a></div> <div class="mt-16 text-lg"> <div class="top-0 mt-16 fixed ml-8"><a href="/blog" class="no-underline"><svg class="svelte-fa inline mr-1 svelte-1cj2gr0" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0"><g transform="translate(0,0) scale(1,1)"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" fill="currentColor" transform="translate(-224 -256)"></path></g></g></svg><b data-svelte-h="svelte-1jwultk">Index</b></a></div> <!-- HTML_TAG_START --><style>/*!
-  Theme: Gruvbox light, medium
-  Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
-  License: ~ MIT (or more permissive) [via base16-schemes-source]
-  Maintainer: @highlightjs/core-team
-  Version: 2021.09.0
-*/pre code.hljs{display:block;overflow-x:auto;padding:1em}div .codeheader{background:#ebdbb2}code.hljs{padding:3px 5px}.hljs{color:#504945;background:#fbf1c7}.hljs::-moz-selection,.hljs ::-moz-selection{background-color:#d5c4a1;color:#504945}.hljs::selection,.hljs ::selection{background-color:#d5c4a1;color:#504945}.hljs-comment{color:#bdae93}.hljs-tag{color:#665c54}.hljs-subst,.hljs-punctuation,.hljs-operator{color:#504945}.hljs-operator{opacity:.7}.hljs-bullet,.hljs-variable,.hljs-template-variable,.hljs-selector-tag,.hljs-name,.hljs-deletion{color:#9d0006}.hljs-symbol,.hljs-number,.hljs-link,.hljs-attr,.hljs-variable.constant_,.hljs-literal{color:#af3a03}.hljs-title,.hljs-class .hljs-title,.hljs-title.class_,#markdown>p>code{color:#b57614}.hljs-strong{font-weight:700;color:#b57614}.hljs-code,.hljs-addition,.hljs-title.class_.inherited__,.hljs-string{color:#79740e}.hljs-built_in,.hljs-doctag,.hljs-quote,.hljs-keyword.hljs-atrule,.hljs-regexp{color:#427b58}.hljs-function .hljs-title,.hljs-attribute,.ruby .hljs-property,.hljs-title.function_,.hljs-section{color:#076678}.hljs-type,.hljs-template-tag,.diff .hljs-meta,.hljs-keyword{color:#8f3f71}.hljs-emphasis{color:#8f3f71;font-style:italic}.hljs-meta,.hljs-meta .hljs-keyword,.hljs-meta .hljs-string{color:#d65d0e}.hljs-meta .hljs-keyword,.hljs-meta-keyword{font-weight:700}
-</style><!-- HTML_TAG_END --> <div class="centered-content pb-8"><!-- HTML_TAG_START --><h1>Why Rust?</h1>
+const n=`<h1>Why Rust?</h1>
 <h1>Sep 20 2023</h1>
 <p>I have used a variety of languages since I first started my foray into programming.</p>
 <p>I started with Javascript, learnt Java, hopped to Kotlin, pivoted to Go, and touched on a bunch of other languages along the way.</p>
@@ -71,7 +30,7 @@ fn main() {
 
     print(s);
 
-    // This would be an error, as s has moved into `print`
+    // This would be an error, as s has moved into \`print\`
     println!("{s}")
 }
 </div>
@@ -88,7 +47,7 @@ fn main() {
 
     <span class="hljs-title function_ invoke__">print</span>(s);
 
-    <span class="hljs-comment">// This would be an error, as s has moved into `print`</span>
+    <span class="hljs-comment">// This would be an error, as s has moved into \`print\`</span>
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
 }
 </code></pre>
@@ -107,7 +66,7 @@ or a single mutable reference.</p>
         <a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=%2F%2F%20%60print%60%20now%20takes%20in%20reference%20to%20a%20String.%0A%2F%2F%0A%2F%2F%20P.S.%20the%20type%20should%20really%20be%20%26str%20since%0A%2F%2F%20we%20are%20only%20interested%20in%20the%20data%20of%0A%2F%2F%20the%20string.%0Afn%20print(s%3A%20%26String)%20%7B%0A%20%20%20%20println!(%22%7Bs%7D%22)%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20let%20s%20%3D%20String%3A%3Afrom(%22Hello%2C%20world!%22)%3B%0A%0A%20%20%20%20%2F%2F%20We%20give%20%60print%60%20a%20reference%20to%20%60s%60%20instead%20of%20%60s%60%20itself%0A%20%20%20%20print(%26s)%3B%0A%0A%20%20%20%20%2F%2F%20%60s%60%20has%20not%20been%20moved%20out%20of%20this%20function%2C%0A%20%20%20%20%2F%2F%20and%20is%20thus%20still%20valid.%0A%20%20%20%20println!(%22%7Bs%7D%22)%0A%7D%0A"" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
         
         <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('cbcp-2').innerText)">
-            <div class="hidden aria-hidden" id='cbcp-2'>// `print` now takes in reference to a String.
+            <div class="hidden aria-hidden" id='cbcp-2'>// \`print\` now takes in reference to a String.
 //
 // P.S. the type should really be &str since
 // we are only interested in the data of
@@ -119,10 +78,10 @@ fn print(s: &String) {
 fn main() {
     let s = String::from("Hello, world!");
 
-    // We give `print` a reference to `s` instead of `s` itself
+    // We give \`print\` a reference to \`s\` instead of \`s\` itself
     print(&s);
 
-    // `s` has not been moved out of this function,
+    // \`s\` has not been moved out of this function,
     // and is thus still valid.
     println!("{s}")
 }
@@ -131,7 +90,7 @@ fn main() {
         </button>
     </span>
 </div>
-<pre class="hljs codeblock"><code><span class="hljs-comment">// `print` now takes in reference to a String.</span>
+<pre class="hljs codeblock"><code><span class="hljs-comment">// \`print\` now takes in reference to a String.</span>
 <span class="hljs-comment">//</span>
 <span class="hljs-comment">// P.S. the type should really be &amp;str since</span>
 <span class="hljs-comment">// we are only interested in the data of</span>
@@ -143,10 +102,10 @@ fn main() {
 <span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = <span class="hljs-type">String</span>::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);
 
-    <span class="hljs-comment">// We give `print` a reference to `s` instead of `s` itself</span>
+    <span class="hljs-comment">// We give \`print\` a reference to \`s\` instead of \`s\` itself</span>
     <span class="hljs-title function_ invoke__">print</span>(&amp;s);
 
-    <span class="hljs-comment">// `s` has not been moved out of this function,</span>
+    <span class="hljs-comment">// \`s\` has not been moved out of this function,</span>
     <span class="hljs-comment">// and is thus still valid.</span>
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{s}&quot;</span>)
 }
@@ -475,7 +434,7 @@ This avoids allocating a container for each operation, which would be necessary 
         <a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%20%7B%0A%20%20%20%20%2F%2F%20This%20is%20a%20bad%20use%20of%20%60map%60%2C%20%60inspect%60%20is%20more%20suitable%20here.%0A%20%20%20%20(1..%3D10).map(%7Cn%7C%20println!(%22%7Bn%7D%22)).take(3).for_each(drop)%3B%0A%20%20%20%20%2F%2F%20By%20the%20end%20of%20the%20statement%20above%2C%0A%20%20%20%20%2F%2F%20we'd%20have%20printed%3A%0A%20%20%20%20%2F%2F%20next%201%0A%20%20%20%20%2F%2F%20next%202%0A%20%20%20%20%2F%2F%20next%203%0A%20%20%20%20%0A%7D"" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
         
         <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('cbcp-11').innerText)">
-            <div class="hidden aria-hidden" id='cbcp-11'>// This is a bad use of `map`, `inspect` is more suitable here.
+            <div class="hidden aria-hidden" id='cbcp-11'>// This is a bad use of \`map\`, \`inspect\` is more suitable here.
 (1..=10).map(|n| println!("{n}")).take(3).for_each(drop);
 // By the end of the statement above,
 // we'd have printed:
@@ -487,7 +446,7 @@ This avoids allocating a container for each operation, which would be necessary 
         </button>
     </span>
 </div>
-<pre class="hljs codeblock"><code><span class="hljs-comment">// This is a bad use of `map`, `inspect` is more suitable here.</span>
+<pre class="hljs codeblock"><code><span class="hljs-comment">// This is a bad use of \`map\`, \`inspect\` is more suitable here.</span>
 (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>).<span class="hljs-title function_ invoke__">for_each</span>(drop);
 <span class="hljs-comment">// By the end of the statement above,</span>
 <span class="hljs-comment">// we&#x27;d have printed:</span>
@@ -508,7 +467,7 @@ This avoids allocating a container for each operation, which would be necessary 
         <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('cbcp-12').innerText)">
             <div class="hidden aria-hidden" id='cbcp-12'>let mut count = 0;
 for n in (1..=10) {
-    // Shadowing the binding of `n` to the result of the map.
+    // Shadowing the binding of \`n\` to the result of the map.
     let n = println!("{n}");
 
     count += 1;
@@ -525,7 +484,7 @@ for n in (1..=10) {
 </div>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">count</span> = <span class="hljs-number">0</span>;
 <span class="hljs-keyword">for</span> <span class="hljs-variable">n</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>) {
-    <span class="hljs-comment">// Shadowing the binding of `n` to the result of the map.</span>
+    <span class="hljs-comment">// Shadowing the binding of \`n\` to the result of the map.</span>
     <span class="hljs-keyword">let</span> <span class="hljs-variable">n</span> = <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>);
 
     count += <span class="hljs-number">1</span>;
@@ -591,44 +550,4 @@ harness it's powers when it fits the project. I personally make a lot of
 command-line utilities, which I believe Rust to be an excellent choice for.</p>
 <p>If you are interested in learning Rust, I strongly recommend reading the <a href="https://doc.rust-lang.org/book" target="_blank">Book</a>
 or doing <a href="https://github.com/rust-lang/rustlings" target="_blank">Rustlings exercises</a>.</p>
-<!-- HTML_TAG_END --></div> </div> <style data-svelte-h="svelte-1rtngcf">nav ul {
-            margin-left: 2rem;
-            margin-right: 2rem;
-        }</style> <style data-svelte-h="svelte-lexy66">h1:not(.no-hl),
-        h2:not(.no-hl),
-        h3:not(.no-hl) {
-            color: #076678;
-        }
-
-        .text-col {
-            color: black;
-        }</style> 
-			
-			<script>
-				{
-					__sveltekit_ird9b = {
-						base: new URL("..", location).pathname.slice(0, -1),
-						env: {}
-					};
-
-					const element = document.currentScript.parentElement;
-
-					const data = [null,null];
-
-					Promise.all([
-						import("../_app/immutable/entry/start.406daa0c.js"),
-						import("../_app/immutable/entry/app.6f153ea9.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 4],
-							data,
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-</body>
-
-</html>
+`;export{n as default};
