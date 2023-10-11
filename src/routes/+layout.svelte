@@ -6,9 +6,10 @@
 
     import { theme } from "$lib/stores";
     import { onMount } from "svelte";
-    import { Fractils, mobile } from "fractils";
+    import { Fractils, mobile, mobileThreshold } from "fractils";
     import { onNavigate } from "$app/navigation";
 
+    mobileThreshold.set(1000);
     let themeToggle: HTMLButtonElement;
 
     onMount(() => {
@@ -142,22 +143,6 @@
     <slot class="bg-white dark:bg-black" />
 </div>
 
-{#if $mobile}
-    <style>
-        nav ul {
-            margin-left: 0.25rem;
-            margin-right: 0.25rem;
-        }
-    </style>
-{:else}
-    <style>
-        nav ul {
-            margin-left: 2rem;
-            margin-right: 2rem;
-        }
-    </style>
-{/if}
-
 {#if $theme === "light"}
     <style>
         h1:not(.no-hl),
@@ -191,12 +176,19 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         text-align: center;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    nav > ul > li:nth-child(1) {
+        margin-left: 1rem;
+    }
+
+    nav > ul > li:nth-child(2) {
+        margin-right: 1rem;
     }
 
     nav > ul > li > ul > li {
-        width: 100%;
-        margin-left: 1rem;
-        margin-right: 1rem;
         flex-flow: row nowrap;
     }
 </style>

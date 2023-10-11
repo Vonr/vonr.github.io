@@ -2,7 +2,7 @@
     import "./markdown.css";
     import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
-    import { mobile } from "fractils";
+    import { mobile, screenW } from "fractils";
     import { theme } from "$lib/stores";
     import type { PageData } from "./$types";
     import lightTheme from "$lib/styles/hljs-gruvbox-light-medium.css?inline";
