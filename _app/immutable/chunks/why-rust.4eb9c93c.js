@@ -462,11 +462,11 @@ This avoids allocating a container for each operation, which would be necessary 
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
-        
+        <a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%20%7B%0A%20%20%20%20let%20mut%20count%20%3D%200%3B%0A%20%20%20%20for%20n%20in%201..%3D10%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20Shadowing%20the%20binding%20of%20%60n%60%20to%20the%20result%20of%20the%20map.%0A%20%20%20%20%20%20%20%20let%20n%20%3D%20println!(%22%7Bn%7D%22)%3B%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20count%20%2B%3D%201%3B%0A%20%20%20%20%20%20%20%20if%20count%20%3E%3D%203%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20break%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%2F%2F%20inner%20loop%0A%20%20%20%20%7D%0A%7D"" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
         
         <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('cbcp-12').innerText)">
             <div class="hidden aria-hidden" id='cbcp-12'>let mut count = 0;
-for n in (1..=10) {
+for n in 1..=10 {
     // Shadowing the binding of \`n\` to the result of the map.
     let n = println!("{n}");
 
@@ -483,7 +483,7 @@ for n in (1..=10) {
     </span>
 </div>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">count</span> = <span class="hljs-number">0</span>;
-<span class="hljs-keyword">for</span> <span class="hljs-variable">n</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>) {
+<span class="hljs-keyword">for</span> <span class="hljs-variable">n</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>..=<span class="hljs-number">10</span> {
     <span class="hljs-comment">// Shadowing the binding of \`n\` to the result of the map.</span>
     <span class="hljs-keyword">let</span> <span class="hljs-variable">n</span> = <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>);
 
@@ -503,18 +503,18 @@ not only unexpectedly printing all 10 numbers, but also allocating two new array
         <b>JavaScript</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
-        
+        <a href="https://www.typescriptlang.org/play?filetype=js&#src=let%20mapped%20%3D%20%5B%5D%3B%0A%0Afor%20(const%20n%20of%20%5B1%2C%202%2C%203%2C%204%2C%205%2C%206%2C%207%2C%208%2C%209%2C%2010%5D)%20%7B%0A%20%20%20%20mapped.push(console.log(n))%3B%0A%7D%0A%0Alet%20taken%20%3D%20mapped.slice(0%2C%203)%3B%0A%0Afor%20(const%20n%20of%20taken)%20%7B%0A%20%20%20%20%2F%2F%20inner%20loop%0A%7D%0A" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
         
         <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('cbcp-13').innerText)">
             <div class="hidden aria-hidden" id='cbcp-13'>let mapped = [];
 
-for (n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+for (const n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
     mapped.push(console.log(n));
 }
 
 let taken = mapped.slice(0, 3);
 
-for (n of taken) {
+for (const n of taken) {
     // inner loop
 }
 </div>
@@ -524,13 +524,13 @@ for (n of taken) {
 </div>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">let</span> mapped = [];
 
-<span class="hljs-keyword">for</span> (n <span class="hljs-keyword">of</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> n <span class="hljs-keyword">of</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>]) {
     mapped.<span class="hljs-title function_">push</span>(<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(n));
 }
 
 <span class="hljs-keyword">let</span> taken = mapped.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>);
 
-<span class="hljs-keyword">for</span> (n <span class="hljs-keyword">of</span> taken) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> n <span class="hljs-keyword">of</span> taken) {
     <span class="hljs-comment">// inner loop</span>
 }
 </code></pre>
