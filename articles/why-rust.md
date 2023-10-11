@@ -258,9 +258,9 @@ Notice how we only printed "next" three times, despite the `inspect` taking plac
 
 The `Iterator` we produced is equivalent to the following imperative code.
 
-```rs,ignore
+```rs,nomain
 let mut count = 0;
-for n in (1..=10) {
+for n in 1..=10 {
     // Shadowing the binding of `n` to the result of the map.
     let n = println!("{n}");
 
@@ -276,16 +276,16 @@ for n in (1..=10) {
 While doing the same in Javascript would lead to the equivalent of the following instead,
 not only unexpectedly printing all 10 numbers, but also allocating two new arrays.
 
-```js,ignore
+```js
 let mapped = [];
 
-for (n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+for (const n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
     mapped.push(console.log(n));
 }
 
 let taken = mapped.slice(0, 3);
 
-for (n of taken) {
+for (const n of taken) {
     // inner loop
 }
 ```

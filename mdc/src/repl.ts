@@ -15,7 +15,7 @@ const choose = <T>(map: Record<string, T>, mods: string[]): T | undefined => {
 }
 
 const replMakers: Record<string, (lang: string, mods: string[], code: string) => string> = {
-    'Rust': (lang, mods, code) => {
+    'Rust': (_lang, mods, code) => {
         const channelMap = {
             'stable': 'stable',
             'beta': 'beta',
@@ -43,8 +43,25 @@ const replMakers: Record<string, (lang: string, mods: string[], code: string) =>
         }
 
         return `https://play.rust-lang.org/?version=${channel}&mode=${mode}&edition=${edition}&code=${encodeURIComponent(code)}"`
+    },
+
+    'JavaScript': (_lang, _mods, code) => {
+        return `https://www.typescriptlang.org/play?filetype=js&#src=${encodeURIComponent(code)}`;
+    },
+
+    'TypeScript': (_lang, _mods, code) => {
+        return `https://www.typescriptlang.org/play?filetype=ts&#src=${encodeURIComponent(code)}`;
+    },
+
+    'Haskell': (_lang, mods, code) => {
+        if (mods.includes('nomain')) {
+            code = `main :: IO ()
+main = ${code.replace(/\n$/, '').replaceAll(/\n/g, '\n  ')}`;
+        }
+
+        return `https://play.haskell.org/?code=${encodeURIComponent(code)}`;
     }
-}
+};
 
 export const makeRepl = (lang: string, mods: string[], code: string) => {
     if (mods.includes('ignore')) {
