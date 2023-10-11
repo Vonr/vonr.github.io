@@ -38,7 +38,7 @@ const replMakers: Record<string, (lang: string, mods: string[], code: string) =>
 
         if (mods.includes('nomain')) {
             code = `fn main() {
-    ${code.replaceAll(/\n/g, '\n    ')}
+    ${code.replace(/\n$/, '').replaceAll(/\n/g, '\n    ')}
 }`
         }
 
