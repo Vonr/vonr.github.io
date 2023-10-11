@@ -389,7 +389,7 @@ As such, we put them on the heap using the <code>Box</code> smart pointer and st
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
-        <a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%20%7B%0A%20%20%20%20use%20std%3A%3Afmt%3A%3ADebug%3B%0A%20%20%20%20%0A%20%20%20%20let%20vec%3A%20Vec%3CBox%3Cdyn%20Debug%3E%3E%20%3D%20vec!%5B%0A%20%20%20%20%20%20%20%20Box%3A%3Anew(1)%2C%0A%20%20%20%20%20%20%20%20Box%3A%3Anew(Some(3))%2C%20%0A%20%20%20%20%20%20%20%20Box%3A%3Anew(%22test%22)%0A%20%20%20%20%5D%3B%0A%20%20%20%20%0A%20%20%20%20println!(%22%7Bvec%3A%3F%7D%22)%0A%20%20%20%20%0A%7D"" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
+        <a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%20%7B%0A%20%20%20%20use%20std%3A%3Afmt%3A%3ADebug%3B%0A%20%20%20%20%0A%20%20%20%20let%20vec%3A%20Vec%3CBox%3Cdyn%20Debug%3E%3E%20%3D%20vec!%5B%0A%20%20%20%20%20%20%20%20Box%3A%3Anew(1)%2C%0A%20%20%20%20%20%20%20%20Box%3A%3Anew(Some(3))%2C%20%0A%20%20%20%20%20%20%20%20Box%3A%3Anew(%22test%22)%0A%20%20%20%20%5D%3B%0A%20%20%20%20%0A%20%20%20%20println!(%22%7Bvec%3A%3F%7D%22)%0A%7D"" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
         
         <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('cbcp-10').innerText)">
             <div class="hidden aria-hidden" id='cbcp-10'>use std::fmt::Debug;
@@ -431,7 +431,7 @@ This avoids allocating a container for each operation, which would be necessary 
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
-        <a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%20%7B%0A%20%20%20%20%2F%2F%20This%20is%20a%20bad%20use%20of%20%60map%60%2C%20%60inspect%60%20is%20more%20suitable%20here.%0A%20%20%20%20(1..%3D10).map(%7Cn%7C%20println!(%22%7Bn%7D%22)).take(3).for_each(drop)%3B%0A%20%20%20%20%2F%2F%20By%20the%20end%20of%20the%20statement%20above%2C%0A%20%20%20%20%2F%2F%20we'd%20have%20printed%3A%0A%20%20%20%20%2F%2F%20next%201%0A%20%20%20%20%2F%2F%20next%202%0A%20%20%20%20%2F%2F%20next%203%0A%20%20%20%20%0A%7D"" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
+        <a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%20%7B%0A%20%20%20%20%2F%2F%20This%20is%20a%20bad%20use%20of%20%60map%60%2C%20%60inspect%60%20is%20more%20suitable%20here.%0A%20%20%20%20(1..%3D10).map(%7Cn%7C%20println!(%22%7Bn%7D%22)).take(3).for_each(drop)%3B%0A%20%20%20%20%2F%2F%20By%20the%20end%20of%20the%20statement%20above%2C%0A%20%20%20%20%2F%2F%20we'd%20have%20printed%3A%0A%20%20%20%20%2F%2F%20next%201%0A%20%20%20%20%2F%2F%20next%202%0A%20%20%20%20%2F%2F%20next%203%0A%7D"" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>
         
         <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('cbcp-11').innerText)">
             <div class="hidden aria-hidden" id='cbcp-11'>// This is a bad use of \`map\`, \`inspect\` is more suitable here.
