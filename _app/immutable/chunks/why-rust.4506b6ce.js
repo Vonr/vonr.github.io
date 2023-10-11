@@ -14,7 +14,7 @@ This program is at the core of Rust, upholding its borrowing rules.</p>
 This means that you can no longer access it, even after the function is over.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -59,7 +59,7 @@ That's why Rust makes heavy use of borrows - creating references to values.</p>
 or a single mutable reference.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -119,7 +119,7 @@ allowing the programmer to not have to worry about memory leaks.</p>
 In fact, it is such a simple function you could write it yourself - no compiler magic!</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -146,7 +146,7 @@ This type exists in the standard library
 and is defined similarly to this.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -174,7 +174,7 @@ a few other languages such as Java, where you can pass a <code>null</code> for a
 If you don't, you will simply get a compile error.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -215,7 +215,7 @@ You can read more about it <a href="https://doc.rust-lang.org/std/result/enum.Re
 We can also implement foreign traits for our own types, or our own traits for foreign types.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -294,7 +294,7 @@ fn main() {
 much more complex bounds.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -331,7 +331,7 @@ fn main() {
 For longer bounds like that of <code>double_and_print</code>, we can use the <code>where</code> keyword to specify the bounds after the arguments.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -360,7 +360,7 @@ where
 the generic type(s) if type inference falls short.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -385,7 +385,7 @@ the generic type(s) if type inference falls short.</p>
 As such, we put them on the heap using the <code>Box</code> smart pointer and store them in a heap-allocated <code>Vec</code>.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -427,7 +427,7 @@ such as <code>filter</code>, <code>map</code>, <code>skip</code>, and <code>take
 This avoids allocating a container for each operation, which would be necessary in a strict API.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -458,7 +458,7 @@ This avoids allocating a container for each operation, which would be necessary 
 <p>The <code>Iterator</code> we produced is equivalent to the following imperative code.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>Rust</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
@@ -499,7 +499,7 @@ for n in 1..=10 {
 not only unexpectedly printing all 10 numbers, but also allocating two new arrays.</p>
 
 <div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-70 w-min">
+    <span class="ml-2 outline-none align-top opacity-60 w-min">
         <b>JavaScript</b>
     </span>
     <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
