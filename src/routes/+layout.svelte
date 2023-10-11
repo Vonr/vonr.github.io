@@ -176,16 +176,8 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         text-align: center;
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-    }
-
-    nav > ul > li:nth-child(1) {
         margin-left: 1rem;
-    }
-
-    nav > ul > li:nth-child(2) {
-        margin-right: 1rem;
+        margin-right: 2rem;
     }
 
     nav > ul > li > ul > li {
