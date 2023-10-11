@@ -57,7 +57,7 @@
 
 <Fractils />
 
-<nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0">
+<nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0 z-50">
     <ul>
         <!-- left -->
         <li>

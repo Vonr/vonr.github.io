@@ -40,6 +40,10 @@ pre code.hljs {
   padding: 1em;
 }
 
+div .codeheader {
+    background: #3c3836;
+}
+
 code.hljs {
   padding: 3px 5px;
 }

@@ -21,6 +21,10 @@ In Rust, when something is passed by value to another function, it is moved out 
 This means that you can no longer access it, even after the function is over.
 
 ```rs
+fn print(s: String) {
+    println!("{s}")
+}
+
 fn main() {
     let s = String::from("Hello, world!");
 
@@ -29,12 +33,7 @@ fn main() {
     // This would be an error, as s has moved into `print`
     println!("{s}")
 }
-
-fn print(s: String) {
-    println!("{s}")
-}
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=4cd8bcc42a9e27c8a287a0295b68a362)
 
 Of course, this by itself is inconvenient.  
 That's why Rust makes heavy use of borrows - creating references to values.
@@ -47,6 +46,15 @@ As such, you must pick between having as many immutable references to an object 
 or a single mutable reference.
 
 ```rs
+// `print` now takes in reference to a String.
+//
+// P.S. the type should really be &str since
+// we are only interested in the data of
+// the string.
+fn print(s: &String) {
+    println!("{s}")
+}
+
 fn main() {
     let s = String::from("Hello, world!");
 
@@ -57,17 +65,7 @@ fn main() {
     // and is thus still valid.
     println!("{s}")
 }
-
-// `print` now takes in reference to a String.
-//
-// P.S. the type should really be &str since
-// we are only interested in the data of
-// the string.
-fn print(s: &String) {
-    println!("{s}")
-}
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=d1c040196f4c5a11c920ad0c9a2874a6)
 
 This rule may seem quite arbitrary at first glance, but this simple rule prevents an entire class of bugs,
 such as use-after-free and double-free, which may be especially freeing for developers coming from a C or C++ background.
@@ -79,10 +77,9 @@ allowing the programmer to not have to worry about memory leaks.
 That said, Rust also gives you the tools to free (or `drop`) a value manually as long as you have ownership of it.  
 In fact, it is such a simple function you could write it yourself - no compiler magic!
 
-```rs
+```rs,ignore,docs=https://doc.rust-lang.org/std/mem/fn.drop.html
 pub fn drop<T>(_x: T) {}
 ```
-[Docs](https://doc.rust-lang.org/std/mem/fn.drop.html)
 
 If you wish to learn more about what the borrow checker does, I recommend reading  
 [this article](https://blog.logrocket.com/introducing-the-rust-borrow-checker/).
@@ -96,10 +93,10 @@ If you're familiar with algebraic type systems, Rust's enums are sum types,
 and those of you who know what that implies would already be excited about it.
 
 Let's take a look at the `Option` type.
-This type exists in the [standard library](https://doc.rust-lang.org/std/option/enum.Option.html)
+This type exists in the standard library
 and is defined similarly to this.
 
-```rs
+```rs,ignore,docs=https://doc.rust-lang.org/std/option/enum.Option.html
 enum Option<T> {
     Some(T),
     None,
@@ -124,7 +121,6 @@ fn main() {
     assert_eq!(foo(Some(2)), Some(4));
 }
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=89255fd5cb5ab72b62c8ff772e599acc)
 
 As shown in the above example, another advantage is that being a type, we can attach methods such as `map` onto it.
 
@@ -177,7 +173,6 @@ fn main() {
     assert!(!has_more_than_3_legs(Table { legs: 3 }))
 }
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=0c7470eeff0dd17b784d38d27eb75507)
 
 In the above example, the function `has_more_than_3_legs` has a simple generic bound, but typeclasses let us express
 much more complex bounds.
@@ -194,12 +189,11 @@ fn main() {
     double_and_print(2); // prints "4"
 }
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=ccf2621556e0fe53957be7c9f89938db)
 
 There are also alternative syntaxes to specify bounds.
 For longer bounds like that of `double_and_print`, we can use the `where` keyword to specify the bounds after the arguments.
 
-```rs
+```rs,ignore
 fn double_and_print<T>(val: T)
 where
     T: Add<Output = T> + Display + Clone
@@ -211,7 +205,7 @@ where
 For shorter bounds, we can use the `impl` keyword inside the arguments themselves, but this would prevent us from specifying
 the generic type(s) if type inference falls short.
 
-```rs
+```rs,ignore
 fn debug(val: impl Display) {
     println!("{val}")
 }
@@ -224,20 +218,17 @@ You can also use dynamic dispatch to make a "trait object" type.
 It should be noted that trait objects are unsized as different implementors of the trait may have different sizes.  
 As such, we put them on the heap using the `Box` smart pointer and store them in a heap-allocated `Vec`.
 
-```rs
+```rs,nomain
 use std::fmt::Debug;
 
-fn main() {
-    let vec: Vec<Box<dyn Debug>> = vec![
-        Box::new(1),
-        Box::new(Some(3)), 
-        Box::new("test")
-    ];
-    
-    println!("{vec:?}")
-}
+let vec: Vec<Box<dyn Debug>> = vec![
+    Box::new(1),
+    Box::new(Some(3)), 
+    Box::new("test")
+];
+
+println!("{vec:?}")
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=05af188547fe84ba81c0aae62f8e2373)
 
 ## Iterators
 
@@ -245,7 +236,7 @@ Iterators are by far my favourite feature of Rust, utilizing its powerful type s
 to create a concise and easy way of manipulating data.
 
 Most collection types in Rust either have an `iter` method or implement `IntoIterator`,
-which craetes an `Iterator` over them.
+which creates an `Iterator` over them.
 
 Once in an `Iterator`, you get access to a wide variety of helper methods to manipulate it
 such as `filter`, `map`, `skip`, and `take` among many more.
@@ -253,24 +244,21 @@ such as `filter`, `map`, `skip`, and `take` among many more.
 Rust's `Iterator` is "lazy", meaning that operations on them only run when needed.
 This avoids allocating a container for each operation, which would be necessary in a strict API.
 
-```rs
-fn main() {
-    // This is a bad use of `map`, `inspect` is more suitable here.
-    (1..=10).map(|n| println!("{n}")).take(3).for_each(drop);
-    // By the end of the loop,
-    // we'd have printed
-    // next 1
-    // next 2
-    // next 3
-}
+```rs,nomain
+// This is a bad use of `map`, `inspect` is more suitable here.
+(1..=10).map(|n| println!("{n}")).take(3).for_each(drop);
+// By the end of the statement above,
+// we'd have printed:
+// next 1
+// next 2
+// next 3
 ```
-[Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=480f6d4ab0935f7cb3e254f0237f6cd9)
 
 Notice how we only printed "next" three times, despite the `inspect` taking place before `take`.
 
 The `Iterator` we produced is equivalent to the following imperative code.
 
-```rs
+```rs,ignore
 let mut count = 0;
 for n in (1..=10) {
     // Shadowing the binding of `n` to the result of the map.
@@ -288,7 +276,7 @@ for n in (1..=10) {
 While doing the same in Javascript would lead to the equivalent of the following instead,
 not only unexpectedly printing all 10 numbers, but also allocating two new arrays.
 
-```js
+```js,ignore
 let mapped = [];
 
 for (n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {

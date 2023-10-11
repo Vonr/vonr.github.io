@@ -5,7 +5,8 @@ import Rust from "highlight.js/lib/languages/rust";
 import MarkdownItAnchor from "markdown-it-anchor";
 import { exit } from "node:process";
 import { RenderRule } from "markdown-it/lib/renderer";
-import { slugifyWithCounter } from "@sindresorhus/slugify"
+import { slugifyWithCounter } from "@sindresorhus/slugify";
+import { makeRepl } from './repl';
 
 const _slugify = slugifyWithCounter();
 
@@ -28,7 +29,8 @@ hljs.registerLanguage("rust", Rust);
 const slugify = (s: string) => _slugify(s.replaceAll(/!@#\$%\^\*\(\)\[\]'"/g, ""))
 
 const md: MarkdownIt = MarkdownIt({
-    highlight: (str, lang) => {
+    highlight: (str, _lang) => {
+        let [lang, ...mods] = _lang.split(',');
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return `<pre class="hljs codeblock"><code>${hljs.highlight(str, {
@@ -68,6 +70,40 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
 
     return link_open(tokens, idx, options, env, self);
 };
+
+{
+    const fence = proxy(md.renderer.rules.fence);
+    const code_block = proxy(md.renderer.rules.code_block);
+    const makeRule = (rule: RenderRule): RenderRule => ((tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        const id = slugify('cbcp')
+        const content = token.content
+        let [lang, ...mods] = token.info.split(',');
+        lang = hljs.getLanguage(lang)?.name ?? lang ?? '';
+
+        let repl = makeRepl(lang, mods, content);
+        let docs = mods.find((mod) => mod.startsWith('docs='))?.split('docs=')?.[1]
+
+        return `
+<div class="codeheader flex rounded-t-lg">
+    <span class="ml-2 outline-none align-top opacity-70 w-min">
+        <b>${lang}</b>
+    </span>
+    <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
+        ${repl ? `<a href="${repl}" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>` : ''}
+        ${docs ? `<a href="${docs}" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">docs</a>` : ''}
+        <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('${id}').innerText)">
+            <div class="hidden aria-hidden" id='${id}'>${content}</div>
+            copy
+        </button>
+    </span>
+</div>
+${rule(tokens, idx, options, env, self)}`;
+    })
+
+    md.renderer.rules.fence = makeRule(fence)
+    md.renderer.rules.code_block = makeRule(code_block)
+}
 
 if (!fs.existsSync(builddir)) {
     fs.mkdirSync(builddir);
