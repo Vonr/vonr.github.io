@@ -11,6 +11,8 @@
 
 <svelte:head>
     <title>Blog Index</title>
+    <meta content="Blog Index" property="og:title" />
+    <meta content="https://vonr.github.io/blog" property="og:url" />
 </svelte:head>
 
 <div class="centered-content">

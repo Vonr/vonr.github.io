@@ -5,6 +5,8 @@
 
 <svelte:head>
     <title>Home</title>
+    <meta content="Qther's Site" property="og:title" />
+    <meta content="https://vonr.github.io/" property="og:url" />
 </svelte:head>
 
 <div class="centered-content">

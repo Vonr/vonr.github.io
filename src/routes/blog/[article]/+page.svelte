@@ -8,10 +8,14 @@
     import lightTheme from "$lib/styles/hljs-gruvbox-light-medium.css?inline";
     import darkTheme from "$lib/styles/hljs-gruvbox-dark-medium.css?inline";
     import { onMount } from "svelte";
+    import { page } from "$app/stores";
 
     let style: string;
     export let data: PageData;
     let post = data.post;
+    let postName = post
+        .substring(0, post.indexOf("\n"))
+        .replace(/<[^>]*>?/gm, "");
 
     theme.subscribe(async (theme) => {
         if (theme === "light") {
@@ -27,8 +31,10 @@
 
 <svelte:head>
     <title>
-        {post.substring(0, post.indexOf("\n")).replace(/<[^>]*>?/gm, "")}
+        {postName}
     </title>
+    <meta content={postName} property="og:title" />
+    <meta content={$page.url.href} property="og:url" />
 </svelte:head>
 
 <div

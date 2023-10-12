@@ -4,6 +4,8 @@
 
 <svelte:head>
     <title>Portfolio</title>
+    <meta content="Portfolio" property="og:title" />
+    <meta content="https://vonr.github.io/portfolio" property="og:url" />
 </svelte:head>
 
 <div class="centered-content">

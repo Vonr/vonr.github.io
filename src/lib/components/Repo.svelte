@@ -29,26 +29,29 @@
     });
 </script>
 
-{#if mounted}
-    <span class="bg-indigo-100 dark:bg-gray-700">
-        <a href={repoInfo.html_url} target="_blank">
+<span class="bg-indigo-100 dark:bg-gray-700">
+    <a
+        href={mounted
+            ? repoInfo.html_url
+            : `https://github.com/${owner}/${repo}`}
+        target="_blank"
+    >
             <Fa
                 icon={faGithub}
                 class="inline text-black dark:text-white mr-0.5"
             />{repo}
+    </a>
+    {#if mounted && showStars && repoInfo.stargazers_count > 0}
+        <a
+            href={`${repoInfo.html_url}/stargazers`}
+            target="_blank"
+            class="noblue no-underline"
+        >
+            <Fa
+                icon={faStar}
+                class="inline"
+                color="#ddb14e"
+            />{repoInfo.stargazers_count}
         </a>
-        {#if showStars && repoInfo.stargazers_count > 0}
-            <a
-                href={`${repoInfo.html_url}/stargazers`}
-                target="_blank"
-                class="noblue no-underline"
-            >
-                <Fa
-                    icon={faStar}
-                    class="inline"
-                    color="#ddb14e"
-                />{repoInfo.stargazers_count}
-            </a>
-        {/if}
-    </span>
-{/if}
+    {/if}
+</span>
