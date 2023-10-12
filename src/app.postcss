@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+:root::-webkit-scrollbar {
+  display: none;
+}
+
 .centered-content {
     max-width: calc(min(760px, 90%));
     margin: 0 auto;

@@ -2,11 +2,12 @@
     import "./markdown.css";
     import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
-    import { mobile, screenW } from "fractils";
+    import { mobile } from "fractils";
     import { theme } from "$lib/stores";
     import type { PageData } from "./$types";
     import lightTheme from "$lib/styles/hljs-gruvbox-light-medium.css?inline";
     import darkTheme from "$lib/styles/hljs-gruvbox-dark-medium.css?inline";
+    import { onMount } from "svelte";
 
     let style: string;
     export let data: PageData;
@@ -19,6 +20,9 @@
             style = darkTheme;
         }
     });
+
+    let mounted = false;
+    onMount(() => (mounted = true));
 </script>
 
 <svelte:head>
@@ -29,9 +33,9 @@
 
 <div
     class="top-0 mt-16"
-    class:fixed={!$mobile}
-    class:ml-8={!$mobile}
-    class:centered-content={$mobile}
+    class:fixed={!mounted || !$mobile}
+    class:ml-8={!mounted || !$mobile}
+    class:centered-content={mounted && $mobile}
 >
     <a href="/blog" class="no-underline">
         <Fa icon={faArrowLeft} class="inline mr-1" /><b>Index</b>
@@ -44,7 +48,7 @@
     {@html post}
 </div>
 
-{#if $mobile}
+{#if mounted && $mobile}
     <style>
         .codeblock {
             max-height: 16rem;

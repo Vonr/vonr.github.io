@@ -8,9 +8,11 @@
     import { onMount } from "svelte";
     import { Fractils, mobile, mobileThreshold } from "fractils";
     import { onNavigate } from "$app/navigation";
+    import { Svrollbar } from "svrollbar";
 
     mobileThreshold.set(1000);
     let themeToggle: HTMLButtonElement;
+    let mounted = false;
 
     onMount(() => {
         themeToggle.disabled = false;
@@ -42,6 +44,7 @@
                 localStorage.theme = "dark";
             }
         });
+        mounted = true;
     });
 
     onNavigate((navigation) => {
@@ -58,6 +61,8 @@
 
 <Fractils />
 
+<Svrollbar />
+
 <nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0 z-50">
     <ul>
         <!-- left -->
@@ -66,7 +71,7 @@
                 <li>
                     <a href="/" class="text-lg no-underline" title="Home">
                         <Fa icon={faHome} class="inline" />
-                        {#if !$mobile}
+                        {#if !mounted || !$mobile}
                             Home
                         {/if}
                     </a>
@@ -133,6 +138,8 @@
     <a href="https://ko-fi.com/qther" target="_blank">
         <img
             src="/logos/kofi.png"
+            width="500px"
+            height="500px"
             alt="Support me on Ko-fi"
             class="h-16 w-16"
         />
