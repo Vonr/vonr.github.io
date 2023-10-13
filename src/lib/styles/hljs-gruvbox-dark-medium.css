@@ -48,6 +48,12 @@ code.hljs {
   padding: 3px 5px;
 }
 
+p > code {
+    background: #3c3836;
+    border-radius: 0.25rem;
+    opacity: 0.8;
+}
+
 .hljs {
   color: #d5c4a1;
   background: #282828;
