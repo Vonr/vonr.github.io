@@ -1,3 +1,5 @@
+import { getModValue } from "./util";
+
 const choose = <T>(map: Record<string, T>, mods: string[]): T | undefined => {
     let lastIdx = 0;
     let result;
@@ -72,9 +74,9 @@ export const makeRepl = (lang: string, mods: string[], code: string): string | u
         return undefined;
     }
 
-    let defined = mods.find((mod) => mod.startsWith('repl='));
+    let defined = getModValue(mods, 'repl')
     if (defined) {
-        return defined.split('repl=')[1];
+        return defined;
     }
 
     lang = lang.toLowerCase();

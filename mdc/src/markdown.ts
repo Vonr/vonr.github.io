@@ -6,6 +6,7 @@ import { exit } from "node:process";
 import { RenderRule } from "markdown-it/lib/renderer";
 import { slugifyWithCounter } from "@sindresorhus/slugify";
 import { makeRepl } from './repl';
+import { getModValue } from "./util";
 
 const _slugify = slugifyWithCounter();
 
@@ -72,7 +73,7 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
         lang = hljs.getLanguage(lang)?.name ?? lang ?? '';
 
         let repl = makeRepl(lang, mods, content);
-        let docs = mods.find((mod) => mod.startsWith('docs='))?.split('docs=')?.[1];
+        let docs = getModValue(mods, 'docs');
 
         return `
 <div class="codeheader flex rounded-t-lg">
