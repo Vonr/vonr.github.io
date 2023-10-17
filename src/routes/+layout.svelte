@@ -13,18 +13,20 @@
     mobileThreshold.set(1000);
     let themeToggle: HTMLButtonElement;
     let mounted = false;
+    let rem = 16;
 
     onMount(() => {
+        rem = parseInt(getComputedStyle(document.documentElement).fontSize);
         themeToggle.disabled = false;
 
         if (
-            localStorage.theme === "dark" ||
+            localStorage.theme === "light" ||
             (!("theme" in localStorage) &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches)
+                window.matchMedia("(prefers-color-scheme: light)").matches)
         ) {
-            theme.set("dark");
+        theme.set("light");
         } else {
-            theme.set("light");
+        theme.set("dark");
         }
 
         theme.subscribe((theme) => {
@@ -60,8 +62,6 @@
 </script>
 
 <Fractils />
-
-<Svrollbar />
 
 <nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0 z-50">
     <ul>
@@ -134,7 +134,15 @@
     </ul>
 </nav>
 
-<div class="fixed bottom-0 right-0 p-8">
+<Svrollbar
+    alwaysVisible={true}
+    margin={{
+        top: 3.5 * rem,
+        buttom: 0.5 * rem,
+    }}
+/>
+
+<div class="fixed bottom-0 right-0 m-8">
     <a href="https://ko-fi.com/qther" target="_blank">
         <img
             src="/logos/kofi.png"
