@@ -67,12 +67,17 @@ main = ${code.replace(/\n$/, '').replaceAll(/\n/g, '\n  ')}`;
     },
 };
 
-export const makeRepl = (lang: string, mods: string[], code: string) => {
+export const makeRepl = (lang: string, mods: string[], code: string): string | undefined => {
     if (mods.includes('ignore')) {
         return undefined;
     }
 
-    lang = lang.toLowerCase()
+    let defined = mods.find((mod) => mod.startsWith('repl='));
+    if (defined) {
+        return defined.split('repl=')[1];
+    }
+
+    lang = lang.toLowerCase();
     let replMaker = replMakers[lang];
     if (replMaker) {
         return replMaker(lang, mods, code);
