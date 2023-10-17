@@ -1,12 +1,10 @@
 const n=`<h1>Why Rust?</h1>
 <h1>Sep 20 2023</h1>
 <p>I have used a variety of languages since I first started my foray into programming.</p>
-<p>I started with Javascript, learnt Java, hopped to Kotlin, pivoted to Go, and touched on a bunch of other languages along the way.</p>
-<p>Despite all my time with these other languages, I find myself routinely reaching for Rust
+<p>However, despite all my time with many other languages, I often find myself reaching for Rust
 for whatever I am working on.</p>
-<p>Rust was a language that I had a lot of trouble picking up.<br>
-I attempted learning it 8 times before it finally clicked.<br>
-What made it so different, and why do I enjoy it?</p>
+<p>Rust was a language that I had a lot of trouble picking up,<br>
+but what made it so different, and why do I enjoy it?</p>
 <h2 id="the-borrow-checker" tabindex="-1"><a class="header-anchor" href="#the-borrow-checker" aria-hidden="true" target="_self">#</a> The Borrow Checker</h2>
 <p>Rust has a system that it calls the borrow checker.<br>
 This program is at the core of Rust, upholding its borrowing rules.</p>
@@ -205,10 +203,10 @@ fn main() {
 </code></pre>
 <p>As shown in the above example, another advantage is that being a type, we can attach methods such as <code>map</code> onto it.</p>
 <p>This makes working with optional values more concise and convenient.</p>
-<p>Rust also has a <code>Result</code> type which is very similar to <code>Option</code>, replacing exceptions instead of <code>null</code>.
+<p>Rust also has a <code>Result</code> type which is similar to <code>Option</code>, replacing exceptions instead of <code>null</code>.
 You can read more about it <a href="https://doc.rust-lang.org/std/result/enum.Result.html" target="_blank">here</a>.</p>
 <h2 id="traits-typeclasses" tabindex="-1"><a class="header-anchor" href="#traits-typeclasses" aria-hidden="true" target="_self">#</a> Traits (Typeclasses)</h2>
-<p>If you've had experience with the ML family of langauges or Haskell, you would be familiar with the concept of typeclasses.</p>
+<p>If you've had experience with the ML family of languages or Haskell, you would be familiar with the concept of typeclasses.</p>
 <p>Rust was influenced by Haskell's typeclasses, resulting in traits.</p>
 <p>Traits allow us to compartmentalize behaviour into interface-like structures.</p>
 <p>We can implement any number of traits for an enum or struct.<br>
@@ -327,7 +325,7 @@ fn main() {
     <span class="hljs-title function_ invoke__">double_and_print</span>(<span class="hljs-number">2</span>); <span class="hljs-comment">// prints &quot;4&quot;</span>
 }
 </code></pre>
-<p>There are also alternative syntaxes to specify bounds.
+<p>There are also alternative syntax to specify bounds.
 For longer bounds like that of <code>double_and_print</code>, we can use the <code>where</code> keyword to specify the bounds after the arguments.</p>
 
 <div class="codeheader flex rounded-t-lg">
@@ -381,7 +379,7 @@ the generic type(s) if type inference falls short.</p>
 </code></pre>
 <p>Rust has a lot of small conveniences like this, making it both flexible and pleasant to use.</p>
 <p>You can also use dynamic dispatch to make a &quot;trait object&quot; type.</p>
-<p>It should be noted that trait objects are unsized as different implementors of the trait may have different sizes.<br>
+<p>It should be noted that trait objects are unsized as different implementers of the trait may have different sizes.<br>
 As such, we put them on the heap using the <code>Box</code> smart pointer and store them in a heap-allocated <code>Vec</code>.</p>
 
 <div class="codeheader flex rounded-t-lg">
@@ -495,7 +493,7 @@ for n in 1..=10 {
     <span class="hljs-comment">// inner loop</span>
 }
 </code></pre>
-<p>While doing the same in Javascript would lead to the equivalent of the following instead,
+<p>While doing the same in JavaScript would lead to the equivalent of the following instead,
 not only unexpectedly printing all 10 numbers, but also allocating two new arrays.</p>
 
 <div class="codeheader flex rounded-t-lg">
@@ -540,12 +538,12 @@ and Rust's lack of container allocations makes it the better option for me.</p>
 <p>I have only discussed a small portion of the reasons that I love using Rust, but the
 reasons I have discussed are the primary reasons why I continue to choose Rust for
 many of my projects.</p>
-<p>With all that said, I believe it is worth nothing that Rust is neither a perfect langauge
+<p>With all that said, I believe it is worth nothing that Rust is neither a perfect language
 nor a language that should be used for everything.</p>
 <p>In fact, I considered writing this website in Rust for fun, but decided against it in the
-end as I would be losing out on the fantastic Javascript ecosystem which could help
+end as I would be losing out on the fantastic JavaScript ecosystem which could help
 me push out this website faster.</p>
-<p>I believe that Rust deserves a spot on your toolbelt, so that you can easily
+<p>I believe that Rust deserves a spot on your tool-belt, so that you can easily
 harness it's powers when it fits the project. I personally make a lot of
 command-line utilities, which I believe Rust to be an excellent choice for.</p>
 <p>If you are interested in learning Rust, I strongly recommend reading the <a href="https://doc.rust-lang.org/book" target="_blank">Book</a>

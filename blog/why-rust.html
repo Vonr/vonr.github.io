@@ -12,26 +12,26 @@
 
 body::-webkit-scrollbar{display:none}@-moz-document url-prefix(){html{scrollbar-width:none}}#scrollbar.svelte-1yrcs1i{position:fixed;right:5px;z-index:9999;margin:auto;width:7px;height:var(--scrollbar-height);background:var(--color, #555);border-radius:20px;opacity:0;overflow:hidden;transition:opacity .25s}.reveal.svelte-1yrcs1i{opacity:1!important}.wrapper.svelte-11dxj9w{all:unset;display:flex;position:relative;align-items:center;justify-content:center;width:2rem;height:2rem;line-height:2rem;border-radius:100%;cursor:pointer}.icon.svelte-11dxj9w{position:absolute;font-size:1.5rem;background-color:transparent;pointer-events:none;top:0;right:0;bottom:0;left:0}
 
-.codeblock{padding:.75rem 1rem;margin-top:0rem;margin-bottom:1rem;width:auto;max-width:min(760px,100%);overflow-x:auto;justify-self:center;border-bottom-left-radius:.5rem;border-bottom-right-radius:.5rem;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.3s}.codeblock>code{margin-top:0rem;margin-bottom:0rem}h1{margin-bottom:.375rem}h2{margin-top:.75rem;margin-bottom:.375rem}h3{margin-top:.75rem;margin-bottom:.125rem}
+.codeblock{padding:.75rem 1rem;margin-top:0rem;margin-bottom:1rem;width:auto;max-width:min(760px,100%);overflow-x:auto;justify-self:center;border-bottom-left-radius:.5rem;border-bottom-right-radius:.5rem;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.3s}.codeblock>code{margin-top:0rem;margin-bottom:0rem}h1{margin-bottom:.375rem}h2{margin-top:.75rem;margin-bottom:.375rem}h3{margin-top:.75rem;margin-bottom:.125rem}blockquote{margin:.75rem .375rem .375rem;padding:.375rem 1.25rem;border-left-width:.375rem}
 </style>
 		<link href="../_app/immutable/assets/0.91c44390.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/fa.95b16411.css" rel="stylesheet" disabled media="(max-width: 0)">
 		<link href="../_app/immutable/assets/ThemeToggle.91c5c161.css" rel="stylesheet" disabled media="(max-width: 0)">
-		<link href="../_app/immutable/assets/4.1c41749c.css" rel="stylesheet" disabled media="(max-width: 0)">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.d2c81d3c.js">
+		<link href="../_app/immutable/assets/4.b0a2a5f4.css" rel="stylesheet" disabled media="(max-width: 0)">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.4fcf9dc2.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.9d93041a.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.64def6c0.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.c795374b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.24198c72.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.a892a00c.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.a4192956.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.3e095812.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.bd6b7961.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.3e3319a8.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/fa.7c8c3a1d.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.ac23d56d.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.04ca9c1a.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.33532618.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/4.8088d33d.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.728e6f5b.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.098b19df.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/article-index_raw.27fe09df.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/stores.a4a24639.js"><title> Why Rust? </title><!-- HEAD_svelte-16u30cp_START --><meta content="Why Rust?" property="og:title"><meta content="http://sveltekit-prerender/blog/why-rust" property="og:url"><!-- HEAD_svelte-16u30cp_END -->
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.ac79f7a1.js"><title> Why Rust? </title><!-- HEAD_svelte-16u30cp_START --><meta content="Why Rust?" property="og:title"><meta content="http://sveltekit-prerender/blog/why-rust" property="og:url"><!-- HEAD_svelte-16u30cp_END -->
 </head>
 
 <body data-sveltekit-preload-data="hover"
@@ -42,16 +42,14 @@ body::-webkit-scrollbar{display:none}@-moz-document url-prefix(){html{scrollbar-
   License: ~ MIT (or more permissive) [via base16-schemes-source]
   Maintainer: @highlightjs/core-team
   Version: 2021.09.0
-*/pre code.hljs{display:block;overflow-x:auto;padding:1em}div .codeheader{background:#ebdbb2}code.hljs{padding:3px 5px}p>code{background:#ebdbb2;border-radius:.25rem;opacity:.8}.hljs{color:#504945;background:#fbf1c7}.hljs::-moz-selection,.hljs ::-moz-selection{background-color:#d5c4a1;color:#504945}.hljs::selection,.hljs ::selection{background-color:#d5c4a1;color:#504945}.hljs-comment{color:#bdae93}.hljs-tag{color:#665c54}.hljs-subst,.hljs-punctuation,.hljs-operator{color:#504945}.hljs-operator{opacity:.7}.hljs-bullet,.hljs-variable,.hljs-template-variable,.hljs-selector-tag,.hljs-name,.hljs-deletion{color:#9d0006}.hljs-symbol,.hljs-number,.hljs-link,.hljs-attr,.hljs-variable.constant_,.hljs-literal{color:#af3a03}.hljs-title,.hljs-class .hljs-title,.hljs-title.class_,#markdown>p>code{color:#b57614}.hljs-strong{font-weight:700;color:#b57614}.hljs-code,.hljs-addition,.hljs-title.class_.inherited__,.hljs-string{color:#79740e}.hljs-built_in,.hljs-doctag,.hljs-quote,.hljs-keyword.hljs-atrule,.hljs-regexp{color:#427b58}.hljs-function .hljs-title,.hljs-attribute,.ruby .hljs-property,.hljs-title.function_,.hljs-section{color:#076678}.hljs-type,.hljs-template-tag,.diff .hljs-meta,.hljs-keyword{color:#8f3f71}.hljs-emphasis{color:#8f3f71;font-style:italic}.hljs-meta,.hljs-meta .hljs-keyword,.hljs-meta .hljs-string{color:#d65d0e}.hljs-meta .hljs-keyword,.hljs-meta-keyword{font-weight:700}
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}div .codeheader{background:#ebdbb2}code.hljs{padding:3px 5px}p>code{background:#ebdbb2;border-radius:.25rem;opacity:.8}blockquote{background:#fbf1c7;border-left-color:#d5c4a1}.hljs{color:#504945;background:#fbf1c7}.hljs::-moz-selection,.hljs ::-moz-selection{background-color:#d5c4a1;color:#504945}.hljs::selection,.hljs ::selection{background-color:#d5c4a1;color:#504945}.hljs-comment{color:#bdae93}.hljs-tag{color:#665c54}.hljs-subst,.hljs-punctuation,.hljs-operator{color:#504945}.hljs-operator{opacity:.7}.hljs-bullet,.hljs-variable,.hljs-template-variable,.hljs-selector-tag,.hljs-name,.hljs-deletion{color:#9d0006}.hljs-symbol,.hljs-number,.hljs-link,.hljs-attr,.hljs-variable.constant_,.hljs-literal{color:#af3a03}.hljs-title,.hljs-class .hljs-title,.hljs-title.class_,#markdown>p>code{color:#b57614}.hljs-strong{font-weight:700;color:#b57614}.hljs-code,.hljs-addition,.hljs-title.class_.inherited__,.hljs-string{color:#79740e}.hljs-built_in,.hljs-doctag,.hljs-quote,.hljs-keyword.hljs-atrule,.hljs-regexp{color:#427b58}.hljs-function .hljs-title,.hljs-attribute,.ruby .hljs-property,.hljs-title.function_,.hljs-section{color:#076678}.hljs-type,.hljs-template-tag,.diff .hljs-meta,.hljs-keyword{color:#8f3f71}.hljs-emphasis{color:#8f3f71;font-style:italic}.hljs-meta,.hljs-meta .hljs-keyword,.hljs-meta .hljs-string{color:#d65d0e}.hljs-meta .hljs-keyword,.hljs-meta-keyword{font-weight:700}
 </style><!-- HTML_TAG_END --> <div class="centered-content pb-8"><!-- HTML_TAG_START --><h1>Why Rust?</h1>
 <h1>Sep 20 2023</h1>
 <p>I have used a variety of languages since I first started my foray into programming.</p>
-<p>I started with Javascript, learnt Java, hopped to Kotlin, pivoted to Go, and touched on a bunch of other languages along the way.</p>
-<p>Despite all my time with these other languages, I find myself routinely reaching for Rust
+<p>However, despite all my time with many other languages, I often find myself reaching for Rust
 for whatever I am working on.</p>
-<p>Rust was a language that I had a lot of trouble picking up.<br>
-I attempted learning it 8 times before it finally clicked.<br>
-What made it so different, and why do I enjoy it?</p>
+<p>Rust was a language that I had a lot of trouble picking up,<br>
+but what made it so different, and why do I enjoy it?</p>
 <h2 id="the-borrow-checker" tabindex="-1"><a class="header-anchor" href="#the-borrow-checker" aria-hidden="true" target="_self">#</a> The Borrow Checker</h2>
 <p>Rust has a system that it calls the borrow checker.<br>
 This program is at the core of Rust, upholding its borrowing rules.</p>
@@ -250,10 +248,10 @@ fn main() {
 </code></pre>
 <p>As shown in the above example, another advantage is that being a type, we can attach methods such as <code>map</code> onto it.</p>
 <p>This makes working with optional values more concise and convenient.</p>
-<p>Rust also has a <code>Result</code> type which is very similar to <code>Option</code>, replacing exceptions instead of <code>null</code>.
+<p>Rust also has a <code>Result</code> type which is similar to <code>Option</code>, replacing exceptions instead of <code>null</code>.
 You can read more about it <a href="https://doc.rust-lang.org/std/result/enum.Result.html" target="_blank">here</a>.</p>
 <h2 id="traits-typeclasses" tabindex="-1"><a class="header-anchor" href="#traits-typeclasses" aria-hidden="true" target="_self">#</a> Traits (Typeclasses)</h2>
-<p>If you've had experience with the ML family of langauges or Haskell, you would be familiar with the concept of typeclasses.</p>
+<p>If you've had experience with the ML family of languages or Haskell, you would be familiar with the concept of typeclasses.</p>
 <p>Rust was influenced by Haskell's typeclasses, resulting in traits.</p>
 <p>Traits allow us to compartmentalize behaviour into interface-like structures.</p>
 <p>We can implement any number of traits for an enum or struct.<br>
@@ -372,7 +370,7 @@ fn main() {
     <span class="hljs-title function_ invoke__">double_and_print</span>(<span class="hljs-number">2</span>); <span class="hljs-comment">// prints &quot;4&quot;</span>
 }
 </code></pre>
-<p>There are also alternative syntaxes to specify bounds.
+<p>There are also alternative syntax to specify bounds.
 For longer bounds like that of <code>double_and_print</code>, we can use the <code>where</code> keyword to specify the bounds after the arguments.</p>
 
 <div class="codeheader flex rounded-t-lg">
@@ -426,7 +424,7 @@ the generic type(s) if type inference falls short.</p>
 </code></pre>
 <p>Rust has a lot of small conveniences like this, making it both flexible and pleasant to use.</p>
 <p>You can also use dynamic dispatch to make a &quot;trait object&quot; type.</p>
-<p>It should be noted that trait objects are unsized as different implementors of the trait may have different sizes.<br>
+<p>It should be noted that trait objects are unsized as different implementers of the trait may have different sizes.<br>
 As such, we put them on the heap using the <code>Box</code> smart pointer and store them in a heap-allocated <code>Vec</code>.</p>
 
 <div class="codeheader flex rounded-t-lg">
@@ -540,7 +538,7 @@ for n in 1..=10 {
     <span class="hljs-comment">// inner loop</span>
 }
 </code></pre>
-<p>While doing the same in Javascript would lead to the equivalent of the following instead,
+<p>While doing the same in JavaScript would lead to the equivalent of the following instead,
 not only unexpectedly printing all 10 numbers, but also allocating two new arrays.</p>
 
 <div class="codeheader flex rounded-t-lg">
@@ -585,12 +583,12 @@ and Rust's lack of container allocations makes it the better option for me.</p>
 <p>I have only discussed a small portion of the reasons that I love using Rust, but the
 reasons I have discussed are the primary reasons why I continue to choose Rust for
 many of my projects.</p>
-<p>With all that said, I believe it is worth nothing that Rust is neither a perfect langauge
+<p>With all that said, I believe it is worth nothing that Rust is neither a perfect language
 nor a language that should be used for everything.</p>
 <p>In fact, I considered writing this website in Rust for fun, but decided against it in the
-end as I would be losing out on the fantastic Javascript ecosystem which could help
+end as I would be losing out on the fantastic JavaScript ecosystem which could help
 me push out this website faster.</p>
-<p>I believe that Rust deserves a spot on your toolbelt, so that you can easily
+<p>I believe that Rust deserves a spot on your tool-belt, so that you can easily
 harness it's powers when it fits the project. I personally make a lot of
 command-line utilities, which I believe Rust to be an excellent choice for.</p>
 <p>If you are interested in learning Rust, I strongly recommend reading the <a href="https://doc.rust-lang.org/book" target="_blank">Book</a>
@@ -607,7 +605,7 @@ or doing <a href="https://github.com/rust-lang/rustlings" target="_blank">Rustli
 			
 			<script>
 				{
-					__sveltekit_atsvg1 = {
+					__sveltekit_atagc5 = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -617,8 +615,8 @@ or doing <a href="https://github.com/rust-lang/rustlings" target="_blank">Rustli
 					const data = [null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.d2c81d3c.js"),
-						import("../_app/immutable/entry/app.c795374b.js")
+						import("../_app/immutable/entry/start.4fcf9dc2.js"),
+						import("../_app/immutable/entry/app.a892a00c.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
