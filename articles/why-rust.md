@@ -3,14 +3,11 @@
 
 I have used a variety of languages since I first started my foray into programming.
 
-I started with Javascript, learnt Java, hopped to Kotlin, pivoted to Go, and touched on a bunch of other languages along the way.
-
-Despite all my time with these other languages, I find myself routinely reaching for Rust
+However, despite all my time with many other languages, I often find myself reaching for Rust
 for whatever I am working on.
 
-Rust was a language that I had a lot of trouble picking up.  
-I attempted learning it 8 times before it finally clicked.  
-What made it so different, and why do I enjoy it?
+Rust was a language that I had a lot of trouble picking up,  
+but what made it so different, and why do I enjoy it?
 
 ## The Borrow Checker
 
@@ -126,12 +123,12 @@ As shown in the above example, another advantage is that being a type, we can at
 
 This makes working with optional values more concise and convenient.
 
-Rust also has a `Result` type which is very similar to `Option`, replacing exceptions instead of `null`.
+Rust also has a `Result` type which is similar to `Option`, replacing exceptions instead of `null`.
 You can read more about it [here](https://doc.rust-lang.org/std/result/enum.Result.html).
 
 ## Traits (Typeclasses)
 
-If you've had experience with the ML family of langauges or Haskell, you would be familiar with the concept of typeclasses.
+If you've had experience with the ML family of languages or Haskell, you would be familiar with the concept of typeclasses.
 
 Rust was influenced by Haskell's typeclasses, resulting in traits.
 
@@ -190,7 +187,7 @@ fn main() {
 }
 ```
 
-There are also alternative syntaxes to specify bounds.
+There are also alternative syntax to specify bounds.
 For longer bounds like that of `double_and_print`, we can use the `where` keyword to specify the bounds after the arguments.
 
 ```rs,ignore
@@ -215,7 +212,7 @@ Rust has a lot of small conveniences like this, making it both flexible and plea
 
 You can also use dynamic dispatch to make a "trait object" type.
 
-It should be noted that trait objects are unsized as different implementors of the trait may have different sizes.  
+It should be noted that trait objects are unsized as different implementers of the trait may have different sizes.  
 As such, we put them on the heap using the `Box` smart pointer and store them in a heap-allocated `Vec`.
 
 ```rs,nomain
@@ -273,7 +270,7 @@ for n in 1..=10 {
 }
 ```
 
-While doing the same in Javascript would lead to the equivalent of the following instead,
+While doing the same in JavaScript would lead to the equivalent of the following instead,
 not only unexpectedly printing all 10 numbers, but also allocating two new arrays.
 
 ```js
@@ -299,14 +296,14 @@ I have only discussed a small portion of the reasons that I love using Rust, but
 reasons I have discussed are the primary reasons why I continue to choose Rust for
 many of my projects.
 
-With all that said, I believe it is worth nothing that Rust is neither a perfect langauge
+With all that said, I believe it is worth nothing that Rust is neither a perfect language
 nor a language that should be used for everything.
 
 In fact, I considered writing this website in Rust for fun, but decided against it in the
-end as I would be losing out on the fantastic Javascript ecosystem which could help
+end as I would be losing out on the fantastic JavaScript ecosystem which could help
 me push out this website faster.
 
-I believe that Rust deserves a spot on your toolbelt, so that you can easily
+I believe that Rust deserves a spot on your tool-belt, so that you can easily
 harness it's powers when it fits the project. I personally make a lot of
 command-line utilities, which I believe Rust to be an excellent choice for.
 

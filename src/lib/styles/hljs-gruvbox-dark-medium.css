@@ -54,6 +54,11 @@ p > code {
     opacity: 0.8;
 }
 
+blockquote {
+    background: #282828;
+    border-left-color: #504945;
+}
+
 .hljs {
   color: #d5c4a1;
   background: #282828;
