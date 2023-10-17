@@ -14,12 +14,13 @@
     <p>
         Hey, I'm Qther.
         <br />
-        Of course, that's just an alias as I choose not to reveal my real name for the sake of privacy.
+        That's an alias - as I choose not to reveal my real name for the sake of
+        privacy.
         <br />
     </p>
 
     <p>
-        I started programming with Javascript when I was just 9 years old,
+        I started programming with JavaScript when I was just 9 years old,
         <br />
         though I did not make anything of note until much later.
     </p>
@@ -28,13 +29,13 @@
         Nowadays, I mostly program in Rust, as I am a big fan of its safety and
         ergonomics. Apart from binaries like
         <Repo repo="parui" />, a terminal user interface wrapper around the Arch
-        User Repository (AUR) Helper paru,
-        <br />
+        User Repository (AUR) Helper paru.
+    </p>
+    <p>
         I have also made several libraries such
         <Repo repo="compact_strings" />
         , a more space-efficient and cache-friendly way of representing large lists
         of strings also used in parui,
-        <br />
         and
         <Repo repo="nonn" />, a wrapper around the standard library's NonZero*
         integer types to make them generically NonN instead.
@@ -49,9 +50,3 @@
         <Repo repo="align.nvim" />, though they are largely unmaintained.
     </p>
 </div>
-
-<style>
-    p {
-        padding-bottom: 0.5rem;
-    }
-</style>

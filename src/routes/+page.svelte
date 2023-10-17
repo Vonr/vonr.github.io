@@ -1,4 +1,5 @@
 <script>
+    import Repo from "$lib/components/Repo.svelte";
     import { faGithub } from "@fortawesome/free-brands-svg-icons";
     import Fa from "svelte-fa";
 </script>
@@ -14,7 +15,11 @@
 
     <p>I'm Qther, an aspiring software engineer mostly programming in Rust.</p>
     <p>
-        This website is made with Svelte and will host a small
+        This website (<Repo
+            repo="vonr.github.io"
+            displayName="Source"
+            showStars={false}
+        />) is made with Svelte and will host a small
         <a href="/portfolio" target="_blank">portfolio</a>
         of some of my projects as well as some
         <a href="/blog" target="_blank">blog posts</a>

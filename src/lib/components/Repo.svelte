@@ -7,23 +7,26 @@
 
     export let owner = "Vonr";
     export let repo: string;
+    export let displayName = repo;
     export let showStars = true;
 
     let mounted = false;
     let repoInfo: RepoInfo;
 
     onMount(async () => {
-        repoInfo = await fetch(
-            `https://api.github.com/repos/${owner}/${repo}`,
-            {
-                headers: {
-                    Accept: "application/vnd.github+json",
-                    "X-GitHub-Api-Version": "2022-11-28",
-                },
-            }
-        )
-            .then((res) => res.json())
-            .then((ri) => ri as RepoInfo);
+        if (showStars) {
+            repoInfo = await fetch(
+                `https://api.github.com/repos/${owner}/${repo}`,
+                {
+                    headers: {
+                        Accept: "application/vnd.github+json",
+                        "X-GitHub-Api-Version": "2022-11-28",
+                    },
+                }
+            )
+                .then((res) => res.json())
+                .then((ri) => ri as RepoInfo);
+        }
 
         mounted = true;
     });
@@ -31,15 +34,13 @@
 
 <span class="bg-indigo-100 dark:bg-gray-700">
     <a
-        href={mounted
-            ? repoInfo.html_url
-            : `https://github.com/${owner}/${repo}`}
+        href={`https://github.com/${owner}/${repo}`}
         target="_blank"
     >
-            <Fa
-                icon={faGithub}
-                class="inline text-black dark:text-white mr-0.5"
-            />{repo}
+        <Fa
+            icon={faGithub}
+            class="inline text-black dark:text-white mr-0.5"
+        />{displayName}
     </a>
     {#if mounted && showStars && repoInfo.stargazers_count > 0}
         <a
