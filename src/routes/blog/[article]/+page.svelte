@@ -3,27 +3,16 @@
     import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
     import { mobile } from "fractils";
-    import { theme } from "$lib/stores";
     import type { PageData } from "./$types";
-    import lightTheme from "$lib/styles/hljs-gruvbox-light-medium.css?inline";
-    import darkTheme from "$lib/styles/hljs-gruvbox-dark-medium.css?inline";
+    import "$lib/styles/hljs-gruvbox-merged.css";
     import { onMount } from "svelte";
     import { page } from "$app/stores";
 
-    let style: string;
     export let data: PageData;
     let post = data.post;
     let postName = post
         .substring(0, post.indexOf("\n"))
         .replace(/<[^>]*>?/gm, "");
-
-    theme.subscribe(async (theme) => {
-        if (theme === "light") {
-            style = lightTheme;
-        } else {
-            style = darkTheme;
-        }
-    });
 
     let mounted = false;
     onMount(() => (mounted = true));
@@ -47,8 +36,6 @@
         <Fa icon={faArrowLeft} class="inline mr-1" /><b>Index</b>
     </a>
 </div>
-
-{@html `<style>${style}</style>`}
 
 <div class="centered-content pb-8">
     {@html post}
