@@ -10,8 +10,7 @@ import{s as oe,f as r,a as H,l as p,H as se,g as o,d as l,c as A,h as k,A as E,m
         User Repository (AUR) Helper paru.`),J=H(),s=r("p"),Q=p(`I have also made several libraries such
         `),T(u.$$.fragment),B=p(`
         , a more space-efficient and cache-friendly way of representing large lists
-        of strings also used in parui,
-        and
+        of strings also used in parui, and
         `),T(c.$$.fragment),F=p(`, a wrapper around the standard library's NonZero*
         integer types to make them generically NonN instead.`),K=H(),i=r("p"),O=p(`I use Neovim as my text editor, both for simple files and for
         programming. I host my `),g=r("a"),g.textContent=ae,W=p(`
@@ -22,8 +21,7 @@ import{s as oe,f as r,a as H,l as p,H as se,g as o,d as l,c as A,h as k,A as E,m
         User Repository (AUR) Helper paru.`),R.forEach(l),J=A(n),s=o(n,"P",{});var x=k(s);Q=f(x,`I have also made several libraries such
         `),M(u.$$.fragment,x),B=f(x,`
         , a more space-efficient and cache-friendly way of representing large lists
-        of strings also used in parui,
-        and
+        of strings also used in parui, and
         `),M(c.$$.fragment,x),F=f(x,`, a wrapper around the standard library's NonZero*
         integer types to make them generically NonN instead.`),x.forEach(l),K=A(n),i=o(n,"P",{});var I=k(i);O=f(I,`I use Neovim as my text editor, both for simple files and for
         programming. I host my `),g=o(I,"A",{href:!0,"data-svelte-h":!0}),E(g)!=="svelte-uv1yaj"&&(g.textContent=ae),W=f(I,`
