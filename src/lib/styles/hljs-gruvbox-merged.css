@@ -34,7 +34,7 @@ code.hljs {
     padding: 3px 5px;
 }
 
-p>code {
+p > code {
     background: #ebdbb2;
     border-radius: 0.25rem;
     opacity: 0.8;
@@ -56,7 +56,7 @@ blockquote {
     color: #504945;
 }
 
-.dark p>code {
+.dark p > code {
     background: #3c3836;
     border-radius: 0.25rem;
     opacity: 0.8;
@@ -80,7 +80,8 @@ blockquote {
 
 .hljs-formula,
 .hljs-params,
-.hljs-property {}
+.hljs-property {
+}
 
 .hljs-comment {
     color: #bdae93;
@@ -135,7 +136,7 @@ blockquote {
 .hljs-title,
 .hljs-class .hljs-title,
 .hljs-title.class_,
-#markdown>p>code {
+#markdown > p > code {
     color: #b57614;
 }
 
@@ -206,7 +207,7 @@ blockquote {
 .dark .hljs-title,
 .dark .hljs-class .hljs-title,
 .dark .hljs-title.class_,
-.dark #markdown>p>code {
+.dark #markdown > p > code {
     color: #fabd2f;
 }
 

@@ -3,7 +3,7 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "fmt": "prettier --write src/**/*.ts --cache",
+    "fmt": "prettier --write src --cache",
     "lint": "eslint src --ext .ts --report-unused-disable-directives --max-warnings 0",
     "fix": "eslint --fix src --ext .ts --report-unused-disable-directives --max-warnings 0"
   },

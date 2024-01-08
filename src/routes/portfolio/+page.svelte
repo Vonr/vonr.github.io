@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Repo from "$lib/components/Repo.svelte";
+    import Repo from '$lib/components/Repo.svelte'
 </script>
 
 <svelte:head>
@@ -35,8 +35,7 @@
         I have also made several libraries such
         <Repo repo="compact_strings" />
         , a more space-efficient and cache-friendly way of representing large lists
-        of strings also used in parui,
-        and
+        of strings also used in parui, and
         <Repo repo="nonn" />, a wrapper around the standard library's NonZero*
         integer types to make them generically NonN instead.
     </p>

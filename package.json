@@ -34,13 +34,12 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "fmt": "prettier --write src/**/*.{svelte,ts} --cache",
+    "fmt": "prettier --write src --cache",
     "lint": "eslint src --ext .svelte --ext .ts --report-unused-disable-directives --max-warnings 0",
     "fix": "eslint --fix src --ext .svelte --ext .ts --report-unused-disable-directives --max-warnings 0"
   },
   "type": "module",
   "dependencies": {
-    "0g": "",
     "svrollbar": "^0.12.0"
   }
 }
