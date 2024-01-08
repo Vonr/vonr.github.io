@@ -1,64 +1,64 @@
 <script lang="ts">
-    import "../app.postcss";
-    import Fa from "svelte-fa";
-    import { faSun, faMoon, faHome } from "@fortawesome/free-solid-svg-icons";
-    import { faGithub } from "@fortawesome/free-brands-svg-icons";
+    import '../app.postcss'
+    import Fa from 'svelte-fa'
+    import { faSun, faMoon, faHome } from '@fortawesome/free-solid-svg-icons'
+    import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-    import { theme } from "$lib/stores";
-    import { onMount } from "svelte";
-    import { Fractils, mobile, mobileThreshold } from "fractils";
-    import { onNavigate } from "$app/navigation";
-    import { Svrollbar } from "svrollbar";
+    import { theme } from '$lib/stores'
+    import { onMount } from 'svelte'
+    import { Fractils, mobile, mobileThreshold } from 'fractils'
+    import { onNavigate } from '$app/navigation'
+    import { Svrollbar } from 'svrollbar'
 
-    mobileThreshold.set(1000);
-    let themeToggle: HTMLButtonElement;
-    let mounted = false;
-    let rem = 16;
+    mobileThreshold.set(1000)
+    let themeToggle: HTMLButtonElement
+    let mounted = false
+    let rem = 16
 
     onMount(() => {
-        rem = parseInt(getComputedStyle(document.documentElement).fontSize);
-        themeToggle.disabled = false;
+        rem = parseInt(getComputedStyle(document.documentElement).fontSize)
+        themeToggle.disabled = false
 
         if (
-            localStorage.theme === "light" ||
-            (!("theme" in localStorage) &&
-                window.matchMedia("(prefers-color-scheme: light)").matches)
+            localStorage.theme === 'light' ||
+            (!('theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: light)').matches)
         ) {
-            theme.set("light");
+            theme.set('light')
         } else {
-            theme.set("dark");
+            theme.set('dark')
         }
 
         theme.subscribe((theme) => {
-            if (theme === "light") {
-                document.documentElement.classList.remove("dark");
+            if (theme === 'light') {
+                document.documentElement.classList.remove('dark')
                 document.documentElement.style.setProperty(
-                    "color-scheme",
-                    "light"
-                );
-                localStorage.theme = "light";
+                    'color-scheme',
+                    'light'
+                )
+                localStorage.theme = 'light'
             } else {
-                document.documentElement.classList.add("dark");
+                document.documentElement.classList.add('dark')
                 document.documentElement.style.setProperty(
-                    "color-scheme",
-                    "dark"
-                );
-                localStorage.theme = "dark";
+                    'color-scheme',
+                    'dark'
+                )
+                localStorage.theme = 'dark'
             }
-        });
-        mounted = true;
-    });
+        })
+        mounted = true
+    })
 
     onNavigate((navigation) => {
-        if (!document.startViewTransition) return;
+        if (!document.startViewTransition) return
 
         return new Promise((resolve) => {
             document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
-            });
-        });
-    });
+                resolve()
+                await navigation.complete
+            })
+        })
+    })
 </script>
 
 <Fractils />
@@ -112,18 +112,18 @@
                     <button
                         on:click={() => {
                             theme.update((theme) =>
-                                theme === "light" ? "dark" : "light"
-                            );
+                                theme === 'light' ? 'dark' : 'light'
+                            )
                         }}
-                        title={$theme === "light"
-                            ? "Switch to Dark Mode"
-                            : "Switch to Light Mode"}
+                        title={$theme === 'light'
+                            ? 'Switch to Dark Mode'
+                            : 'Switch to Light Mode'}
                         disabled={true}
                         bind:this={themeToggle}
                         class="disabled:opacity-50"
                     >
                         <Fa
-                            icon={$theme === "light" ? faSun : faMoon}
+                            icon={$theme === 'light' ? faSun : faMoon}
                             size="2x"
                             class="py-1 w-6"
                         />
@@ -158,7 +158,7 @@
     <slot class="bg-white dark:bg-black" />
 </div>
 
-{#if $theme === "light"}
+{#if $theme === 'light'}
     <style>
         h1:not(.no-hl),
         h2:not(.no-hl),

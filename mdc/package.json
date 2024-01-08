@@ -2,6 +2,11 @@
   "name": "mdc",
   "module": "src/index.ts",
   "type": "module",
+  "scripts": {
+    "fmt": "prettier --write src/**/*.ts --cache",
+    "lint": "eslint src --ext .ts --report-unused-disable-directives --max-warnings 0",
+    "fix": "eslint --fix src --ext .ts --report-unused-disable-directives --max-warnings 0"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
@@ -13,6 +18,12 @@
     "@types/markdown-it": "^13.0.1",
     "highlight.js": "^11.8.0",
     "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.6.7"
+    "markdown-it-anchor": "^8.6.7",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
   }
 }

@@ -1,21 +1,23 @@
 <script lang="ts">
-    import "./markdown.css";
-    import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-    import Fa from "svelte-fa";
-    import { mobile } from "fractils";
-    import type { PageData } from "./$types";
-    import "$lib/styles/hljs-gruvbox-merged.css";
-    import { onMount } from "svelte";
-    import { page } from "$app/stores";
+    /* eslint-disable svelte/no-at-html-tags */
 
-    export let data: PageData;
-    let post = data.post;
+    import './markdown.css'
+    import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+    import Fa from 'svelte-fa'
+    import { mobile } from 'fractils'
+    import type { PageData } from './$types'
+    import '$lib/styles/hljs-gruvbox-merged.css'
+    import { onMount } from 'svelte'
+    import { page } from '$app/stores'
+
+    export let data: PageData
+    let post = data.post
     let postName = post
-        .substring(0, post.indexOf("\n"))
-        .replace(/<[^>]*>?/gm, "");
+        .substring(0, post.indexOf('\n'))
+        .replace(/<[^>]*>?/gm, '')
 
-    let mounted = false;
-    onMount(() => (mounted = true));
+    let mounted = false
+    onMount(() => (mounted = true))
 </script>
 
 <svelte:head>

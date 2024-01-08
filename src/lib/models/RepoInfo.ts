@@ -64,11 +64,11 @@ export interface RepoInfo {
     has_pages: boolean
     has_discussions: boolean
     forks_count: number
-    mirror_url: any
+    mirror_url: unknown
     archived: boolean
     disabled: boolean
     open_issues_count: number
-    license: any
+    license: unknown
     allow_forking: boolean
     is_template: boolean
     web_commit_signoff_required: boolean
@@ -78,7 +78,7 @@ export interface RepoInfo {
     open_issues: number
     watchers: number
     default_branch: string
-    temp_clone_token: any
+    temp_clone_token: unknown
     network_count: number
     subscribers_count: number
 }

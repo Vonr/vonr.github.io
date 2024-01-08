@@ -1,7 +1,7 @@
 <script>
-    import Repo from "$lib/components/Repo.svelte";
-    import { faGithub } from "@fortawesome/free-brands-svg-icons";
-    import Fa from "svelte-fa";
+    import Repo from '$lib/components/Repo.svelte'
+    import { faGithub } from '@fortawesome/free-brands-svg-icons'
+    import Fa from 'svelte-fa'
 </script>
 
 <svelte:head>
