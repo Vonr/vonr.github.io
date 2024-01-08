@@ -24,9 +24,9 @@
             (!("theme" in localStorage) &&
                 window.matchMedia("(prefers-color-scheme: light)").matches)
         ) {
-        theme.set("light");
+            theme.set("light");
         } else {
-        theme.set("dark");
+            theme.set("dark");
         }
 
         theme.subscribe((theme) => {
@@ -165,10 +165,6 @@
         h3:not(.no-hl) {
             color: #076678;
         }
-
-        .text-col {
-            color: black;
-        }
     </style>
 {:else}
     <style>
@@ -176,10 +172,6 @@
         h2:not(.no-hl),
         h3:not(.no-hl) {
             color: #83a598;
-        }
-
-        .text-col {
-            color: white;
         }
     </style>
 {/if}
