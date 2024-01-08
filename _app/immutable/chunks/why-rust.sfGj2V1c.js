@@ -445,7 +445,7 @@ This avoids allocating a container for each operation, which would be necessary 
     </span>
 </div>
 <pre class="hljs codeblock"><code><span class="hljs-comment">// This is a bad use of \`map\`, \`inspect\` is more suitable here.</span>
-(<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>).<span class="hljs-title function_ invoke__">for_each</span>(drop);
+(<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>).for_each(drop);
 <span class="hljs-comment">// By the end of the statement above,</span>
 <span class="hljs-comment">// we&#x27;d have printed:</span>
 <span class="hljs-comment">// next 1</span>

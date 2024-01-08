@@ -15,19 +15,19 @@ body::-webkit-scrollbar{display:none}@-moz-document url-prefix(){html{scrollbar-
 		<link href="../_app/immutable/assets/index.omLGGTPY.css" rel="stylesheet" disabled media="(max-width: 0)">
 		<link href="../_app/immutable/assets/ThemeToggle.txVFkIri.css" rel="stylesheet" disabled media="(max-width: 0)">
 		<link href="../_app/immutable/assets/4.y2HlDqRy.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.ijddlmcs.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.06dWQhfm.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.4soVT9IY.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.2Zj5A8bm.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.wJFTSMUY.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.TKdHhFWl.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.94FewpwR.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.0HuHagjb.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.fHZ4slBF.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.MFizy4JG.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.kTMLG_da.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.Pf6GXUel.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.pDq0Q_Mf.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.n7TddWOX.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/4.hPK-9GIv.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.SRcAqHP2.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.qtid8wWb.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/article-index_raw.Tp7TYAV2.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/stores.w76TMTDa.js"><title> Why Rust? </title><!-- HEAD_svelte-16u30cp_START --><meta content="Why Rust?" property="og:title"><meta content="http://sveltekit-prerender/blog/why-rust" property="og:url"><!-- HEAD_svelte-16u30cp_END -->
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.iBj1oHiR.js"><title> Why Rust? </title><!-- HEAD_svelte-16u30cp_START --><meta content="Why Rust?" property="og:title"><meta content="http://sveltekit-prerender/blog/why-rust" property="og:url"><!-- HEAD_svelte-16u30cp_END -->
     </head>
 
     <body
@@ -481,7 +481,7 @@ This avoids allocating a container for each operation, which would be necessary 
     </span>
 </div>
 <pre class="hljs codeblock"><code><span class="hljs-comment">// This is a bad use of `map`, `inspect` is more suitable here.</span>
-(<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>).<span class="hljs-title function_ invoke__">for_each</span>(drop);
+(<span class="hljs-number">1</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|n| <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{n}&quot;</span>)).<span class="hljs-title function_ invoke__">take</span>(<span class="hljs-number">3</span>).for_each(drop);
 <span class="hljs-comment">// By the end of the statement above,</span>
 <span class="hljs-comment">// we&#x27;d have printed:</span>
 <span class="hljs-comment">// next 1</span>
@@ -592,7 +592,7 @@ or doing <a href="https://github.com/rust-lang/rustlings" target="_blank">Rustli
 			
 			<script>
 				{
-					__sveltekit_ecjbp9 = {
+					__sveltekit_rd1sic = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						env: null
 					};
@@ -602,8 +602,8 @@ or doing <a href="https://github.com/rust-lang/rustlings" target="_blank">Rustli
 					const data = [null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.ijddlmcs.js"),
-						import("../_app/immutable/entry/app.wJFTSMUY.js")
+						import("../_app/immutable/entry/start.06dWQhfm.js"),
+						import("../_app/immutable/entry/app.94FewpwR.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
