@@ -2,6 +2,7 @@ import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 import Rust from 'highlight.js/lib/languages/rust'
 import MarkdownItAnchor from 'markdown-it-anchor'
+import MarkdownItContainer from 'markdown-it-container'
 import { exit } from 'node:process'
 import { RenderRule } from 'markdown-it/lib/renderer'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
@@ -40,14 +41,16 @@ const md: MarkdownIt = MarkdownIt({
             str
         )}</code></pre>`
     },
-}).use(MarkdownItAnchor, {
-    slugify: slugify,
-    level: 2,
-    permalink: MarkdownItAnchor.permalink.ariaHidden({
-        placement: 'before',
-        renderAttrs: (_slug, _state) => ({ target: '_self' }),
-    }),
 })
+    .use(MarkdownItAnchor, {
+        slugify: slugify,
+        level: 2,
+        permalink: MarkdownItAnchor.permalink.ariaHidden({
+            placement: 'before',
+            renderAttrs: (_slug, _state) => ({ target: '_self' }),
+        }),
+    })
+    .use(MarkdownItContainer, 'diagram')
 
 const proxy: (_: RenderRule | undefined) => RenderRule = (old) =>
     old ||

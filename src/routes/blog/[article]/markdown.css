@@ -6,7 +6,7 @@
     margin-top: 0rem;
     margin-bottom: 1rem;
     width: auto;
-    max-width: calc(min(760px, 100%));
+    max-width: calc(min(840px, 100%));
     overflow-x: auto;
     justify-self: center;
     border-bottom-left-radius: 0.5rem;
@@ -17,7 +17,7 @@
     transition-duration: 200ms;
 }
 
-.codeblock > code {
+.codeblock>code {
     margin-top: 0rem;
     margin-bottom: 0rem;
 }
@@ -32,4 +32,18 @@ blockquote {
     padding-top: 0.375rem;
     padding-bottom: 0.375rem;
     border-left-width: 0.375rem;
+}
+
+#article>ul {
+    list-style-type: disc;
+}
+
+:is(.dark .diagram>*>img) {
+    border-color: white;
+}
+
+.diagram>*>img {
+    padding: 0.5rem;
+    border-color: black;
+    border-width: 1px;
 }

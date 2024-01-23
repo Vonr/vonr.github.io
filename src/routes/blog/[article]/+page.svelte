@@ -9,6 +9,7 @@
     import '$lib/styles/hljs-gruvbox-merged.css'
     import { onMount } from 'svelte'
     import { page } from '$app/stores'
+    import { theme } from '$lib/stores'
 
     export let data: PageData
     let post = data.post
@@ -17,7 +18,21 @@
         .replace(/<[^>]*>?/gm, '')
 
     let mounted = false
-    onMount(() => (mounted = true))
+    onMount(() => {
+        const diagrams = document.getElementsByClassName('diagram')
+        theme.subscribe((theme) => {
+            for (const diagram of diagrams) {
+                for (const img of diagram.querySelectorAll('img')) {
+                    img.src = img.src.replace(
+                        theme === 'light' ? 'dark' : 'light',
+                        theme as string
+                    )
+                }
+            }
+        })
+
+        mounted = true
+    })
 </script>
 
 <svelte:head>
@@ -39,7 +54,7 @@
     </a>
 </div>
 
-<div class="centered-content pb-8">
+<div class="centered-content pb-8" id="article">
     {@html post}
 </div>
 
