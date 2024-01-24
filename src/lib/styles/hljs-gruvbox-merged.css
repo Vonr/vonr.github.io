@@ -83,7 +83,7 @@ blockquote {
 .hljs-property {}
 
 .hljs-comment {
-    color: #bdae93;
+    color: #928374;
 }
 
 .hljs-tag {
@@ -94,10 +94,6 @@ blockquote {
 .hljs-punctuation,
 .hljs-operator {
     color: #504945;
-}
-
-.dark .hljs-comment {
-    color: #928374;
 }
 
 .dark .hljs-tag {
