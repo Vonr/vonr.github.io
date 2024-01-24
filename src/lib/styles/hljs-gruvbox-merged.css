@@ -97,7 +97,7 @@ blockquote {
 }
 
 .dark .hljs-comment {
-    color: #665c54;
+    color: #928374;
 }
 
 .dark .hljs-tag {
@@ -219,7 +219,7 @@ blockquote {
 .dark .hljs-addition,
 .dark .hljs-title.class_.inherited__,
 .dark .hljs-string {
-    color: #3c3836;
+    color: #b8bb26;
 }
 
 .dark .hljs-built_in,
