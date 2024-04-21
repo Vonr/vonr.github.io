@@ -15,6 +15,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@numbered/feed": "^4.2.8",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/markdown-it": "^13.0.1",
     "@typescript-eslint/eslint-plugin": "^6.18.0",

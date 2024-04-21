@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import { exit } from 'node:process'
 import md from './markdown'
+import { Feed } from '@numbered/feed'
 
 if (process.argv.length < 5) {
     console.error('Arguments: <dir> <builddir> <index>')
@@ -33,6 +34,23 @@ if (fs.existsSync(index)) {
         .forEach((content) => (hashes[content[0]] = content[3]))
 }
 
+const feed = new Feed({
+    title: "Qther's Blog",
+    id: 'https://vonr.github.io/feed',
+    link: 'https://vonr.github.io/feed',
+    copyright: 'All Rights Reserved 2024, Qther',
+    language: 'en',
+    feedLinks: {
+        json: 'https://vonr.github.io/feed/json',
+        atom: 'https://vonr.github.io/feed/atom',
+    },
+    author: {
+        name: 'Qther',
+        email: 'qther@tuta.io',
+        link: 'https://github.com/Vonr',
+    },
+})
+
 for (const article of articles) {
     const content = fs.readFileSync(`${dir}/${article}`)
     const hasher = new Bun.CryptoHasher('sha256')
@@ -51,6 +69,20 @@ for (const article of articles) {
         .slice(firstLineEnd + 1, secondLineEnd)
         .replace(/^#+ /, '')
     indices.push({ id, name, date, hash })
+
+    feed.addItem({
+        title: name,
+        id: `https://vonr.github.io/blog/${id}`,
+        link: `https://vonr.github.io/blog/${id}`,
+        date: new Date(Date.parse(date) + 8 * 60 * 60 * 1000),
+        author: [
+            {
+                name: 'Qther',
+                email: 'qther@tuta.io',
+                link: 'https://github.com/Vonr',
+            },
+        ],
+    })
 
     if (hashes[id] === hash && fs.existsSync(path)) {
         unreplacedArticles.delete(`${id}.html`)
@@ -72,6 +104,10 @@ for (const article of articles) {
 
     unreplacedArticles.delete(`${id}.html`)
 }
+
+fs.writeFileSync('./static/blog/feed.rss', feed.rss2())
+fs.writeFileSync('./static/blog/feed.json', feed.json1())
+fs.writeFileSync('./static/blog/feed.atom', feed.atom1())
 
 for (const article of unreplacedArticles) {
     console.log(`${article} was not produced by us, removing.`)

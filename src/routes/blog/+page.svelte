@@ -16,7 +16,14 @@
 </svelte:head>
 
 <div class="centered-content">
-    <h1>Blog Posts</h1>
+    <div class="flex justify-between">
+        <h1 class="inline">Blog Posts</h1>
+        <span>
+            <a href="/blog/feed.rss" target="_blank">rss</a>
+            <a href="/blog/feed.json" target="_blank">json</a>
+            <a href="/blog/feed.atom" target="_blank">atom</a>
+        </span>
+    </div>
     <ul class="text-lg">
         {#if index === null || index.length === 0}
             No blog posts yet.

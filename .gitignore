@@ -10,3 +10,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /src/lib/article-index
 /src/lib/articles
+/static/blog/feed.*
