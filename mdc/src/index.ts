@@ -23,21 +23,42 @@ if (!fs.existsSync(builddir)) {
 const indices = []
 const unreplacedArticles = new Set(fs.readdirSync(builddir))
 
+const hashes: { [article: string]: string } = {}
+if (fs.existsSync(index)) {
+    const idx = fs.readFileSync(index).toString('utf8')
+
+    idx.split('\n')
+        .map((entry) => entry.split('|||'))
+        .filter((entry) => entry.length === 4)
+        .forEach((content) => (hashes[content[0]] = content[3]))
+}
+
 for (const article of articles) {
+    const content = fs.readFileSync(`${dir}/${article}`)
+    const hasher = new Bun.CryptoHasher('sha256')
+    hasher.update(content)
+    const hash = hasher.digest('hex')
+
     const id = article.replace(/\.md$/, '')
+    const path = `${builddir}/${id}.html`
 
-    const content = fs.readFileSync(`${dir}/${article}`).toString('utf8')
+    const contentStr = content.toString('utf8')
+    const firstLineEnd = contentStr.indexOf('\n')
+    const secondLineEnd = contentStr.indexOf('\n', firstLineEnd + 1)
 
-    const firstLineEnd = content.indexOf('\n')
-    const secondLineEnd = content.indexOf('\n', firstLineEnd + 1)
-
-    const name = content.slice(0, firstLineEnd).replace(/^#+ /, '')
-    const date = content
+    const name = contentStr.slice(0, firstLineEnd).replace(/^#+ /, '')
+    const date = contentStr
         .slice(firstLineEnd + 1, secondLineEnd)
         .replace(/^#+ /, '')
+    indices.push({ id, name, date, hash })
 
-    const rendered = md.render(content)
-    const path = `${builddir}/${id}.html`
+    if (hashes[id] === hash && fs.existsSync(path)) {
+        unreplacedArticles.delete(`${id}.html`)
+        console.log(`${article} has not changed, skipping.`)
+        continue
+    }
+
+    const rendered = md.render(contentStr)
 
     if (
         !fs.existsSync(path) ||
@@ -50,8 +71,6 @@ for (const article of articles) {
     }
 
     unreplacedArticles.delete(`${id}.html`)
-
-    indices.push({ id, name, date })
 }
 
 for (const article of unreplacedArticles) {
@@ -60,8 +79,11 @@ for (const article of unreplacedArticles) {
 }
 
 const indexContent = indices
-    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
-    .map((article) => `${article.id}|||${article.name}|||${article.date}`)
+    .toSorted((a, b) => Date.parse(b.date) - Date.parse(a.date))
+    .map(
+        (article) =>
+            `${article.id}|||${article.name}|||${article.date}|||${article.hash}`
+    )
     .join('\n')
 
 if (

@@ -90,3 +90,13 @@ In theory, it should be possible to expose a limited mutation API for `CompactBy
 be riddled with validation checks that are easy to do wrong and cause bugs. Besides, I think such an API
 would be severely limiting, with the most powerful operation likely being a `map` or `replace` with the heavy limitation
 of the size in bytes of the replaced string being less than or equal to the size in bytes of the starting string.
+
+## Addendum
+
+The `compact_strings` crate now features an even more compact representation dubbed "fixed" compact strings (and bytestrings).
+These representations only use `n + 6` pointer sizes of auxiliary memory by getting rid of the lengths in the metadata.  
+Unfortunately, this efficiency is not free as it makes some parts of the API - especially those related to mutation, less 
+flexible or more expensive - methods like `ignore` are now impossible to implement for example.
+
+This was an idea sparked by [Jimmy](https://github.com/caibear) (cai_bear on Discord) and was implemented with help
+from [Gnome](https://github.com/GnomedDev) (gnomeddev on Discord). A big thanks to both of them!

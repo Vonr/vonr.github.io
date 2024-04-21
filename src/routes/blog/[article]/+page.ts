@@ -5,7 +5,7 @@ export const entries: EntryGenerator = async () => {
     return index
         .split('\n')
         .map((entry) => entry.split('|||'))
-        .filter((entry) => entry.length === 3)
+        .filter((entry) => entry.length === 4)
         .map(([id, _name, _date]) => ({ article: id }))
 }
 

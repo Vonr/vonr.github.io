@@ -1,13 +1,13 @@
 # Why Rust?
 # Sep 20 2023
 
-I have used a variety of languages since I first started my foray into programming.
+I have used a variety of languages since I first started my programming journey.
 
-However, despite all my time with many other languages, I often find myself reaching for Rust
-for whatever I am working on.
+However, despite all my time with many other languages, I often find myself 
+reaching for Rust, despite all my initial troubles with picking it up.
 
-Rust was a language that I had a lot of trouble picking up,  
-but what made it so different, and why do I enjoy it?
+In this post I want to explore what made it so different, as well as why I ultimately
+found enjoyment in using it.
 
 ## The Borrow Checker
 
@@ -78,8 +78,13 @@ In fact, it is such a simple function you could write it yourself - no compiler 
 pub fn drop<T>(_x: T) {}
 ```
 
+The use of the borrow checker is also not limited to preventing bugs, it also provides various guarantees to the
+compiler which can make use of those guarantees to generate faster machine code - potentially providing performance
+benefits.
+
 If you wish to learn more about what the borrow checker does, I recommend reading  
-[this article](https://blog.logrocket.com/introducing-the-rust-borrow-checker/).
+[this article](https://blog.logrocket.com/introducing-the-rust-borrow-checker/) or
+watching [Niko Matsakis' wonderful talk](https://www.youtube.com/watch?v=_agDeiWek8w).
 
 ## Enums (Sum Types)
 
@@ -171,7 +176,7 @@ fn main() {
 }
 ```
 
-In the above example, the function `has_more_than_3_legs` has a simple generic bound, but typeclasses let us express
+In the above example, the function `has_more_than_3_legs` has a simple generic bound, but traits let us express
 much more complex bounds.
 
 ```rs
@@ -213,7 +218,7 @@ Rust has a lot of small conveniences like this, making it both flexible and plea
 You can also use dynamic dispatch to make a "trait object" type.
 
 It should be noted that trait objects are unsized as different implementers of the trait may have different sizes.  
-As such, we put them on the heap using the `Box` smart pointer and store them in a heap-allocated `Vec`.
+As such, we need to put them behind some form of indirection - such as a `Box`, in order to store them.
 
 ```rs,nomain
 use std::fmt::Debug;
@@ -229,8 +234,8 @@ println!("{vec:?}")
 
 ## Iterators
 
-Iterators are by far my favourite feature of Rust, utilizing its powerful type system
-to create a concise and easy way of manipulating data.
+Iterators are another very powerful feature of Rust, utilizing its powerful type system
+to create a concise, easy, and efficient way of manipulating data.
 
 Most collection types in Rust either have an `iter` method or implement `IntoIterator`,
 which creates an `Iterator` over them.

@@ -5,7 +5,7 @@
     index = indexFile
         .split('\n')
         .map((entry) => entry.split('|||'))
-        .filter((entry) => entry.length === 3)
+        .filter((entry) => entry.length === 4)
         .sort((a, b) => Date.parse(b[2]) - Date.parse(a[2]))
 </script>
 
