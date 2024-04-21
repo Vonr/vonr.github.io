@@ -1,10 +1,10 @@
 const n=`<h1>Why Rust?</h1>
 <h1>Sep 20 2023</h1>
-<p>I have used a variety of languages since I first started my foray into programming.</p>
-<p>However, despite all my time with many other languages, I often find myself reaching for Rust
-for whatever I am working on.</p>
-<p>Rust was a language that I had a lot of trouble picking up,<br>
-but what made it so different, and why do I enjoy it?</p>
+<p>I have used a variety of languages since I first started my programming journey.</p>
+<p>However, despite all my time with many other languages, I often find myself
+reaching for Rust, despite all my initial troubles with picking it up.</p>
+<p>In this post I want to explore what made it so different, as well as why I ultimately
+found enjoyment in using it.</p>
 <h2 id="the-borrow-checker" tabindex="-1"><a class="header-anchor" href="#the-borrow-checker" aria-hidden="true" target="_self">#</a> The Borrow Checker</h2>
 <p>Rust has a system that it calls the borrow checker.<br>
 This program is at the core of Rust, upholding its borrowing rules.</p>
@@ -132,8 +132,12 @@ In fact, it is such a simple function you could write it yourself - no compiler 
 </div>
 <pre class="hljs codeblock"><code><span class="hljs-keyword">pub</span> <span class="hljs-keyword">fn</span> <span class="hljs-title function_">drop</span>&lt;T&gt;(_x: T) {}
 </code></pre>
+<p>The use of the borrow checker is also not limited to preventing bugs, it also provides various guarantees to the
+compiler which can make use of those guarantees to generate faster machine code - potentially providing performance
+benefits.</p>
 <p>If you wish to learn more about what the borrow checker does, I recommend reading<br>
-<a href="https://blog.logrocket.com/introducing-the-rust-borrow-checker/" target="_blank">this article</a>.</p>
+<a href="https://blog.logrocket.com/introducing-the-rust-borrow-checker/" target="_blank">this article</a> or
+watching <a href="https://www.youtube.com/watch?v=_agDeiWek8w" target="_blank">Niko Matsakis' wonderful talk</a>.</p>
 <h2 id="enums-sum-types" tabindex="-1"><a class="header-anchor" href="#enums-sum-types" aria-hidden="true" target="_self">#</a> Enums (Sum Types)</h2>
 <p>The borrow checker is really neat, but one of the biggest reasons I love Rust is how
 expressive the language is, in many ways thanks to its powerful enums.</p>
@@ -288,7 +292,7 @@ fn main() {
     <span class="hljs-built_in">assert!</span>(!<span class="hljs-title function_ invoke__">has_more_than_3_legs</span>(Table { legs: <span class="hljs-number">3</span> }))
 }
 </code></pre>
-<p>In the above example, the function <code>has_more_than_3_legs</code> has a simple generic bound, but typeclasses let us express
+<p>In the above example, the function <code>has_more_than_3_legs</code> has a simple generic bound, but traits let us express
 much more complex bounds.</p>
 
 <div class="codeheader flex rounded-t-lg">
@@ -380,7 +384,7 @@ the generic type(s) if type inference falls short.</p>
 <p>Rust has a lot of small conveniences like this, making it both flexible and pleasant to use.</p>
 <p>You can also use dynamic dispatch to make a &quot;trait object&quot; type.</p>
 <p>It should be noted that trait objects are unsized as different implementers of the trait may have different sizes.<br>
-As such, we put them on the heap using the <code>Box</code> smart pointer and store them in a heap-allocated <code>Vec</code>.</p>
+As such, we need to put them behind some form of indirection - such as a <code>Box</code>, in order to store them.</p>
 
 <div class="codeheader flex rounded-t-lg">
     <span class="ml-2 outline-none align-top opacity-60 w-min">
@@ -415,8 +419,8 @@ println!("{vec:?}")
 <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{vec:?}&quot;</span>)
 </code></pre>
 <h2 id="iterators" tabindex="-1"><a class="header-anchor" href="#iterators" aria-hidden="true" target="_self">#</a> Iterators</h2>
-<p>Iterators are by far my favourite feature of Rust, utilizing its powerful type system
-to create a concise and easy way of manipulating data.</p>
+<p>Iterators are another very powerful feature of Rust, utilizing its powerful type system
+to create a concise, easy, and efficient way of manipulating data.</p>
 <p>Most collection types in Rust either have an <code>iter</code> method or implement <code>IntoIterator</code>,
 which creates an <code>Iterator</code> over them.</p>
 <p>Once in an <code>Iterator</code>, you get access to a wide variety of helper methods to manipulate it

@@ -15,19 +15,19 @@ body::-webkit-scrollbar{display:none}@-moz-document url-prefix(){html{scrollbar-
 		<link href="../_app/immutable/assets/index.omLGGTPY.css" rel="stylesheet" disabled media="(max-width: 0)">
 		<link href="../_app/immutable/assets/ThemeToggle.txVFkIri.css" rel="stylesheet" disabled media="(max-width: 0)">
 		<link href="../_app/immutable/assets/4.iHxQW4mD.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.By2Q0aJ3.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/entry.jsaR84jw.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.40wju5Fp.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.DAYvg8ec.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.62YBDsEO.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.b3wrx5u7.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.7kRTK5FF.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.0HuHagjb.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.LLhpI6Hz.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0._Fw17_ge.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.-B-PJaNA.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.448XYeCO.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.pDq0Q_Mf.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.GhULdKyb.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/4.Ro1hM7Ib.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/article-index_raw.9cdHFyxL.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/stores.wrt96YGn.js"><title> Compact String Lists </title><!-- HEAD_svelte-16u30cp_START --><meta content="Compact String Lists" property="og:title"><meta content="http://sveltekit-prerender/blog/compact-strings" property="og:url"><!-- HEAD_svelte-16u30cp_END -->
+		<link rel="modulepreload" href="../_app/immutable/chunks/ThemeToggle.svelte_svelte_type_style_lang.nO1QwZU_.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.yEgc-aKt.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/article-index_raw.ISQZrBY_.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.d4j4pkEV.js"><title> Compact String Lists </title><!-- HEAD_svelte-16u30cp_START --><meta content="Compact String Lists" property="og:title"><meta content="http://sveltekit-prerender/blog/compact-strings" property="og:url"><!-- HEAD_svelte-16u30cp_END -->
     </head>
 
     <body
@@ -94,6 +94,13 @@ as fast at populating a list of 10 million strings as measured on my machine.</p
 be riddled with validation checks that are easy to do wrong and cause bugs. Besides, I think such an API
 would be severely limiting, with the most powerful operation likely being a <code>map</code> or <code>replace</code> with the heavy limitation
 of the size in bytes of the replaced string being less than or equal to the size in bytes of the starting string.</p>
+<h2 id="addendum" tabindex="-1"><a class="header-anchor" href="#addendum" aria-hidden="true" target="_self">#</a> Addendum</h2>
+<p>The <code>compact_strings</code> crate now features an even more compact representation dubbed &quot;fixed&quot; compact strings (and bytestrings).
+These representations only use <code>n + 6</code> pointer sizes of auxiliary memory by getting rid of the lengths in the metadata.<br>
+Unfortunately, this efficiency is not free as it makes some parts of the API - especially those related to mutation, less
+flexible or more expensive - methods like <code>ignore</code> are now impossible to implement for example.</p>
+<p>This was an idea sparked by <a href="https://github.com/caibear" target="_blank">Jimmy</a> (cai_bear on Discord) and was implemented with help
+from <a href="https://github.com/GnomedDev" target="_blank">Gnome</a> (gnomeddev on Discord). A big thanks to both of them!</p>
 <!-- HTML_TAG_END --></div> </div> <style data-svelte-h="svelte-pgqjjv">h1:not(.no-hl),
         h2:not(.no-hl),
         h3:not(.no-hl) {
@@ -102,7 +109,7 @@ of the size in bytes of the replaced string being less than or equal to the size
 			
 			<script>
 				{
-					__sveltekit_gor76k = {
+					__sveltekit_b56rem = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
@@ -111,8 +118,8 @@ of the size in bytes of the replaced string being less than or equal to the size
 					const data = [null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.By2Q0aJ3.js"),
-						import("../_app/immutable/entry/app.b3wrx5u7.js")
+						import("../_app/immutable/entry/start.40wju5Fp.js"),
+						import("../_app/immutable/entry/app.7kRTK5FF.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],

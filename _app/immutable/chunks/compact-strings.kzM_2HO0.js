@@ -58,4 +58,11 @@ as fast at populating a list of 10 million strings as measured on my machine.</p
 be riddled with validation checks that are easy to do wrong and cause bugs. Besides, I think such an API
 would be severely limiting, with the most powerful operation likely being a <code>map</code> or <code>replace</code> with the heavy limitation
 of the size in bytes of the replaced string being less than or equal to the size in bytes of the starting string.</p>
+<h2 id="addendum" tabindex="-1"><a class="header-anchor" href="#addendum" aria-hidden="true" target="_self">#</a> Addendum</h2>
+<p>The <code>compact_strings</code> crate now features an even more compact representation dubbed &quot;fixed&quot; compact strings (and bytestrings).
+These representations only use <code>n + 6</code> pointer sizes of auxiliary memory by getting rid of the lengths in the metadata.<br>
+Unfortunately, this efficiency is not free as it makes some parts of the API - especially those related to mutation, less
+flexible or more expensive - methods like <code>ignore</code> are now impossible to implement for example.</p>
+<p>This was an idea sparked by <a href="https://github.com/caibear" target="_blank">Jimmy</a> (cai_bear on Discord) and was implemented with help
+from <a href="https://github.com/GnomedDev" target="_blank">Gnome</a> (gnomeddev on Discord). A big thanks to both of them!</p>
 `;export{e as default};
