@@ -134,13 +134,7 @@
     </ul>
 </nav>
 
-<Svrollbar
-    alwaysVisible={true}
-    margin={{
-        top: 3.5 * rem,
-        buttom: 0.5 * rem,
-    }}
-/>
+<Svrollbar alwaysVisible={true} />
 
 <div class="fixed bottom-0 right-0 m-8">
     <a href="https://ko-fi.com/qther" target="_blank">

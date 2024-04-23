@@ -12,6 +12,22 @@
     display: none;
 }
 
+.v-scrollbar {
+    margin-top: 3rem !important;
+    --svrollbar-track-width: 6px;
+    --svrollbar-thumb-width: var(--svrollbar-track-width);
+    --svrollbar-thumb-radius: 0px;
+}
+
+.v-scrollbar,
+.v-track {
+    height: calc(100vh - 3rem) !important;
+}
+
+.v-thumb {
+    height: calc((100vh - 3rem) / 5.92) !important;
+}
+
 .centered-content {
     max-width: calc(min(840px, 90%));
     margin: 0 auto;
