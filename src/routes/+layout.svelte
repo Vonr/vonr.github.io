@@ -135,7 +135,7 @@
 </nav>
 
 <Svrollbar
-    alwaysVisible={true}
+    initiallyVisible={true}
     margin={{
         top: 3 * rem,
     }}
@@ -153,7 +153,7 @@
     </a>
 </div>
 
-<div class="mt-16 text-lg">
+<div class="my-16 text-lg">
     <slot class="bg-white dark:bg-black" />
 </div>
 
