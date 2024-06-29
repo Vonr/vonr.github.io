@@ -44,7 +44,7 @@
 </svelte:head>
 
 <div
-    class="top-0 mt-16"
+    class="top-0 mt-16 text-black dark:text-white"
     class:fixed={!mounted || !$mobile}
     class:ml-8={!mounted || !$mobile}
     class:centered-content={mounted && $mobile}

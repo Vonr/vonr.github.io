@@ -35,9 +35,14 @@ code.hljs {
 }
 
 p>code {
+    color: black;
     background: #ebdbb2;
     border-radius: 0.25rem;
     opacity: 0.8;
+}
+
+p>code:is(.dark *) {
+    color: white;
 }
 
 blockquote {

@@ -32,7 +32,7 @@
     })
 </script>
 
-<span class="bg-indigo-100 dark:bg-gray-700">
+<span class="bg-indigo-100 dark:bg-gray-700 text-black dark:text-white">
     <a href={`https://github.com/${owner}/${repo}`} target="_blank">
         <Fa
             icon={faGithub}

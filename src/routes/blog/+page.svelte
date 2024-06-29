@@ -34,7 +34,11 @@
                         <div
                             class="bg-blue-200 dark:bg-gray-700 h-30 w-full whitespace-nowrap rounded-md px-6 py-4 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-300 border-2 border-transparent hover:border-blue-300 mb-3"
                         >
-                            <h1 class="mb-0 p-0 no-hl">{title}</h1>
+                            <h1
+                                class="mb-0 p-0 no-hl text-black dark:text-white"
+                            >
+                                {title}
+                            </h1>
                             <br />
                             <date datetime={date} class="text-col">
                                 {date}
