@@ -11,13 +11,17 @@
     import { page } from '$app/stores'
     import { theme } from '$lib/stores'
 
-    export let data: PageData
+    interface Props {
+        data: PageData;
+    }
+
+    let { data }: Props = $props();
     let post = data.post
     let postName = post
         .substring(0, post.indexOf('\n'))
         .replace(/<[^>]*>?/gm, '')
 
-    let mounted = false
+    let mounted = $state(false)
     onMount(() => {
         const diagrams = document.getElementsByClassName('diagram')
         theme.subscribe((theme) => {

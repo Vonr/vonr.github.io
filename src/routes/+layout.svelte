@@ -9,15 +9,20 @@
     import { Fractils, mobile, mobileThreshold } from 'fractils'
     import { onNavigate } from '$app/navigation'
     import { Svrollbar } from 'svrollbar'
+    interface Props {
+        children?: import('svelte').Snippet<[unknown]>
+    }
+
+    let { children }: Props = $props()
 
     mobileThreshold.set(1000)
-    let themeToggle: HTMLButtonElement
-    let mounted = false
-    let rem = 16
+    let themeToggle: HTMLButtonElement | undefined = $state()
+    let mounted = $state(false)
+    let rem = $state(16)
 
     onMount(() => {
         rem = parseInt(getComputedStyle(document.documentElement).fontSize)
-        themeToggle.disabled = false
+        themeToggle!.disabled = false
 
         if (
             localStorage.theme === 'light' ||
@@ -110,7 +115,7 @@
                 </li>
                 <li>
                     <button
-                        on:click={() => {
+                        onclick={() => {
                             theme.update((theme) =>
                                 theme === 'light' ? 'dark' : 'light'
                             )
@@ -142,7 +147,7 @@
 />
 
 <div class="my-16 text-lg content">
-    <slot class="bg-white dark:bg-black" />
+    {@render children?.({ class: 'bg-white dark:bg-black' })}
 </div>
 
 {#if $theme === 'light'}

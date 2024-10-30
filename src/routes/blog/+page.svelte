@@ -1,6 +1,6 @@
 <script lang="ts">
     import indexFile from '$lib/article-index?raw'
-    let index: string[][]
+    let index: string[][] = $state([])
 
     index = indexFile
         .split('\n')

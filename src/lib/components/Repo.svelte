@@ -5,13 +5,22 @@
     import type { RepoInfo } from '$lib/models/RepoInfo'
     import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-    export let owner = 'Vonr'
-    export let repo: string
-    export let displayName = repo
-    export let showStars = true
+    interface Props {
+        owner?: string
+        repo: string
+        displayName?: string
+        showStars?: boolean
+    }
 
-    let mounted = false
-    let repoInfo: RepoInfo
+    let {
+        owner = 'Vonr',
+        repo,
+        displayName = repo,
+        showStars = true,
+    }: Props = $props()
+
+    let mounted = $state(false)
+    let repoInfo: RepoInfo | undefined = $state()
 
     onMount(async () => {
         if (showStars) {
@@ -39,17 +48,14 @@
             class="inline text-black dark:text-white mr-0.5"
         />{displayName}
     </a>
-    {#if mounted && showStars && repoInfo.stargazers_count > 0}
+    {#if mounted && showStars && repoInfo!.stargazers_count > 0}
         <a
-            href={`${repoInfo.html_url}/stargazers`}
+            href={`${repoInfo!.html_url}/stargazers`}
             target="_blank"
             class="noblue no-underline"
         >
-            <Fa
-                icon={faStar}
-                class="inline"
-                color="#ddb14e"
-            />{repoInfo.stargazers_count}
+            <Fa icon={faStar} class="inline" color="#ddb14e" />{repoInfo!
+                .stargazers_count}
         </a>
     {/if}
 </span>
