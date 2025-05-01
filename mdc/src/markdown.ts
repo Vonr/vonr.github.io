@@ -13,6 +13,7 @@ import { unified } from 'unified'
 import yaml from 'yaml'
 import remarkDirective from 'remark-directive'
 import directorPlugin from './plugins/director'
+import { Element } from 'hast'
 
 if (process.argv.length < 5) {
     console.error('Arguments: <dir> <builddir> <index>')
@@ -32,8 +33,7 @@ export interface Frontmatter {
 }
 
 export const parseFrontmatter = (s: string) => {
-    let frontmatter: Frontmatter
-    frontmatter = yaml.parse(s)
+    const frontmatter: Frontmatter = yaml.parse(s)
 
     const { title, date } = frontmatter
     if (title == null || date == null) {
@@ -56,6 +56,7 @@ export const md = unified()
             code: (state, node) => {
                 const id = increment('cbcp')
                 const content = node.value
+                // eslint-disable-next-line prefer-const
                 let [lang, ...mods] = node.lang.split(',') ?? []
                 lang = getFullName(lang)
                 node.lang = lang
@@ -69,27 +70,27 @@ export const md = unified()
                     h(
                         'div.codeheader.flex.rounded-t-lg',
                         h(
-                            'span.ml-2.outline-none.align-top.opacity-80.w-min',
+                            'span.ml-2.outline-none.align-top.opacity-70.w-min',
                             h('b', lang)
                         ),
                         h(
                             'span.mr-2.outline-none.text-right.align-top.w-min.whitespace-nowrap.ml-auto',
                             repl
                                 ? h(
-                                      `a.noblue.transition-all.opacity-80.hover:opacity-100.no-underline`,
+                                      `a.noblue.transition-all.opacity-70.hover:opacity-100.no-underline`,
                                       { href: repl, target: '_blank' },
                                       'repl '
                                   )
                                 : '',
                             docs
                                 ? h(
-                                      `a.noblue.transition-all.opacity-80.hover:opacity-100.no-underline`,
+                                      `a.noblue.transition-all.opacity-70.hover:opacity-100.no-underline`,
                                       { href: docs, target: '_blank' },
                                       'docs '
                                   )
                                 : '',
                             h(
-                                'button.opacity-80.hover:opacity-100.transition-all',
+                                'button.opacity-70.hover:opacity-100.transition-all',
                                 {
                                     title: 'Copy Code',
                                     onclick: `navigator.clipboard.writeText(document.getElementById('${id}').innerText)`,
@@ -104,7 +105,7 @@ export const md = unified()
                         )
                     ),
                     rendered,
-                ] as any
+                ] as Element[]
             },
             yaml: (_state, node) => {
                 const frontmatter = parseFrontmatter(node.value)
@@ -133,6 +134,11 @@ export const md = unified()
             ],
         },
     })
-    .use(rehypePrettyCode, { theme: 'kanagawa-wave' })
+    .use(rehypePrettyCode, {
+        theme: {
+            dark: 'gruvbox-dark-medium',
+            light: 'gruvbox-light-medium',
+        },
+    })
     .use(remarkFrontmatter, ['yaml'])
     .use(rehypeStringify)
