@@ -1,45 +1,4 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="../favicon.webp" />
-        <meta property="og:type" content="website" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="darkreader-lock" />
-        
-		<link href="../_app/immutable/assets/index.DEMbqDo3.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/ThemeToggle.CSo9U3E1.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/0.CSb5lpzf.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/4.B0wmyxKy.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.DHGLIlQ9.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BvzmGGr6.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/0Hw5SMD3.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BPxrqMEp.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.CaYipFhx.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C1FmrZbK.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CwoefqmL.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DDX5szTn.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/gyCbYhQh.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B8RWU7ym.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/Dy013pN5.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.zv9WxP_B.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/C7-O0awn.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BwMStztO.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/B-PdPM1Y.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BTirhgpz.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/DRMv6pdk.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/4.A7pNXlmU.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/BmiAugHU.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/CKNZXvGa.js"><!--[--><meta content="Why Rust?" property="og:title"> <meta content="http://sveltekit-prerender/blog/why-rust" property="og:url"><!--]--><title>
-        Why Rust?
-    </title>
-    </head>
-
-    <body
-        data-sveltekit-preload-data="hover"
-        class="transition-all duration-300 bg-white dark:bg-black text-black dark:text-white"
-    >
-        <div style="display: contents"><!--[--><!--[--><!----><!----> <nav class="h-12 py-2 mb-8 bg-gray-800 text-white flex fixed w-full top-0 z-50 svelte-10xly4i"><ul class="svelte-10xly4i"><li class="svelte-10xly4i"><ul class="svelte-10xly4i"><li class="svelte-10xly4i"><a href="/" class="text-lg no-underline" title="Home"><!--[--><svg class="svelte-fa inline svelte-chiuqu" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 576 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(288 256)" transform-origin="144 0" class="svelte-chiuqu"><g transform="translate(0,0) scale(1,1)" class="svelte-chiuqu"><!--[--><path d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" fill="currentColor" transform="translate(-288 -256)" class="svelte-chiuqu"></path><!--]--></g></g></svg><!--]--><!----> <!--[-->Home<!--]--></a></li> <li class="svelte-10xly4i"><a href="/portfolio" class="text-lg no-underline" title="Portfolio">Portfolio</a></li> <li class="svelte-10xly4i"><a href="/blog" class="text-lg no-underline" title="Blog">Blog</a></li></ul></li> <li class="svelte-10xly4i"><ul class="svelte-10xly4i"><li class="svelte-10xly4i"><a href="https://github.com/Vonr" target="_blank" class="noblue notransition" title="GitHub"><!--[--><svg class="svelte-fa py-1 w-6 svelte-chiuqu" style="height:1em;font-size:2em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 496 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(248 256)" transform-origin="124 0" class="svelte-chiuqu"><g transform="translate(0,0) scale(1,1)" class="svelte-chiuqu"><!--[--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" fill="currentColor" transform="translate(-248 -256)" class="svelte-chiuqu"></path><!--]--></g></g></svg><!--]--><!----></a></li> <li class="svelte-10xly4i"><button title="Switch to Dark Mode" disabled class="disabled:opacity-50"><!--[--><svg class="svelte-fa py-1 w-6 svelte-chiuqu" style="height:1em;font-size:2em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 512 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(256 256)" transform-origin="128 0" class="svelte-chiuqu"><g transform="translate(0,0) scale(1,1)" class="svelte-chiuqu"><!--[--><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z" fill="currentColor" transform="translate(-256 -256)" class="svelte-chiuqu"></path><!--]--></g></g></svg><!--]--><!----></button></li></ul></li></ul></nav> <!--[--><div class="v-scrollbar svelte-iodyq2" style="height: -48px; margin: 48px 0px 0px 0px"><div class="v-track svelte-iodyq2" style="height: -48px"></div> <div class="v-thumb svelte-iodyq2" style="height: 0px; top: 0px"></div></div><!--]--><!----> <div class="my-16 text-lg content"><!----><div class="top-0 mt-16 text-black dark:text-white fixed ml-8"><a href="/blog" class="no-underline"><!--[--><svg class="svelte-fa inline mr-1 svelte-chiuqu" style="height:1em;vertical-align:-.125em;transform-origin:center;overflow:visible" viewBox="0 0 448 512" aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg"><g transform="translate(224 256)" transform-origin="112 0" class="svelte-chiuqu"><g transform="translate(0,0) scale(1,1)" class="svelte-chiuqu"><!--[--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" fill="currentColor" transform="translate(-224 -256)" class="svelte-chiuqu"></path><!--]--></g></g></svg><!--]--><!----><b>Index</b></a></div> <div class="centered-content pb-8" id="article"><!----><h1 id="title"><a class="section_heading no-underline dark:text-[#83a598]" href="#title">Why Rust?</a></h1>
+const i=`<h1 id="title"><a class="section_heading no-underline dark:text-[#83a598]" href="#title">Why Rust?</a></h1>
 <h1 class="nolink" id="date">20 Sep 2023</h1>
 <p>I have used a variety of languages since I first started my programming journey.</p>
 <p>However, despite all my time with many other languages, I often find myself
@@ -60,7 +19,7 @@ fn main() {
 
     print(s);
 
-    // This would be an error, as s has moved into `print`
+    // This would be an error, as s has moved into \`print\`
     println!("{s}")
 }</div>copy</button></span></div>
 <figure data-rehype-pretty-code-figure=""><pre style="--shiki-dark:#DCD7BA;--shiki-light:#545464;--shiki-dark-bg:#1F1F28;--shiki-light-bg:#F2ECBC" tabindex="0" data-language="rust" data-theme="kanagawa-wave kanagawa-lotus"><code data-language="rust" data-theme="kanagawa-wave kanagawa-lotus" style="display: grid;"><span data-line=""><span style="--shiki-dark:#957FB8;--shiki-light:#624C83">fn</span><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B"> print</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464">s</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">:</span><span style="--shiki-dark:#7AA89F;--shiki-light:#597B75"> String</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">)</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2"> {</span></span>
@@ -72,7 +31,7 @@ fn main() {
 <span data-line=""> </span>
 <span data-line=""><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B">    print</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464">s</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">);</span></span>
 <span data-line=""> </span>
-<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // This would be an error, as s has moved into `print`</span></span>
+<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // This would be an error, as s has moved into \`print\`</span></span>
 <span data-line=""><span style="--shiki-dark:#E46876;--shiki-light:#C84053">    println!</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">{</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">s</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">}</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">)</span></span>
 <span data-line=""><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">}</span></span></code></pre></figure>
 <p>Of course, this by itself is inconvenient.<br>
@@ -81,7 +40,7 @@ That's why Rust makes heavy use of borrows - creating references to values.</p>
 <p>Mutable references can not coexist with any other reference, regardless of mutability.</p>
 <p>As such, you must pick between having as many immutable references to an object as needed,
 or a single mutable reference.</p>
-<div class="codeheader flex rounded-t-lg"><span class="ml-2 outline-none align-top opacity-70 w-min"><b>rust</b></span><span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto"><a class="noblue transition-all opacity-70 hover:opacity-100 no-underline" href="https://play.rust-lang.org/?version=stable&#x26;mode=debug&#x26;edition=2021&#x26;code=%2F%2F%20%60print%60%20now%20takes%20in%20reference%20to%20a%20String.%0A%2F%2F%0A%2F%2F%20P.S.%20the%20type%20should%20really%20be%20%26str%20since%0A%2F%2F%20we%20are%20only%20interested%20in%20the%20data%20of%0A%2F%2F%20the%20string.%0Afn%20print(s%3A%20%26String)%20%7B%0A%20%20%20%20println!(%22%7Bs%7D%22)%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20let%20s%20%3D%20String%3A%3Afrom(%22Hello%2C%20world!%22)%3B%0A%0A%20%20%20%20%2F%2F%20We%20give%20%60print%60%20a%20reference%20to%20%60s%60%20instead%20of%20%60s%60%20itself%0A%20%20%20%20print(%26s)%3B%0A%0A%20%20%20%20%2F%2F%20%60s%60%20has%20not%20been%20moved%20out%20of%20this%20function%2C%0A%20%20%20%20%2F%2F%20and%20is%20thus%20still%20valid.%0A%20%20%20%20println!(%22%7Bs%7D%22)%0A%7D&#x22;" target="_blank">repl </a><button class="opacity-70 hover:opacity-100 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById(&#x27;cbcp_2&#x27;).innerText)"><div class="hidden aria-hidden" id="cbcp_2">// `print` now takes in reference to a String.
+<div class="codeheader flex rounded-t-lg"><span class="ml-2 outline-none align-top opacity-70 w-min"><b>rust</b></span><span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto"><a class="noblue transition-all opacity-70 hover:opacity-100 no-underline" href="https://play.rust-lang.org/?version=stable&#x26;mode=debug&#x26;edition=2021&#x26;code=%2F%2F%20%60print%60%20now%20takes%20in%20reference%20to%20a%20String.%0A%2F%2F%0A%2F%2F%20P.S.%20the%20type%20should%20really%20be%20%26str%20since%0A%2F%2F%20we%20are%20only%20interested%20in%20the%20data%20of%0A%2F%2F%20the%20string.%0Afn%20print(s%3A%20%26String)%20%7B%0A%20%20%20%20println!(%22%7Bs%7D%22)%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20let%20s%20%3D%20String%3A%3Afrom(%22Hello%2C%20world!%22)%3B%0A%0A%20%20%20%20%2F%2F%20We%20give%20%60print%60%20a%20reference%20to%20%60s%60%20instead%20of%20%60s%60%20itself%0A%20%20%20%20print(%26s)%3B%0A%0A%20%20%20%20%2F%2F%20%60s%60%20has%20not%20been%20moved%20out%20of%20this%20function%2C%0A%20%20%20%20%2F%2F%20and%20is%20thus%20still%20valid.%0A%20%20%20%20println!(%22%7Bs%7D%22)%0A%7D&#x22;" target="_blank">repl </a><button class="opacity-70 hover:opacity-100 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById(&#x27;cbcp_2&#x27;).innerText)"><div class="hidden aria-hidden" id="cbcp_2">// \`print\` now takes in reference to a String.
 //
 // P.S. the type should really be &#x26;str since
 // we are only interested in the data of
@@ -93,14 +52,14 @@ fn print(s: &#x26;String) {
 fn main() {
     let s = String::from("Hello, world!");
 
-    // We give `print` a reference to `s` instead of `s` itself
+    // We give \`print\` a reference to \`s\` instead of \`s\` itself
     print(&#x26;s);
 
-    // `s` has not been moved out of this function,
+    // \`s\` has not been moved out of this function,
     // and is thus still valid.
     println!("{s}")
 }</div>copy</button></span></div>
-<figure data-rehype-pretty-code-figure=""><pre style="--shiki-dark:#DCD7BA;--shiki-light:#545464;--shiki-dark-bg:#1F1F28;--shiki-light-bg:#F2ECBC" tabindex="0" data-language="rust" data-theme="kanagawa-wave kanagawa-lotus"><code data-language="rust" data-theme="kanagawa-wave kanagawa-lotus" style="display: grid;"><span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// `print` now takes in reference to a String.</span></span>
+<figure data-rehype-pretty-code-figure=""><pre style="--shiki-dark:#DCD7BA;--shiki-light:#545464;--shiki-dark-bg:#1F1F28;--shiki-light-bg:#F2ECBC" tabindex="0" data-language="rust" data-theme="kanagawa-wave kanagawa-lotus"><code data-language="rust" data-theme="kanagawa-wave kanagawa-lotus" style="display: grid;"><span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// \`print\` now takes in reference to a String.</span></span>
 <span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">//</span></span>
 <span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// P.S. the type should really be &#x26;str since</span></span>
 <span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// we are only interested in the data of</span></span>
@@ -112,10 +71,10 @@ fn main() {
 <span data-line=""><span style="--shiki-dark:#957FB8;--shiki-light:#624C83">fn</span><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B"> main</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">()</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2"> {</span></span>
 <span data-line=""><span style="--shiki-dark:#957FB8;--shiki-light:#624C83">    let</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464"> s </span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">=</span><span style="--shiki-dark:#7AA89F;--shiki-light:#597B75"> String</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">::</span><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B">from</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"Hello, world!"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">);</span></span>
 <span data-line=""> </span>
-<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // We give `print` a reference to `s` instead of `s` itself</span></span>
+<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // We give \`print\` a reference to \`s\` instead of \`s\` itself</span></span>
 <span data-line=""><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B">    print</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">&#x26;</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464">s</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">);</span></span>
 <span data-line=""> </span>
-<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // `s` has not been moved out of this function,</span></span>
+<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // \`s\` has not been moved out of this function,</span></span>
 <span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // and is thus still valid.</span></span>
 <span data-line=""><span style="--shiki-dark:#E46876;--shiki-light:#C84053">    println!</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">{</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">s</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">}</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">)</span></span>
 <span data-line=""><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">}</span></span></code></pre></figure>
@@ -318,14 +277,14 @@ which creates an <code>Iterator</code> over them.</p>
 such as <code>filter</code>, <code>map</code>, <code>skip</code>, and <code>take</code> among many more.</p>
 <p>Rust's <code>Iterator</code> is "lazy", meaning that operations on them only run when needed.
 This avoids allocating a container for each operation, which would be necessary in a strict API.</p>
-<div class="codeheader flex rounded-t-lg"><span class="ml-2 outline-none align-top opacity-70 w-min"><b>rust</b></span><span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto"><a class="noblue transition-all opacity-70 hover:opacity-100 no-underline" href="https://play.rust-lang.org/?version=stable&#x26;mode=debug&#x26;edition=2021&#x26;code=fn%20main()%20%7B%0A%20%20%20%20%2F%2F%20This%20is%20a%20bad%20use%20of%20%60map%60%2C%20%60inspect%60%20is%20more%20suitable%20here.%0A%20%20%20%20(1..%3D10).map(%7Cn%7C%20println!(%22%7Bn%7D%22)).take(3).for_each(drop)%3B%0A%20%20%20%20%2F%2F%20By%20the%20end%20of%20the%20statement%20above%2C%0A%20%20%20%20%2F%2F%20we&#x27;d%20have%20printed%3A%0A%20%20%20%20%2F%2F%20next%201%0A%20%20%20%20%2F%2F%20next%202%0A%20%20%20%20%2F%2F%20next%203%0A%7D&#x22;" target="_blank">repl </a><button class="opacity-70 hover:opacity-100 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById(&#x27;cbcp_11&#x27;).innerText)"><div class="hidden aria-hidden" id="cbcp_11">// This is a bad use of `map`, `inspect` is more suitable here.
+<div class="codeheader flex rounded-t-lg"><span class="ml-2 outline-none align-top opacity-70 w-min"><b>rust</b></span><span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto"><a class="noblue transition-all opacity-70 hover:opacity-100 no-underline" href="https://play.rust-lang.org/?version=stable&#x26;mode=debug&#x26;edition=2021&#x26;code=fn%20main()%20%7B%0A%20%20%20%20%2F%2F%20This%20is%20a%20bad%20use%20of%20%60map%60%2C%20%60inspect%60%20is%20more%20suitable%20here.%0A%20%20%20%20(1..%3D10).map(%7Cn%7C%20println!(%22%7Bn%7D%22)).take(3).for_each(drop)%3B%0A%20%20%20%20%2F%2F%20By%20the%20end%20of%20the%20statement%20above%2C%0A%20%20%20%20%2F%2F%20we&#x27;d%20have%20printed%3A%0A%20%20%20%20%2F%2F%20next%201%0A%20%20%20%20%2F%2F%20next%202%0A%20%20%20%20%2F%2F%20next%203%0A%7D&#x22;" target="_blank">repl </a><button class="opacity-70 hover:opacity-100 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById(&#x27;cbcp_11&#x27;).innerText)"><div class="hidden aria-hidden" id="cbcp_11">// This is a bad use of \`map\`, \`inspect\` is more suitable here.
 (1..=10).map(|n| println!("{n}")).take(3).for_each(drop);
 // By the end of the statement above,
 // we'd have printed:
 // next 1
 // next 2
 // next 3</div>copy</button></span></div>
-<figure data-rehype-pretty-code-figure=""><pre style="--shiki-dark:#DCD7BA;--shiki-light:#545464;--shiki-dark-bg:#1F1F28;--shiki-light-bg:#F2ECBC" tabindex="0" data-language="rust" data-theme="kanagawa-wave kanagawa-lotus"><code data-language="rust" data-theme="kanagawa-wave kanagawa-lotus" style="display: grid;"><span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// This is a bad use of `map`, `inspect` is more suitable here.</span></span>
+<figure data-rehype-pretty-code-figure=""><pre style="--shiki-dark:#DCD7BA;--shiki-light:#545464;--shiki-dark-bg:#1F1F28;--shiki-light-bg:#F2ECBC" tabindex="0" data-language="rust" data-theme="kanagawa-wave kanagawa-lotus"><code data-language="rust" data-theme="kanagawa-wave kanagawa-lotus" style="display: grid;"><span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// This is a bad use of \`map\`, \`inspect\` is more suitable here.</span></span>
 <span data-line=""><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#D27E99;--shiki-light:#B35B79">1</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">..=</span><span style="--shiki-dark:#D27E99;--shiki-light:#B35B79">10</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">)</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">.</span><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B">map</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">|</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464">n</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">|</span><span style="--shiki-dark:#E46876;--shiki-light:#C84053"> println!</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">{</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">n</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">}</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">))</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">.</span><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B">take</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#D27E99;--shiki-light:#B35B79">3</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">)</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">.</span><span style="--shiki-dark:#7E9CD8;--shiki-light:#4D699B">for_each</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464">drop</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">);</span></span>
 <span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// By the end of the statement above,</span></span>
 <span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">// we'd have printed:</span></span>
@@ -336,7 +295,7 @@ This avoids allocating a container for each operation, which would be necessary 
 <p>The <code>Iterator</code> we produced is equivalent to the following imperative code.</p>
 <div class="codeheader flex rounded-t-lg"><span class="ml-2 outline-none align-top opacity-70 w-min"><b>rust</b></span><span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto"><a class="noblue transition-all opacity-70 hover:opacity-100 no-underline" href="https://play.rust-lang.org/?version=stable&#x26;mode=debug&#x26;edition=2021&#x26;code=fn%20main()%20%7B%0A%20%20%20%20let%20mut%20count%20%3D%200%3B%0A%20%20%20%20for%20n%20in%201..%3D10%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20Shadowing%20the%20binding%20of%20%60n%60%20to%20the%20result%20of%20the%20map.%0A%20%20%20%20%20%20%20%20let%20n%20%3D%20println!(%22%7Bn%7D%22)%3B%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20count%20%2B%3D%201%3B%0A%20%20%20%20%20%20%20%20if%20count%20%3E%3D%203%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20break%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%20%20%20%20%2F%2F%20inner%20loop%0A%20%20%20%20%7D%0A%7D&#x22;" target="_blank">repl </a><button class="opacity-70 hover:opacity-100 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById(&#x27;cbcp_12&#x27;).innerText)"><div class="hidden aria-hidden" id="cbcp_12">let mut count = 0;
 for n in 1..=10 {
-    // Shadowing the binding of `n` to the result of the map.
+    // Shadowing the binding of \`n\` to the result of the map.
     let n = println!("{n}");
 
     count += 1;
@@ -348,7 +307,7 @@ for n in 1..=10 {
 }</div>copy</button></span></div>
 <figure data-rehype-pretty-code-figure=""><pre style="--shiki-dark:#DCD7BA;--shiki-light:#545464;--shiki-dark-bg:#1F1F28;--shiki-light-bg:#F2ECBC" tabindex="0" data-language="rust" data-theme="kanagawa-wave kanagawa-lotus"><code data-language="rust" data-theme="kanagawa-wave kanagawa-lotus" style="display: grid;"><span data-line=""><span style="--shiki-dark:#957FB8;--shiki-light:#624C83">let</span><span style="--shiki-dark:#957FB8;--shiki-light:#624C83"> mut</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464"> count </span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">=</span><span style="--shiki-dark:#D27E99;--shiki-light:#B35B79"> 0</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">;</span></span>
 <span data-line=""><span style="--shiki-dark:#957FB8;--shiki-light:#624C83">for</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464"> n </span><span style="--shiki-dark:#957FB8;--shiki-light:#624C83">in</span><span style="--shiki-dark:#D27E99;--shiki-light:#B35B79"> 1</span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">..=</span><span style="--shiki-dark:#D27E99;--shiki-light:#B35B79">10</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2"> {</span></span>
-<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // Shadowing the binding of `n` to the result of the map.</span></span>
+<span data-line=""><span style="--shiki-dark:#727169;--shiki-light:#716E61">    // Shadowing the binding of \`n\` to the result of the map.</span></span>
 <span data-line=""><span style="--shiki-dark:#957FB8;--shiki-light:#624C83">    let</span><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464"> n </span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">=</span><span style="--shiki-dark:#E46876;--shiki-light:#C84053"> println!</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">(</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">{</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">n</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">}</span><span style="--shiki-dark:#98BB6C;--shiki-light:#6F894E">"</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">);</span></span>
 <span data-line=""> </span>
 <span data-line=""><span style="--shiki-dark:#DCD7BA;--shiki-light:#545464">    count </span><span style="--shiki-dark:#E6C384;--shiki-light:#77713F">+=</span><span style="--shiki-dark:#D27E99;--shiki-light:#B35B79"> 1</span><span style="--shiki-dark:#9CABCA;--shiki-light:#4E8CA2">;</span></span>
@@ -397,35 +356,4 @@ me push out this website faster.</p>
 harness it's powers when it fits the project. I personally make a lot of
 command-line utilities, which I believe Rust to be an excellent choice for.</p>
 <p>If you are interested in learning Rust, I strongly recommend reading the <a href="https://doc.rust-lang.org/book">Book</a>
-or doing <a href="https://github.com/rust-lang/rustlings">Rustlings exercises</a>.</p><!----></div> <!--[!--><!--]--><!----><!----></div> <!--[--><style>
-        h1:not(.no-hl),
-        h2:not(.no-hl),
-        h3:not(.no-hl) {
-            color: #076678;
-        }
-    </style><!--]--><!----><!--]--> <!--[!--><!--]--><!--]-->
-			
-			<script>
-				{
-					__sveltekit_sj1ywk = {
-						base: new URL("..", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("../_app/immutable/entry/start.DHGLIlQ9.js"),
-						import("../_app/immutable/entry/app.CaYipFhx.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 4],
-							data: [null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-    </body>
-</html>
+or doing <a href="https://github.com/rust-lang/rustlings">Rustlings exercises</a>.</p>`;export{i as default};
