@@ -8,7 +8,6 @@
     "fix": "eslint --fix src --ext .ts --report-unused-disable-directives --max-warnings 0"
   },
   "devDependencies": {
-    "@types/markdown-it-container": "^2.0.9",
     "bun-types": "latest"
   },
   "peerDependencies": {
@@ -16,13 +15,13 @@
   },
   "dependencies": {
     "@numbered/feed": "^4.2.8",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "eslint": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^9.25.1",
     "eslint-config-prettier": "^9.1.0",
     "hast": "^1.0.0",
     "hastscript": "^9.0.1",
-    "prettier": "^3.1.1",
+    "prettier": "^3.5.3",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^6.0.0",
@@ -31,7 +30,7 @@
     "remark-frontmatter": "^5.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.8.3",
     "unified": "^11.0.5",
     "yaml": "^2.7.1"
   }
