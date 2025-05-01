@@ -1,117 +1,138 @@
-import MarkdownIt from 'markdown-it'
-import hljs from 'highlight.js'
-import Rust from 'highlight.js/lib/languages/rust'
-import MarkdownItAnchor from 'markdown-it-anchor'
-import MarkdownItContainer from 'markdown-it-container'
+import { h } from 'hastscript'
 import { exit } from 'node:process'
-import { RenderRule } from 'markdown-it/lib/renderer'
-import { slugifyWithCounter } from '@sindresorhus/slugify'
-import { makeRepl } from './repl'
+import { getFullName, makeRepl } from './repl'
 import { getModValue } from './util'
-
-const _slugify = slugifyWithCounter()
+import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeStringify from 'rehype-stringify'
+import remarkRehype, { defaultHandlers } from 'remark-rehype'
+import remarkParse from 'remark-parse'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug'
+import remarkFrontmatter from 'remark-frontmatter'
+import { unified } from 'unified'
+import yaml from 'yaml'
+import remarkDirective from 'remark-directive'
+import directorPlugin from './plugins/director'
 
 if (process.argv.length < 5) {
     console.error('Arguments: <dir> <builddir> <index>')
     exit(1)
 }
 
-hljs.registerLanguage('rust', Rust)
+const counts: { [key: string]: number } = {}
+const increment = (key: string): string => {
+    const count = counts[key] ?? 1
+    counts[key] = count + 1
+    return `${key}_${count}`
+}
 
-const slugify = (s: string) =>
-    _slugify(s.replaceAll(/!@#\$%\^\*\(\)\[\]'"/g, ''))
+export interface Frontmatter {
+    title: string
+    date: string
+}
 
-const md: MarkdownIt = MarkdownIt({
-    highlight: (str, _lang) => {
-        const [lang, ..._mods] = _lang.split(',')
-        if (lang && hljs.getLanguage(lang)) {
-            try {
-                return `<pre class="hljs codeblock"><code>${
-                    hljs.highlight(str, {
-                        language: lang,
-                        ignoreIllegals: true,
-                    }).value
-                }</code></pre>`
-            } catch (e) {
-                console.error(e)
-            }
-        }
+export const parseFrontmatter = (s: string) => {
+    let frontmatter: Frontmatter
+    frontmatter = yaml.parse(s)
 
-        return `<pre class="hljs codeblock"><code>${md.utils.escapeHtml(
-            str
-        )}</code></pre>`
-    },
-})
-    .use(MarkdownItAnchor, {
-        slugify: slugify,
-        level: 2,
-        permalink: MarkdownItAnchor.permalink.ariaHidden({
-            placement: 'before',
-            renderAttrs: (_slug, _state) => ({ target: '_self' }),
-        }),
-    })
-    .use(MarkdownItContainer, 'diagram')
-
-const proxy: (_: RenderRule | undefined) => RenderRule = (old) =>
-    old ||
-    ((tokens, idx, options, _env, self) =>
-        self.renderToken(tokens, idx, options))
-
-const link_open = proxy(md.renderer.rules.link_open)
-md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
-    const token = tokens[idx]
-    const aIndex = token.attrIndex('target')
-
-    if (aIndex < 0) {
-        token.attrPush(['target', '_blank'])
+    const { title, date } = frontmatter
+    if (title == null || date == null) {
+        throw new Error('Frontmatter must include `title` and `date` fields.')
     }
 
-    return link_open(tokens, idx, options, env, self)
+    return {
+        title,
+        date,
+    }
 }
 
-{
-    const fence = proxy(md.renderer.rules.fence)
-    const code_block = proxy(md.renderer.rules.code_block)
-    const makeRule =
-        (rule: RenderRule): RenderRule =>
-        (tokens, idx, options, env, self) => {
-            const token = tokens[idx]
-            const id = slugify('cbcp')
-            const content = token.content
-            // eslint-disable-next-line prefer-const
-            let [lang, ...mods] = token.info.split(',')
-            lang = hljs.getLanguage(lang)?.name ?? lang ?? ''
+export const md = unified()
+    .use(remarkParse)
+    .use(remarkDirective)
+    .use(directorPlugin)
+    .use(remarkRehype, {
+        allowDangerousHtml: true,
+        handlers: {
+            code: (state, node) => {
+                const id = increment('cbcp')
+                const content = node.value
+                let [lang, ...mods] = node.lang.split(',') ?? []
+                lang = getFullName(lang)
+                node.lang = lang
 
-            const repl = makeRepl(lang, mods, content)
-            const docs = getModValue(mods, 'docs')
+                const repl = makeRepl(lang, mods, content)
+                const docs = getModValue(mods, 'docs')
 
-            return `
-<div class="codeheader flex rounded-t-lg">
-    <span class="ml-2 outline-none align-top opacity-60 w-min">
-        <b>${lang}</b>
-    </span>
-    <span class="mr-2 outline-none text-right align-top w-min whitespace-nowrap ml-auto">
-        ${
-            repl
-                ? `<a href="${repl}" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">repl</a>`
-                : ''
-        }
-        ${
-            docs
-                ? `<a href="${docs}" target="_blank" class="noblue transition-all opacity-50 hover:opacity-70 no-underline">docs</a>`
-                : ''
-        }
-        <button class="opacity-50 hover:opacity-70 transition-all" title="Copy Code" onclick="navigator.clipboard.writeText(document.getElementById('${id}').innerText)">
-            <div class="hidden aria-hidden" id='${id}'>${content}</div>
-            copy
-        </button>
-    </span>
-</div>
-${rule(tokens, idx, options, env, self)}`
-        }
+                const rendered = defaultHandlers.code(state, node)
 
-    md.renderer.rules.fence = makeRule(fence)
-    md.renderer.rules.code_block = makeRule(code_block)
-}
-
-export default md
+                return [
+                    h(
+                        'div.codeheader.flex.rounded-t-lg',
+                        h(
+                            'span.ml-2.outline-none.align-top.opacity-80.w-min',
+                            h('b', lang)
+                        ),
+                        h(
+                            'span.mr-2.outline-none.text-right.align-top.w-min.whitespace-nowrap.ml-auto',
+                            repl
+                                ? h(
+                                      `a.noblue.transition-all.opacity-80.hover:opacity-100.no-underline`,
+                                      { href: repl, target: '_blank' },
+                                      'repl '
+                                  )
+                                : '',
+                            docs
+                                ? h(
+                                      `a.noblue.transition-all.opacity-80.hover:opacity-100.no-underline`,
+                                      { href: docs, target: '_blank' },
+                                      'docs '
+                                  )
+                                : '',
+                            h(
+                                'button.opacity-80.hover:opacity-100.transition-all',
+                                {
+                                    title: 'Copy Code',
+                                    onclick: `navigator.clipboard.writeText(document.getElementById('${id}').innerText)`,
+                                },
+                                h(
+                                    'div.hidden.aria-hidden',
+                                    { id: id },
+                                    content
+                                ),
+                                'copy'
+                            )
+                        )
+                    ),
+                    rendered,
+                ] as any
+            },
+            yaml: (_state, node) => {
+                const frontmatter = parseFrontmatter(node.value)
+                return [
+                    h('h1#title', frontmatter.title),
+                    h('h1.nolink#date', frontmatter.date),
+                ]
+            },
+        },
+    })
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings, {
+        test: (element) => {
+            return !(
+                (
+                    element?.properties?.className as string[] | undefined
+                )?.includes('nolink') ?? false
+            )
+        },
+        behavior: 'wrap',
+        properties: {
+            className: [
+                'section_heading',
+                'no-underline',
+                'dark:text-[#83a598]',
+            ],
+        },
+    })
+    .use(rehypePrettyCode, { theme: 'kanagawa-wave' })
+    .use(remarkFrontmatter, ['yaml'])
+    .use(rehypeStringify)

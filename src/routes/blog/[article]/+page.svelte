@@ -6,16 +6,15 @@
     import Fa from 'svelte-fa'
     import { mobile } from 'fractils'
     import type { PageData } from './$types'
-    import '$lib/styles/hljs-gruvbox-merged.css'
     import { onMount } from 'svelte'
-    import { page } from '$app/stores'
+    import { page } from '$app/state'
     import { theme } from '$lib/stores'
 
     interface Props {
-        data: PageData;
+        data: PageData
     }
 
-    let { data }: Props = $props();
+    let { data }: Props = $props()
     let post = data.post
     let postName = post
         .substring(0, post.indexOf('\n'))
@@ -23,7 +22,7 @@
 
     let mounted = $state(false)
     onMount(() => {
-        const diagrams = document.getElementsByClassName('diagram')
+        const diagrams = document.querySelectorAll('diagram')
         theme.subscribe((theme) => {
             for (const diagram of diagrams) {
                 for (const img of diagram.querySelectorAll('img')) {
@@ -44,7 +43,7 @@
         {postName}
     </title>
     <meta content={postName} property="og:title" />
-    <meta content={$page.url.href} property="og:url" />
+    <meta content={page.url.href} property="og:url" />
 </svelte:head>
 
 <div

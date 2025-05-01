@@ -1,5 +1,7 @@
-# Why Rust?
-# Sep 20 2023
+---
+title: 'Why Rust?'
+date: '20 Sep 2023'
+---
 
 I have used a variety of languages since I first started my programming journey.
 

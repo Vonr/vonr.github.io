@@ -79,6 +79,16 @@ main = ${code.replace(/\n$/, '').replaceAll(/\n/g, '\n  ')}`
     },
 }
 
+const aliases: { [alias: string]: string } = {
+    rs: 'rust',
+    js: 'javascript',
+    ts: 'typescript',
+}
+
+export const getFullName = (alias: string): string => {
+    return aliases[alias] ?? alias
+}
+
 export const makeRepl = (
     lang: string,
     mods: string[],
@@ -93,7 +103,6 @@ export const makeRepl = (
         return defined
     }
 
-    lang = lang.toLowerCase()
     const replMaker = replMakers[lang]
     if (replMaker) {
         return replMaker(lang, mods, code)

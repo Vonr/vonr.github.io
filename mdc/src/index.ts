@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import { exit } from 'node:process'
-import md from './markdown'
+import { Frontmatter, md, parseFrontmatter } from './markdown'
 import { Feed } from '@numbered/feed'
 
 if (process.argv.length < 5) {
@@ -61,17 +61,27 @@ for (const article of articles) {
     const path = `${builddir}/${id}.html`
 
     const contentStr = content.toString('utf8')
-    const firstLineEnd = contentStr.indexOf('\n')
-    const secondLineEnd = contentStr.indexOf('\n', firstLineEnd + 1)
 
-    const name = contentStr.slice(0, firstLineEnd).replace(/^#+ /, '')
-    const date = contentStr
-        .slice(firstLineEnd + 1, secondLineEnd)
-        .replace(/^#+ /, '')
-    indices.push({ id, name, date, hash })
+    const split = contentStr.split('---\n', 2)
+    if (split.length != 2) {
+        console.error(`${article} must have YAML frontmatter.`)
+        exit(1)
+    }
+
+    let frontmatter: Frontmatter
+    try {
+        frontmatter = parseFrontmatter(split[1])
+    } catch (e) {
+        console.error(`${article} has invalid frontmatter: ${e}`)
+        exit(1)
+    }
+
+    let { title, date } = frontmatter
+
+    indices.push({ id, title, date, hash })
 
     feed.addItem({
-        title: name,
+        title,
         id: `https://vonr.github.io/blog/${id}`,
         link: `https://vonr.github.io/blog/${id}`,
         date: new Date(Date.parse(date) + 8 * 60 * 60 * 1000),
@@ -87,10 +97,10 @@ for (const article of articles) {
     if (hashes[id] === hash && fs.existsSync(path)) {
         unreplacedArticles.delete(`${id}.html`)
         console.log(`${article} has not changed, skipping.`)
-        continue
+        // continue
     }
 
-    const rendered = md.render(contentStr)
+    const rendered = String(await md.process(contentStr))
 
     if (
         !fs.existsSync(path) ||
@@ -118,7 +128,7 @@ const indexContent = indices
     .toSorted((a, b) => Date.parse(b.date) - Date.parse(a.date))
     .map(
         (article) =>
-            `${article.id}|||${article.name}|||${article.date}|||${article.hash}`
+            `${article.id}|||${article.title}|||${article.date}|||${article.hash}`
     )
     .join('\n')
 

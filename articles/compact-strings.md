@@ -1,5 +1,7 @@
-# Compact String Lists
-# 23 Jan 2024
+---
+title: 'Compact String Lists'
+date: '23 Jan 2024'
+---
 
 Around 8 months ago, I was working on [parui](https://github.com/Vonr/parui), a TUI for managing packages on [Arch](https://archlinux.org).
 
@@ -12,7 +14,7 @@ Unfortunately, that means that I would have to make my own data structure, since
 I made a few diagrams with [Excalidraw](https://excalidraw.com/) to make it easier to follow along - 
 here's one showing how `Vec`s and `String`s are represented in memory, though in a somewhat simplified form.
 
-::: diagram
+:::diagram
 ![How Vecs (and Strings) are represented in memory (simplified)](/blog/compact-strings/vec-light.png)
 :::
 
@@ -21,7 +23,7 @@ This is a baseline for the amount of memory we will need.
 
 Now, here's the representation of `Vec<String>` in memory.
 
-::: diagram
+:::diagram
 ![How Vec\<String\> is represented in memory](/blog/compact-strings/vec-string-light.png)
 :::
 
@@ -37,7 +39,7 @@ We can easily do that by making a `CompactString` with just a `ptr` and `len`.
 
 This gives us the following representation.
 
-::: diagram
+:::diagram
 ![Possible memory representation](/blog/compact-strings/possible-light.png)
 :::
 
@@ -57,7 +59,7 @@ to reuse the allocation for longer instead of making a new allocation for each s
 
 This would look something like this.
 
-::: diagram
+:::diagram
 ![How CompactStrings is represented in memory](/blog/compact-strings/compactstrings-light.png)
 :::
 
