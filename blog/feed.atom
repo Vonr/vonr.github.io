@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://vonr.github.io/feed</id>
     <title>Qther's Blog</title>
-    <updated>2024-10-30T14:37:50.103Z</updated>
+    <updated>2025-05-01T12:09:29.967Z</updated>
     <author>
         <name>Qther</name>
         <email>qther@tuta.io</email>
@@ -12,10 +12,10 @@
     <link rel="self" href="https://vonr.github.io/feed/atom"/>
     <rights>All Rights Reserved 2024, Qther</rights>
     <entry>
-        <id>https://vonr.github.io/blog/compact-strings</id>
-        <link href="https://vonr.github.io/blog/compact-strings"/>
-        <title type="html"><![CDATA[Compact String Lists]]></title>
-        <updated>2024-01-23T08:00:00.000Z</updated>
+        <id>https://vonr.github.io/blog/why-rust</id>
+        <link href="https://vonr.github.io/blog/why-rust"/>
+        <title type="html"><![CDATA[Why Rust?]]></title>
+        <updated>2023-09-20T08:00:00.000Z</updated>
         <author>
             <name>Qther</name>
             <email>qther@tuta.io</email>
@@ -23,10 +23,10 @@
         </author>
     </entry>
     <entry>
-        <id>https://vonr.github.io/blog/why-rust</id>
-        <link href="https://vonr.github.io/blog/why-rust"/>
-        <title type="html"><![CDATA[Why Rust?]]></title>
-        <updated>2023-09-20T08:00:00.000Z</updated>
+        <id>https://vonr.github.io/blog/compact-strings</id>
+        <link href="https://vonr.github.io/blog/compact-strings"/>
+        <title type="html"><![CDATA[Compact String Lists]]></title>
+        <updated>2024-01-23T08:00:00.000Z</updated>
         <author>
             <name>Qther</name>
             <email>qther@tuta.io</email>

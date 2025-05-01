@@ -4,23 +4,23 @@
         <title>Qther's Blog</title>
         <link>https://vonr.github.io/feed</link>
         <description>undefined</description>
-        <lastBuildDate>Wed, 30 Oct 2024 14:37:50 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 01 May 2025 12:09:29 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>All Rights Reserved 2024, Qther</copyright>
         <item>
-            <title><![CDATA[Compact String Lists]]></title>
-            <link>https://vonr.github.io/blog/compact-strings</link>
-            <guid>https://vonr.github.io/blog/compact-strings</guid>
-            <pubDate>Tue, 23 Jan 2024 08:00:00 GMT</pubDate>
-            <author>qther@tuta.io (Qther)</author>
-        </item>
-        <item>
             <title><![CDATA[Why Rust?]]></title>
             <link>https://vonr.github.io/blog/why-rust</link>
             <guid>https://vonr.github.io/blog/why-rust</guid>
             <pubDate>Wed, 20 Sep 2023 08:00:00 GMT</pubDate>
+            <author>qther@tuta.io (Qther)</author>
+        </item>
+        <item>
+            <title><![CDATA[Compact String Lists]]></title>
+            <link>https://vonr.github.io/blog/compact-strings</link>
+            <guid>https://vonr.github.io/blog/compact-strings</guid>
+            <pubDate>Tue, 23 Jan 2024 08:00:00 GMT</pubDate>
             <author>qther@tuta.io (Qther)</author>
         </item>
     </channel>
