@@ -95,7 +95,6 @@ div .codeheader {
 
 .dark div .codeheader {
     background: #1F1F28;
-    filter: brightness(80%);
 }
 
 .codeheader>span {
