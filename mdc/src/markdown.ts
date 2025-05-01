@@ -136,8 +136,8 @@ export const md = unified()
     })
     .use(rehypePrettyCode, {
         theme: {
-            dark: 'gruvbox-dark-medium',
-            light: 'gruvbox-light-medium',
+            dark: 'kanagawa-wave',
+            light: 'kanagawa-lotus',
         },
     })
     .use(remarkFrontmatter, ['yaml'])

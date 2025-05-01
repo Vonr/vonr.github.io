@@ -89,8 +89,11 @@ blockquote {
 }
 
 div .codeheader {
-    background: #f2e5bc;
-    filter: brightness(80%);
+    background: #f2ecbc;
+    filter: brightness(87.5%);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
 }
 
 .dark div .codeheader {
@@ -109,6 +112,9 @@ code[data-theme*=" "],
 code[data-theme*=" "] span {
     color: var(--shiki-light);
     background-color: var(--shiki-light-bg);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
 }
 
 .dark {
