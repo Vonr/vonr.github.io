@@ -50,7 +50,7 @@ const replMakers: Record<
 
         return `https://play.rust-lang.org/?version=${channel}&mode=${mode}&edition=${edition}&code=${encodeURIComponent(
             code
-        )}"`
+        )}`
     },
 
     javascript: (_lang, _mods, code) => {
