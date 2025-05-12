@@ -54,7 +54,6 @@ export const md = unified()
         allowDangerousHtml: true,
         handlers: {
             code: (state, node) => {
-                const id = increment('cbcp')
                 const content = node.value
                 // eslint-disable-next-line prefer-const
                 let [lang, ...mods] = node.lang.split(',') ?? []
@@ -65,6 +64,8 @@ export const md = unified()
                 const docs = getModValue(mods, 'docs')
 
                 const rendered = defaultHandlers.code(state, node)
+                const id = increment('codeblock')
+                rendered.properties.id = id
 
                 return [
                     h(
@@ -95,11 +96,6 @@ export const md = unified()
                                     title: 'Copy Code',
                                     onclick: `navigator.clipboard.writeText(document.getElementById('${id}').innerText)`,
                                 },
-                                h(
-                                    'div.hidden.aria-hidden',
-                                    { id: id },
-                                    content
-                                ),
                                 'copy'
                             )
                         )
